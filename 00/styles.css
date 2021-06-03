@@ -1,0 +1,76 @@
+body {
+    text-align: center;
+    background-color: hsl(233, 47%, 7%);
+    color: white;
+    margin: 13%;
+}
+
+h2{
+    font-family: Inter;
+}
+
+p{
+    font-size:12px;
+    font-family: Inter, thin;
+    color: silver;
+}
+
+span{
+    color: hsl(277, 64%, 61%);
+}
+
+.card{
+    background-color: hsl(244, 38%, 16%);
+    border-radius: 2%;
+    display: flex;
+    text-align: left;
+}
+
+.text-container{
+    flex: 1;
+    margin: 30px 50px 10px 50px;
+    text-align: left;
+
+}
+
+.image-container{
+    flex: 1;
+    width:50%;
+}
+
+.social-proof{
+    display: inline-block;
+    font-family: Inter;
+    color: silver;
+    font-size: 13px;
+    margin: 20px 10% 10% 0;
+
+}
+
+.numbers{
+    color: white;
+    font-size: 18px;
+    display: block;
+}
+
+.image{
+    width: 100%;
+    background-color: purple;
+    opacity: 0.2;
+}
+
+.attribution{
+    padding: 50px;
+}
+
+/*
+
+.the-thing{
+    display: inline-block;
+    background-color: red;
+    padding: 10%;
+}
+.the-thing2{
+    display: inline-block;
+    background-color: green;
+}*/
