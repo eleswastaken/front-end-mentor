@@ -1,0 +1,99 @@
+
+body{
+    background-color:lightblue;
+    color: white;
+    padding: 10%;
+    font-family: Helvetica;
+}
+
+div{
+/*    padding: 7%;*/
+}
+
+h2{
+    text-transform: uppercase;
+}
+
+p{
+    color: hsla(0, 0%, 100%, 0.75);
+    font-size: 13px;
+    height: 10%;
+    width: 90%;
+    text-justify: auto;
+    margin-bottom: 50%;
+}
+
+.main-cont{
+    display: inline-flex;
+    padding: 7%;
+}
+
+.sedan-cont{
+    background-color: hsl(31, 77%, 52%);
+    padding: 5%;
+    border-radius: 2% 0 0 2%; 
+    flex: 1;
+    width:33%;
+}
+
+.suv-cont{
+    background-color: hsl(184, 100%, 22%);
+    padding: 5%;
+    flex: 1;
+    width:33%;
+}
+
+.luxury-cont{
+    background-color: hsl(179, 100%, 13%);
+    padding: 5%;
+    border-radius: 0 2% 2% 0;
+    flex: 1;
+    width:33%;
+}
+
+.learn-more{
+    background-color: white;
+    font-size: 15px;
+    font-family: Montserrat;
+    padding: 10px 20px;
+    width: 80%;
+    border: white solid 2px;
+    transition-duration: 0.4s;
+    
+    border-radius: 1000px;
+}
+
+.learn-more:hover{
+    color: white;
+    background-color: rgba(0,0,0,0);
+    border: solid white 2px;
+}
+
+.sedan-bt{
+    color:hsl(31, 77%, 52%);
+}
+
+.suv-bt{
+    color: hsl(184, 100%, 22%)
+}
+
+.luxury-bt{
+    color: hsl(179, 100%, 13%);
+}
+
+@media only screen and (max-width: 600px) {
+    body{
+        padding: 0;
+    }
+   .main-cont{
+       padding: 0;
+       display: flex;
+       flex-direction: column;
+    }
+    .sedan-cont{
+        border-radius: 2% 2% 0 0;
+    }
+    .luxury-cont{
+        border-radius: 0 0 2% 2%;
+    }
+}
