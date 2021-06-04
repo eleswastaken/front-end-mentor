@@ -1,0 +1,77 @@
+body{
+    background-color: lightblue;
+    padding: 150px 500px;
+    font-family: Kumbh Sans;
+}
+
+img {
+    position: absolute;
+    left: 624px;
+    top: 250px;
+    border-radius: 1000px;
+    border: solid white 5px;
+}
+.card{
+    background-color: none;
+    height: 430px;
+}
+.prf-cont{
+    height: 65%;
+    border-radius: 15px;
+    background-color: grey;
+    background-image: url(images/bg-pattern-card.svg);
+}
+
+.placehold{
+    height: 50%;
+}
+
+.text-prt{
+    height: 50%;
+    background-color: white;
+    padding: 30px;
+    text-align: center;
+}
+.text{
+    position: absolute;
+    text-align: center;
+    top:365px;
+    left: 609px;
+    color: hsl(227, 10%, 46%)
+}
+.name{    
+    display:inline;
+    color: hsl(229, 23%, 23%);
+}
+.age{
+    font-size: 18px;
+    display: inline;
+}
+.city{
+    font-size: 14px;
+}
+.scl-inf-cont{
+    border-top: solid 1px lightgrey;
+    border-radius: 0 0 15px 15px;
+    background-color: white;
+}
+
+.scl-inf{
+    display: inline-block;
+    text-align: center;
+    margin-left: 40px;
+}
+
+.inf{
+    letter-spacing: 2px;
+    font-size: 10px;
+    font-weight: 400;
+    color: hsl(227, 10%, 46%);
+    margin-top: 0;
+}
+
+.numbers{
+    color: hsl(229, 23%, 23%);
+    font-size: 19px;
+    font-weight: 700;
+}
