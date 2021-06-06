@@ -1,0 +1,112 @@
+body{
+    background-color: white;
+    font-family: Kumbh Sans;
+    margin: 130px 200px;
+    background-image: linear-gradient();
+    background: linear-gradient(hsl(273, 75%, 66%), hsl(240, 73%, 65%));
+}
+
+
+h2{
+    color:hsl(237, 12%, 33%);
+    text-align: center;
+}
+
+p{
+    display: none;
+    color: hsl(240, 6%, 50%);
+    font-weight: 400;
+    font-size: 12px;
+    margin-top: 20px;
+}
+
+.main-cont{
+    background-color: white;
+    border-radius: 40px;
+    display: flex;
+}
+
+.image-cont{
+    min-height: 350px;
+    flex: 1;
+    width: 50%;
+    background-image: url("images/illustration-woman-online-desktop.svg"),url("images/bg-pattern-desktop.svg");
+    background-repeat: no-repeat;
+    background-position: top 40% left 100%, top 70% left 100%;
+}
+
+.text-cont{
+    text-align: left;
+    flex: 1;
+    width: 50%;
+    padding: 30px 50px;
+    margin: 30px 50px;
+}
+
+.question{
+    color: hsl(237, 12%, 33%);
+    cursor: pointer;
+    padding: 20px;
+    font-weight: 400;
+    font-size: 15px;
+    border-bottom: solid hsl(240, 5%, 91%) 1px;
+}
+
+.arrow{
+    position: absolute;
+}
+.question:hover{
+    transition-duration: 0.2s;
+    color: orange;
+}
+ 
+#box-img{
+    display: inline-block;
+    position: absolute;
+    left: 6%;
+    top: 44%;
+}
+#mob-img{
+    display: none;
+}
+@media screen and (max-width: 480px){
+    body{
+        margin:100px 30px;
+    }
+    .main-cont{
+        display: block;
+        padding: 10px;
+    }
+    .image-cont{
+        background-image: url("images/bg-pattern-mobile.svg");
+        min-height: 0;
+        background-position: top 100% left 47%;
+        width: 100%;
+    }
+    .text-cont{
+        width: 100%;
+        margin: 0;
+        padding: 0 0 20px 0;
+    }
+    .question{
+        font-size: 13px;
+        padding-bottom: 10px;
+    }
+    .question:hover{
+        color:hsl(237, 12%, 33%);
+    }
+    #mob-img{
+        display: block;
+    }
+    #desk-img, #box-img{
+        display: none;
+    }
+}
+
+.attribution{
+    color: hsl(228, 47%, 86%);
+    font-size: 11px;
+    text-align: center;
+    text-decoration: none;
+    padding: 40px
+}
