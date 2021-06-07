@@ -1,0 +1,161 @@
+body{
+    background-color: white;
+    padding: 10px;
+    font-family: Spartan;
+    background-image: url(images/bg-pattern-top-mobile.svg),
+    				  url(images/bg-pattern-bottom-mobile.svg);
+	background-repeat: no-repeat;
+    background-position: 0 0,
+    					 top 100% left 100%;
+}
+p{
+	color: hsl(303, 10%, 53%);
+}
+.proof-cont{
+	color:hsl(300, 43%, 22%);
+
+}
+
+.text-cont{
+	text-align: center;
+	padding: 10px;
+}
+
+.rating{
+	background-color:hsl(300, 24%, 96%);
+	margin: 30px 10px;
+	border-radius: 10px;
+	padding: 10px 0;
+	text-align: center;
+	font-weight: 700;
+}
+.stars{
+	width: 100%;
+	height: 20px;
+	background-image: url("images/icon-star.svg"),
+					url("images/icon-star.svg"),
+					url("images/icon-star.svg"),
+					url("images/icon-star.svg"),
+					url("images/icon-star.svg");
+    background-repeat: no-repeat;
+	background-position: 30% top, 
+	                     40% top,
+	                     50% top,
+	                     60% top,
+	                     70% top;
+    padding-bottom: 10px;
+}
+
+.comment{
+	background-color:hsl(300, 43%, 22%);
+	color: white;
+	padding: 30px ;
+	margin: 10px;
+	border-radius: 10px;
+}
+.prf-cont{
+}
+.prf-pic{
+	width: 20%;
+	border-radius: 50px;
+	display: inline;
+	margin-right: 10px;
+}
+.f23a{
+	display: inline-block;
+	margin: ;
+}
+.name{
+	color: white;
+}
+.f12s{
+	display: block;
+	color: hsl(333, 80%, 67%);
+	font-size: 14px;
+	margin-top: -10px;
+}
+.comment-text{
+	color: white;
+	font-size: 14px;
+}
+
+
+@media screen and (min-width: 480px){
+	body{
+		padding: 7% 13%;
+	background-image: url(images/bg-pattern-top-desktop.svg),
+    				  url(images/bg-pattern-bottom-desktop.svg);
+	background-repeat: no-repeat;
+    background-position: 0 0,
+    					 top 100% left 100%;
+	}
+	.proof-cont{
+		display: flex;
+		flex-direction: row;
+		flex-basis: auto;
+	}
+	.text-cont{
+		flex: 1;
+		text-align: left;
+	}
+	h2{
+		width: 50%;
+		font-size: 30px;
+	}
+	.main-p{
+		width: 80%;
+	}
+	.ratings-cont{
+		margin: 40px 0;
+		flex: 1;
+		display: flex;
+		flex-direction: column;
+		flex-basis: 2;
+	}
+	.rating{
+		display: flex;
+		padding: 20px;
+		width: 80%;
+		margin: 10px;
+		font-size: 14px;
+	}
+	.rating.two{
+		margin-left: 60px;
+	}
+	.rating.three{
+		margin-left: 120px;
+	}
+	.stars{
+		width: 40%;
+		background-position: 10% top, 
+	                     30% top,
+	                     50% top,
+	                     70% top,
+	                     90% top;
+	    padding-bottom: 0;
+	}
+	.comments-cont{
+		display: flex;
+		height: 50%
+	}
+	.comment{
+		flex: 1;
+		height: 80%;
+	}
+	.comment.two{
+		margin-top: 50px;
+	}
+	.comment.three{
+		margin-top: 100px;
+	}
+}
+
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+    margin: 50px 0;
+  }
+  .attribution a {
+    color: hsl(228, 45%, 44%);
+  }
