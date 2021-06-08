@@ -1,0 +1,136 @@
+
+/*- Very Dark Grayish Blue: hsl(217, 19%, 35%)
+- Desaturated Dark Blue: hsl(214, 17%, 51%)
+- Grayish Blue: hsl(212, 23%, 69%)
+- Light Grayish Blue: hsl(210, 46%, 95%)*/
+
+body{
+	background-color: hsl(210, 46%, 95%);
+	font-family: Manrope;
+	padding: 40px 10px;
+}
+.main-cont{
+	background-color: white;
+	border-radius: 15px ;
+	display: flex;
+	flex-direction: column;
+}
+
+.image-cont{
+	border-radius: 15px 15px 0 0;
+	min-height: 200px;
+	flex: 1;
+	background-image: url("images/drawers.jpg");
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+	background-size: 100%;
+}
+
+.text-cont{
+	background-color: white;
+	flex: 1;
+	padding: 30px 35px 20px;
+}
+.article{
+	font-weight: 700;
+	color: hsl(217, 19%, 35%);
+}
+.article-p{
+	color: hsl(214, 17%, 51%);
+	font-size: 14px;
+}
+
+.share-cont{
+	border-radius: 0 0 15px 15px;
+	background-color: white;
+	border-top: 1px lightgrey solid;
+	flex: 1;
+	display: flex;
+	flex-direction: row;
+}
+.prf-pic{
+	border-radius: 50%;
+	width: 50%;
+}
+.share-pic{
+	flex: 0.4;
+	text-align: center;
+	margin-right: 10px;
+	margin: auto;
+}
+
+.name-date{
+	flex: 1;
+	
+}
+.name{
+	margin-bottom: 0;
+	color: hsl(217, 19%, 35%);
+	font-weight: 700;	
+	font-size: 14px;
+}
+.date{
+	margin-top: 0;
+	font-weight: 500;
+	font-size: 13px;
+	color: hsl(214, 17%, 51%);
+}
+
+
+.share-btn{
+	flex: 0.4;
+	margin: auto;
+}
+.share-icon-div{
+	height: 30px;
+	width: 40px;
+	cursor: pointer;
+	border-radius: 50%;
+	background-color: hsl(210, 46%, 95%);
+	text-align: center;
+	padding-top: 10px
+}
+.share-icon{
+	background-color: hsl(210, 46%, 95%);
+	border-radius: 50%;
+	width: 20px;
+}
+.share-p{
+	display: none;
+}
+.scs-icons{
+	display: none;
+}
+
+@media screen and (min-width: 480px){
+	body{
+		padding: 100px 200px;
+	}
+	.main-cont{
+		flex-basis: auto;
+		flex-direction: row;	
+	}
+	.second-cont{
+		flex: 1;
+	}
+	.image-cont{
+		border-radius: 15px 0 0 15px;
+	}
+	.text-cont{
+		border-radius: 0 15px 15px 0;
+	}
+	.share-cont{
+		border-radius: 0 0 15px 0;
+		padding: 10px;
+	}
+
+}
+.attribution {
+	font-size: 11px;
+	text-align: center; 
+	margin:50px;
+}
+.attribution a { 
+	color: hsl(228, 45%, 44%);
+	text-decoration: none;
+}
