@@ -1,0 +1,124 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+body{
+	font-family: Josefin Sans;
+	padding: 0;
+}
+
+.main-cont{
+	padding: 10px 0;
+}
+#text-cont{
+	text-align: center;
+	color: hsl(0, 36%, 70%);
+	padding: 50px 20px;
+	line-height: 1.6;
+}
+#text-cont span{
+	color: hsl(0, 36%, 70%);
+	font-weight: 300;
+}
+#text-cont h1{
+	line-height: 1.2;
+	color: black;
+	text-transform: uppercase;
+	word-spacing: 100em;
+	letter-spacing: 12px;
+	margin: 20px 0;
+}
+#logo{
+	margin: 30px;
+	width: 100px;
+}
+#mbl-image{
+	width: 100%;
+	display: block;
+}
+#dsk-image{
+	display: none;
+}
+#form{
+	position: relative;
+}
+#email-inp{
+	margin-top: 30px;
+	padding: 15px;
+	border-radius: 50px;
+	border: solid hsl(0, 36%, 70%) 1px;
+	width: 85%;
+}
+#email-inp:focus{
+		outline: none;
+}
+#sbm-btn{
+	position: absolute;
+	left: 80%;
+	top: 39%;
+	background-image: linear-gradient(325deg, hsl(0, 0%, 100%), hsl(0, 74%, 74%));
+	cursor: pointer;
+	width: 18%;
+	height: 47.5px;
+	border-radius: 50px;
+}
+#sbm-btn img{
+	margin: 11px;
+	height: 50%;
+}
+::placeholder{
+	opacity: .5;
+	padding-left: 10px;
+	color: hsl(0, 36%, 70%);
+}
+#error-msg{
+	color: hsl(0, 93%, 68%);
+	text-align: left;
+	font-size: 14px;
+	margin: 0 35px;
+	display: none;
+}
+@media (min-width: 450px){
+	body{
+		background: url("images/bg-pattern-desktop.svg"), no-repeat;
+	}
+	#logo{
+		width: 20%;
+	}
+	#dsk-image{
+		display: block;
+	}
+	#mbl-image{
+		display: none;
+	}
+	#main-cont{
+		display: flex;
+		flex-direction: row;
+	}
+	#left-cont{
+		padding: 40px 140px;
+	}
+	#text-cont{
+		text-align: left;
+		width: 79%;
+	}
+	#text-cont h1{
+		font-size: 70px;
+	}
+	#text-cont p{
+		line-height: 1.6;
+		margin: 20px 0;
+	}
+	#sbm-btn img{
+		position: absolute;
+		height: 50%;
+		top: 7%;
+		left: 30%;
+	}
+}
+.attribution { 
+	margin: 40px;
+	font-size: 11px;
+	text-align: center; 
+}
+.attribution a { color: hsl(228, 45%, 44%); }
