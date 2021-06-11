@@ -1,0 +1,134 @@
+body{
+	background-color: hsl(0, 100%, 74%);
+	background-image: url("images/bg-intro-desktop.png");
+	font-family: Poppins;
+	color: hsl(0, 0%, 99%);
+	padding: 30px 20px;
+}
+
+#text-cont{
+	text-align: center;
+	margin: 50px 0;
+	padding: 0 20px;
+}
+
+#ad-cont{
+	background-color: hsl(248, 32%, 49%);
+	border-radius: 13px;
+	padding: 30px 60px;
+	text-align: center;
+	margin: 20px 0;
+	font-weight: 400;
+}
+#ad-cont span{
+	font-weight: 600;
+}
+
+#signup-form{
+	background-color: hsl(0, 0%, 100%);
+	border-radius: 13px;
+	padding: 30px;
+	text-align: center;
+}
+#signup-form input{
+	border: solid 1px hsl(246, 25%, 77%);
+	border-radius: 5px;
+	display: inline-block;
+	margin-bottom: 20px;
+	font-weight: 700;
+	font-size: 18px;
+	outline: none;
+	padding: 20px;
+	width: 85%;
+}
+#submit-btn{
+	background-color: hsl(154, 59%, 51%);
+	border-radius: 5px;
+	box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+	color: hsl(0, 0%, 100%);
+	cursor: pointer;
+	text-transform: uppercase;
+	font-size: 18px;
+	font-weight: 500;
+	border: none;
+	padding: 20px;
+	width: 100%;
+}
+#submit-btn:hover{
+	background-color: hsl(154, 59%, 61%);
+}
+#signup-form p{
+	color: hsl(246, 25%, 77%);
+	font-size: 13px;
+	margin: 20px;
+}
+#signup-form p span, a{
+	text-decoration: none;
+	color: hsl(0, 100%, 74%);
+	font-weight: 700;
+}
+.err-msg{
+	display: none;
+	float: right;
+	color: hsl(0, 100%, 74%);
+}
+@media (min-width: 450px){
+	body{
+		padding: 70px 150px;
+	}
+	#main-cont{
+		display: flex;
+		flex-direction: row;
+	}
+	#text-cont{
+		flex: 1;
+		text-align: left;
+		margin: auto;
+		margin-right: 160px;
+	}
+	#text-cont h1{
+		font-size: 40px;
+	}
+	#second-cont{
+		flex: 1;
+	}
+	#ad-cont{
+		padding: 10px 0;
+		border-radius: 7px;
+	}
+	#signup-form{
+		border-radius: 7px;
+	}
+	#signup-form input{
+		margin-bottom: 10px;
+		padding: 15px 20px;
+		font-size: 13px;
+	}
+	#submit-btn{
+		width: 97%;
+		padding: 15px 0;
+		font-size: 13px;
+	}
+
+}
+
+.attribution {
+	font-size: 11px;
+	text-align: center;
+	margin: 50px;
+}
+.attribution a { color: hsl(228, 45%, 44%); }
+/*### Primary
+
+- Red: hsl(0, 100%, 74%) 
+- Green: hsl(154, 59%, 51%)
+
+### Accent
+
+- Blue: hsl(248, 32%, 49%)
+
+### Neutral
+
+- Dark Blue: hsl(249, 10%, 26%) 
+- Grayish Blue: hsl(246, 25%, 77%)
+*/
