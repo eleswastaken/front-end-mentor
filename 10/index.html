@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <title>Frontend Mentor | Ping coming soon page</title>
+
+</head>
+<body>
+  <div id="main-cont">
+
+      <img id="logo" src="images/logo.svg" alt="company-logo">
+      <h2>We are launching <strong>soon!</strong></h2>
+      <p>Subscribe and get notified</p>
+      <form onsubmit="#">
+        <label for="email"></label>
+        <input id="email" type="email" name="email" placeholder="Your email address..."  required="">
+        <button id="notify-btn" onclick="validate()">Notify Me</button>
+        <p id="email-err">Please provide a valid email address</p>
+      </form>
+
+      <img id="ilst-image" src="images/illustration-dashboard.png">
+      <p id="copyright">&copy; Copyright Ping. All rights reserved.</p>
+
+  </div>
+
+  <script>
+    document.getElementById("email").addEventListener('keypress', function (e) {
+      if (e.key === 'Enter') {
+        validate();
+      }
+    });
+
+    function validateEmail(email) {
+        const re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        return re.test(email);}
+
+    function validate() {
+      const $result = document.getElementById("email-err");
+      const email = document.getElementById("email").value;
+        if (validateEmail(email)) {
+            $result.style.display = "none";
+            document.getElementById("email").style.border = "solid hsl(0, 36%, 70%) 1px"
+            // do some action... send an email... register... idk
+          } else {
+            $result.style.display = "inline";
+            document.getElementById("email").style.border = "solid hsl(0, 93%, 68%) 2px"
+        }
+        return false;
+    }
+  </script>
+
+  <footer>
+    <p class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="#">Your Name Here</a>.
+    </p>
+  </footer>
+</body>
+</html>

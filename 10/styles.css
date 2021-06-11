@@ -1,0 +1,105 @@
+body{
+	background-color: white;
+	font-family: Libre Franklin;
+}
+
+#main-cont{
+	text-align: center;
+	padding: 50px 40px;
+}
+#logo{
+	width: 20%;
+	margin: 35px;
+}
+h2{
+	font-weight: 400;
+	color: hsl(0, 0%, 59%);
+}
+h2 strong{
+	color: black;
+}
+p{
+	margin: 30px;
+}
+
+#email{
+	border: solid hsl(223, 100%, 88%) 1px;
+	border-radius: 50px;
+	box-sizing: border-box;
+	margin: 15px 0;
+	outline: none;
+	padding: 13px;
+	text-indent: 15px;
+	width: 100%;
+}
+::placeholder{
+	color: hsl(223, 100%, 88%);
+}
+#email-err{
+	display: none;
+	margin-top: -10px;
+	font-size: 12px;
+	font-style: italic;
+	color: hsl(354, 100%, 66%);
+}
+#notify-btn{
+	width: 100%;
+	box-shadow: rgba(0, 0, 0, 0.1) 0px 25px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+	background-color: hsl(223, 87%, 63%);
+	border: none;
+	border-radius: 50px;
+	box-sizing: border-box;
+	color: white;
+	padding: 13px;
+	transition-duration: 0.1s;
+
+}
+#notify-btn:hover{
+	background-color: hsl(223, 87%, 43%);	
+}
+
+#ilst-image{
+	width: 100%;
+	margin: 70px 0;
+}
+
+
+
+#copyright{
+	color: hsl(0, 0%, 59%);
+	font-size: 13px;
+	margin-bottom: -80px;
+}
+
+@media (min-width: 450px){
+	#main-cont{
+		padding: 50px 330px 100px;
+	}
+	#logo{
+		width: 14%;
+	}
+	#email{
+		width: 60%;
+		padding: 17px;
+	}
+	#notify-btn{
+		width: 30%;
+		padding: 15px;
+	}
+	h2{
+		font-size: 45px;
+	}
+	p{
+		margin-top: 10px;
+		font-size: 20px;
+	}
+}
+
+
+.attribution { 
+	font-size: 11px; 
+	text-align: center; 
+	margin: 50px;
+}
+.attribution a {
+	color: hsl(228, 45%, 44%); }
