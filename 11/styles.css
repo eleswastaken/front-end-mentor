@@ -1,0 +1,90 @@
+body{
+	background-color: hsl(257, 40%, 49%);
+	background-image: url("images/bg-mobile.svg");
+	background-repeat: no-repeat;
+	font-family: Open Sans;
+}
+#logo{
+	margin: 30px;
+	width: 40%;
+}
+#main-cont{
+	padding: 20px;
+}
+#mockups{
+	width: 100%;
+}
+#text-cont{
+	color: white;
+	text-align: center;
+	line-height: 1.6;
+}
+h1{
+	font-family: Poppins;
+	font-size: 25px;
+}
+#register-btn{
+	border: none;
+	border-radius: 50px;
+box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;	color: hsl(257, 40%, 49%);
+	padding: 15px 30px;
+	margin: 10px 0;
+	transition-duration: 0.2s;
+	width: 70%;
+}
+#register-btn:hover{
+	background-color: hsl(300, 69%, 71%);
+	color: white;
+}
+
+
+
+@media (min-width: 450px){
+	body{
+		background-image: url("images/bg-desktop.svg");
+		padding: 35px 50px;
+	}
+	#main-cont{
+		display: flex;
+		flex-direction: row;
+	}
+	#logo{
+		width: 15%;
+	}
+	#text-cont{
+		flex: 0.9;
+		text-align: left;
+	}
+	h1{
+		font-size: 35px;
+		width: 80%;
+	}
+	p{
+		width: 90%;
+	}
+	#f-cont{
+		flex: 1.1;
+		margin-right: 30px;
+	}
+	#register-btn{
+		width: 30%;
+	}
+}
+
+
+
+
+
+
+
+
+.attribution {
+	font-size: 11px;
+	text-align: center;
+	margin: 50px;
+	color: white;
+}
+.attribution a {
+	color: hsl(300, 69%, 71%);
+	text-decoration: none;
+}
