@@ -1,0 +1,232 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: white;
+  background-image: url("../images/bg-pattern.svg");
+  background-repeat: no-repeat;
+  background-position: top;
+  font-size: 15px;
+  font-family: Manrope;
+  padding: 50px 30px;
+}
+
+body > h1, body p {
+  text-align: center;
+  color: #858fad;
+}
+
+body > h1 {
+  color: #293356;
+  margin-bottom: 30px;
+}
+
+a {
+  text-decoration: none;
+}
+
+.flex {
+  display: flex;
+}
+
+.main-cont {
+  width: 40%;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px silver;
+  margin: 50px auto;
+}
+
+.main-cont p {
+  color: #858fad;
+  font-size: 13px;
+}
+
+.main-cont__upper-cont {
+  padding: 40px;
+  border-bottom: 1px solid silver;
+}
+
+.main-cont__upper-cont .slider-cont__up {
+  align-items: center;
+  justify-content: space-between;
+}
+
+.main-cont__upper-cont .slider-cont__up > p:first-child {
+  text-transform: uppercase;
+  color: #858fad;
+  font-weight: 500;
+}
+
+.main-cont__upper-cont .slider-cont__up > p:last-child {
+  font-size: 15px;
+}
+
+.main-cont__upper-cont .slider-cont__up > p:last-child > strong {
+  color: #293356;
+  font-size: 34px;
+}
+
+.main-cont__upper-cont .slider-cont input {
+  width: 100%;
+  margin: 40px 0;
+}
+
+.main-cont__upper-cont .slider-cont input::-moz-range-track {
+  background-color: #eaeefb;
+  border-radius: 7px;
+  height: 10px;
+  border: none;
+}
+
+.main-cont__upper-cont .slider-cont input::-moz-range-thumb {
+  background-color: #a5f3eb;
+  background-image: url("../images/icon-slider.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 50px;
+  box-shadow: 0 10px 20px 3px #a5f3eb;
+  border: none;
+  height: 30px;
+  width: 30px;
+}
+
+.main-cont__upper-cont .slider-cont input::-moz-range-thumb:active {
+  background-color: #10d5c2;
+}
+
+.main-cont__upper-cont .slider-cont input::-moz-range-progress {
+  background-color: #a5f3eb;
+  border: 3px solid #a5f3eb;
+  border-radius: 7px;
+}
+
+.main-cont__upper-cont .switch-cont {
+  align-items: center;
+  text-align: center;
+  justify-content: space-evenly;
+}
+
+.main-cont__upper-cont .switch-cont > .switch {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 22px;
+}
+
+.main-cont__upper-cont .switch-cont > .switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.main-cont__upper-cont .switch-cont > .switch .slider {
+  position: absolute;
+  border-radius: 50px;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #cccccc;
+  transition: .4s;
+}
+
+.main-cont__upper-cont .switch-cont > .switch .slider:before {
+  position: absolute;
+  border-radius: 50%;
+  content: "";
+  height: 14px;
+  width: 14px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: .4s;
+}
+
+.main-cont__upper-cont .switch-cont > .switch input:checked + .slider {
+  background-color: #a5f3eb;
+}
+
+.main-cont__upper-cont .switch-cont > .switch input:checked + .slider:before {
+  transform: translateX(19px);
+}
+
+.main-cont__upper-cont .switch-cont > p > span {
+  background-color: #feece7;
+  border-radius: 8px;
+  color: #ff8c66;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 3px 7px;
+}
+
+.main-cont__bottom-cont {
+  padding: 25px 40px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.main-cont__bottom-cont > div > p {
+  font-size: 13px;
+  text-align: left;
+}
+
+.main-cont__bottom-cont > div > p:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+.main-cont__bottom-cont > div > p > img {
+  margin-right: 10px;
+}
+
+.main-cont__bottom-cont > a {
+  border-radius: 50px;
+  background-color: #293356;
+  color: #bdccff;
+  font-size: 14px;
+  padding: 10px 40px;
+  transition: all 300ms ease-in-out;
+}
+
+.main-cont__bottom-cont > a:hover {
+  color: white;
+}
+
+@media (max-width: 850px) {
+  .main-cont {
+    width: 65%;
+  }
+  .main-cont__upper-cont .slider-cont__up {
+    flex-direction: column;
+  }
+  .main-cont__upper-cont .slider-cont__up > p {
+    margin-bottom: 10px;
+  }
+  .main-cont__bottom-cont {
+    flex-direction: column;
+    text-align: center;
+  }
+  .main-cont__bottom-cont > div > p {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 450px) {
+  .main-cont {
+    width: 100%;
+  }
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  color: #3e52a3;
+}

@@ -1,0 +1,259 @@
+
+
+
+$softCyan : hsl(174, 77%, 80%) ;            // (Full Slider Bar)
+$strongCyan : hsl(174, 86%, 45%);           // (Slider Backround)
+$lightGrayishRed :  hsl(14, 92%, 95%);      // (Discount Background)
+$lightRed : hsl(15, 100%, 70%);             // (Discount Text)
+
+$paleBlue : hsl(226, 100%, 87%);            // (CTA Text)
+$white :  hsl(0, 0%, 100%);                 // (Pricing Component Background)
+$veryPaleBlue : hsl(230, 100%, 99%);        // (Main Background)
+$lightGrayishBlueSl : hsl(224, 65%, 95%);   // (Empty Slider Bar)
+$lightGrayishBlueTg : hsl(223, 50%, 87%);   // (Toggle Background)
+$grayishBlue : hsl(225, 20%, 60%);          // (Text)
+$darkDesaturatedBlue : hsl(227, 35%, 25%);  // (Text & CTA Background)
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body{
+    background-color: $white;
+    background-image: url("../images/bg-pattern.svg");
+    background-repeat: no-repeat;
+    background-position: top;
+    > h1, p{
+        text-align: center;
+        color: $grayishBlue;
+    }
+    >h1 {
+        color: $darkDesaturatedBlue;
+        margin-bottom: 30px;
+    }
+    font-size: 15px;
+    font-family: Manrope;
+    padding: 50px 30px;
+}
+
+a{
+    text-decoration: none;
+}
+.flex{
+    display: flex;
+
+
+}
+
+.main-cont{
+
+    width: 40%;
+    background-color: $white;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px silver;
+    // border: 1px solid purple;
+    margin: 50px auto;
+    p{
+        color: $grayishBlue;
+        font-size: 13px;
+    }
+    &__upper-cont{
+        padding: 40px;
+        border-bottom: 1px solid silver;
+
+        .slider-cont{
+            &__up{
+                align-items: center;
+                justify-content: space-between;
+                > p{
+                    &:first-child{
+                        text-transform: uppercase;
+                        color: $grayishBlue;
+                        font-weight: 500;
+                    }
+                    &:last-child{
+                        font-size: 15px;
+                        > strong{
+                            color: $darkDesaturatedBlue;
+                            font-size: 34px;
+                        }
+                    }
+                }
+            }
+            input{
+                width: 100%;
+                margin: 40px 0;
+                &::-moz-range-track{
+                    background-color: $lightGrayishBlueSl;
+                    border-radius: 7px;
+                    height: 10px;
+                    border: none;
+                }
+                &::-moz-range-thumb{
+                    background-color: $softCyan;
+                    background-image: url("../images/icon-slider.svg");
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    border-radius: 50px;
+                    box-shadow: 0 10px 20px 3px $softCyan;
+                    border: none;
+                    height:30px;
+                    width: 30px;
+
+                    &:active{
+                        background-color: $strongCyan;
+                    }
+                }
+                &::-moz-range-progress{
+                    background-color: $softCyan;
+                    border: 3px solid $softCyan;
+                    border-radius: 7px;
+                }
+            }
+        }
+
+        .switch-cont{
+            align-items: center;
+            text-align: center;
+            justify-content: space-evenly;
+            > .switch{
+                position: relative;
+                display: inline-block;
+                width: 40px;
+                height: 22px;
+                input {
+                  opacity: 0;
+                  width: 0;
+                  height: 0;
+                }
+                .slider {
+                  position: absolute;
+                  border-radius: 50px;
+                  cursor: pointer;
+                  top: 0;
+                  left: 0;
+                  right: 0;
+                  bottom: 0;
+                  background-color: #cccccc;
+                  transition: .4s;
+                }
+                .slider:before {
+                  position: absolute;
+                  border-radius: 50%;
+                  content: "";
+                  height: 14px;
+                  width: 14px;
+                  left: 4px;
+                  bottom: 4px;
+                  background-color: white;
+                  transition: .4s;
+                }
+                input:checked + .slider {
+                  background-color: $softCyan;
+                }
+                input:checked + .slider:before {
+                  transform: translateX(19px);
+              }
+            }
+            > p {
+                > span{
+                    background-color: $lightGrayishRed;
+                    border-radius:  8px;
+                    color: $lightRed;
+                    font-size: 11px;
+                    font-weight: 600;
+                    padding: 3px 7px;
+                }
+            }
+        }
+    }
+
+
+    &__bottom-cont{
+        padding: 25px 40px;
+        align-items: center;
+        justify-content: space-between;
+        > div {
+
+            > p {
+                font-size: 13px;
+                text-align: left;
+                &:not(:last-child){
+                    margin-bottom: 10px;
+                }
+                > img{
+                        margin-right: 10px;
+                }
+            }
+        }
+        > a {
+            border-radius: 50px;
+            background-color: $darkDesaturatedBlue;
+            color: $paleBlue;
+            font-size: 14px;
+            padding: 10px 40px;
+            transition: all 300ms ease-in-out;
+            &:hover{
+                color: $white;
+            }
+        }
+    }
+
+    @media (max-width: 850px){
+        width: 65%;
+
+        &__upper-cont{
+            .slider-cont{
+                &__up{
+                    flex-direction: column;
+                    > p {
+                        margin-bottom: 10px;
+                    }
+                }
+            }
+        }
+        &__bottom-cont{
+            flex-direction: column;
+            text-align: center;
+            > div {
+                > p {
+                    text-align: center;
+                    margin-bottom: 10px;
+                }
+            }
+        }
+    }
+    @media (max-width: 450px){
+        width: 100%;
+
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }

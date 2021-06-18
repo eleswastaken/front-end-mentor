@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+    <link rel="stylesheet" href="dist/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>Frontend Mentor | Interactive pricing component</title>
+
+</head>
+<body>
+    <script src="app/js/script.js" charset="utf-8"></script>
+
+    <h1>Simple, traffic-based pricing</h1>
+    <p>Sign-up for our 30-day trial. No credit card required.</p>
+
+    <div class="main-cont">
+        <div class="main-cont__upper-cont">
+            <div class="slider-cont">
+
+                <div class="slider-cont__up flex">
+                    <p><span id="pageviews">100K</span> Pageviews</p>
+                    <p><strong>$<span id="price">16</span>.00</strong> /month</p>
+                </div>
+                <input id="myrange" onchange="choosePlan()" oninput="choosePlan()" type="range" name="myrange" value="2" min="0" max="4">
+            </div>
+            <div class="switch-cont flex">
+                <p>Monthly Billing</p>
+                <label for="discountswt" class="switch" onclick="choosePlan()">
+                    <input type="checkbox" id="discountswt">
+                    <span class="slider"></span>
+                </label>
+                <p>Yearly Billing <span> 25% discount</span></p>
+            </div>
+        </div>
+
+        <div class="main-cont__bottom-cont flex">
+            <div class="">
+                <p class="small-p"><img src="images/icon-check.svg" alt="check-ico">Unlimited websites</p>
+                <p class="small-p"><img src="images/icon-check.svg" alt="check-ico">100% data ownership</p>
+                <p class="small-p"><img src="images/icon-check.svg" alt="check-ico">Email reports</p>
+            </div>
+            <a href="#">Start my trial</a>
+        </div>
+    </div>
+
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+    Coded by <a href="#">Your Name Here</a>.
+  </div>
+</body>
+</html>
