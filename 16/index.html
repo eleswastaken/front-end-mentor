@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="dist/style.css">
+    <title>Frontend Mentor | Fylo data storage component</title>
+
+</head>
+<body>
+  <script src="app/js/script.js"></script>
+    <div class="main-cont">
+        <div class="main-cont__menu-cont">
+            <img class="main-cont__menu-cont__logo" src="images/logo.svg" alt="logo">
+            <div class="main-cont__menu-cont__menu">
+                <div><img src="images/icon-document.svg" alt="menu-icon"></div>
+                <div><img src="images/icon-folder.svg" alt="menu-icon"></div>
+                <div><img src="images/icon-upload.svg" alt="menu-icon"></div>
+            </div>
+        </div>
+        <div class="main-cont__data-cont">
+            <p>You’ve used <strong> <span id="data-used">815</span> GB</strong> of your storage</p> 
+            <p class="floating-win"><span id="data-left">185</span> GB Left</p>
+
+            <div class="progress-bar">
+                <div class="progress-bar__done" id="progressdone">
+                  <div class="ring"></div>
+                </div>
+            </div>
+
+            <div class="gigabytes">
+                <p>0 GB</p>
+                <p>1000 GB</p>
+            </div>            
+        </div>
+    </div>
+    
+    <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="#">eleswastaken</a>.
+    </div>
+</body>
+</html>

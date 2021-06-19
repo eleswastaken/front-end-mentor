@@ -1,0 +1,181 @@
+
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: "Raleway";
+    background: url("../images/bg-desktop.png") no-repeat bottom;
+    background-color: $veryDarkBlue;
+    height: 80vh;
+
+}
+
+
+.main-cont{
+    display: flex;
+    margin: 200px auto;
+
+    width: 70%;
+    align-items: flex-end;
+
+
+    &__menu-cont{
+        background-color: $darkBlue;
+        border-radius: 10px 100px 10px 10px;
+        padding: 40px;
+        margin-right: 40px; 
+
+        width: 40%;
+        
+        &__logo{
+            margin-bottom: 40px;
+        }
+
+        &__menu{
+            display: flex;
+            align-items: center;
+            > div {
+                border-radius: 10px;
+                background-color: $veryDarkBlue;                    background-color: $veryDarkBlue;
+                height: 40px;
+                text-align: center;
+                width: 40px; 
+
+                margin-right: 15px;
+
+                &:last-child{
+                    margin-right: 100px;
+                }
+                
+            }
+        }
+    }
+
+
+    &__data-cont{
+        background-color: $darkBlue; 
+        border-radius: 10px;
+        padding: 40px;
+        color: $paleBlue;
+        position: relative;
+
+        width: 60%;
+        height: 140px;
+
+        > p {
+            margin: 10px 0;
+        }
+
+        .floating-win{
+            position: absolute;
+            background-color: white;
+            border-radius: 10px;
+            color: $veryDarkBlue;
+
+            padding: 20px;
+
+            top: -60px;
+            right: 40px;
+
+            #data-left{
+                font-size: 24px;
+                font-weight: 600;
+            }
+        }
+
+        .progress-bar{
+            height: 14px;
+            width: 100%;
+            background-color: $veryDarkBlue;
+            border-radius: 50px;
+            border: 3px solid $veryDarkBlue;
+
+            &__done{
+                background-image: linear-gradient(to right, hsl(6, 100%, 80%), hsl(335, 100%, 65%));
+                border-radius: 50px;
+                width: 0%;
+                height: 7px;
+
+                .ring{
+                    height: 7px;
+                    width: 7px;
+                    background-color: white;
+                    border-radius: 40px;
+                    border:1px solid hsl(335, 100%, 65%);
+                    float: right;
+                }
+            }
+        }
+
+        .gigabytes{
+            display: flex;
+            justify-content: space-between;
+            width: 102%;
+
+            > p {
+                margin: 0;
+            }
+        }
+    }
+
+    
+}
+
+@media (max-width: 800px){
+    .main-cont{
+        flex-direction: column;
+
+        >div{
+            margin: 0;
+            width: 85%;
+            margin-bottom: 30px;
+            padding: 20px;
+
+            .floating-win{
+                top: 70%;
+                right: 50%;
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.attribution { color: white; font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
