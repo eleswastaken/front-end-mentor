@@ -1,0 +1,134 @@
+
+
+$darkBlue : hsl(240, 38%, 20%);
+$grayishBlue : hsl(240, 18%, 77%);
+
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+body{
+    font-family: "Inter";
+    padding: 200px 100px 100px  200px;
+    background: url("../images/pattern-curve.svg") no-repeat left bottom, url("../images/pattern-bg.svg") no-repeat top right 100px;
+}
+
+
+
+.main{
+    position: relative;
+    &__first{
+        display: flex;
+
+    }
+
+    &__second{
+        display: none;
+    }
+    > div{
+        align-items: center;
+        
+        &:not(:last-child){
+            > .text{
+                background: url("../images/pattern-quotes.svg") no-repeat top -10% left 10%;
+                width: 60%;
+                > .quote{
+                    font-weight: 300;
+                    font-size: 32px;
+                    color: $darkBlue;
+                    margin-bottom: 20px;
+                }
+                
+                > .name{
+                    font-size: 15px;
+                    display: inline;
+                    font-weight: 700;
+                    color: $darkBlue;
+                }
+
+                > .profession{
+                    font-size: 15px;
+                    display: inline;
+                    font-weight: 500;
+                    color: $grayishBlue;
+                }
+            }
+
+            position: relative;
+            > .image{
+                width: 30%;
+                > img{
+                    position: absolute;
+                    box-shadow: 10px 5px  50px 1px  grey;
+                    border-radius: 5px;
+                    width: 350px;
+                    top: -100px;
+                    right: 100px;
+                    z-index: -1;
+                }
+                
+            }
+        }
+    }
+
+    .switcher{
+        border-radius: 50px;
+        box-shadow: 0 1px  10px 2px  grey;
+        width: 100px;
+        padding: 7px; 
+
+        position: absolute;
+        right: 300px;
+        background-color: white;
+        
+        display: flex;
+        justify-content: space-around;
+        > a{
+            cursor: pointer;
+
+        }
+        &:hover{
+            background-color: lightgrey;
+        }
+    }
+
+}
+
+@media (max-width: 500px){
+    body{
+        padding: 20px;
+    }
+    .main{
+        > div{
+            flex-direction: column;
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.attribution { 
+    font-size: 11px; 
+    text-align: center; 
+    margin: 50px;
+}
+.attribution a {
+     color: hsl(228, 45%, 44%); 
+}
