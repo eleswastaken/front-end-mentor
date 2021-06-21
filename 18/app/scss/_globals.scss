@@ -1,0 +1,304 @@
+
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+body{
+    font-family: "Barlow";
+    background-color: $white;
+    font-size: 1rem;
+}
+
+a {
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.flex{
+    display: flex;
+
+    &-jc-sb{
+        justify-content: space-between;
+    }
+
+    &-ai-c{
+        align-items: center;
+    }
+}
+
+.hide-for-mobile{
+    @include breakpoint-down(small){
+        display: none;
+    }
+}
+.hide-for-desktop{
+    @include breakpoint-up(medium){
+        display: none;
+    }
+}
+
+.button{
+    padding: 10px 20px;
+    color: $veryDarkDesaturatedBlue !important;
+    background-color: $white;
+    border-radius: 50px;
+    border: solid transparent 2px;
+    transition: all 200ms ease-in-out;
+    &:hover{
+        background-color: transparent;
+        border: solid 2px $white;
+        color: $white !important;
+    }
+}
+
+
+.main-cont{
+    position: relative;
+    
+    &__header-cont{
+        padding: 50px;
+        background: url("../images/desktop/image-header.jpg") no-repeat center bottom;
+        background-size: cover;
+        height: 110vh;
+        
+        > div {
+            padding: 100px;
+            text-align: center;
+
+            > h1{
+                color: $white;
+                font-family: "Fraunces";
+                font-size: 3.7em;
+                font-weight: 900;
+                text-transform: uppercase;
+                letter-spacing: 10px;
+                margin-bottom: 70px;
+            }
+        }
+
+        @include breakpoint-down(small){
+            background: url("../images/mobile/image-header.jpg") no-repeat center bottom;
+            padding: 35px 20px;
+
+            > div{
+                padding: 100px 0;
+
+                > h1{
+                    font-size: 2em;
+                }
+            }
+        }
+    }
+
+    &__second-cont{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 3fr;
+
+
+        > div{
+
+            > img{
+                width: 100%;
+                vertical-align: middle;
+            }
+        }
+        .text-cont{
+            padding: 0 130px;
+
+            text-align: left;
+            display: flex;
+            align-items: center;
+
+            > div {
+                > h2{
+                    color: $veryDarkDesaturatedBlue;
+                    font-family: "Fraunces";
+                    font-size: 2.1875em;
+                    font-weight: 900;
+                    margin-bottom: 30px;
+                }
+
+                > p{
+                    color: $grayishBlue;
+                    font-weight: 500;
+                    font-size: 0.9375em;
+                    margin-bottom: 30px;
+                }
+
+                > a{
+                    color: $veryDarkDesaturatedBlue;
+                    text-transform: uppercase;
+                    border-bottom: $softRed solid 3px;
+                    font-family: "Fraunces";
+                    font-weight: 700;
+                    font-size: 16px;
+                }
+            }
+        }
+
+        .specific-cont{
+            position: relative;
+
+            .text-part{
+                position: absolute;
+                bottom: 80px;
+                padding: 0 150px;
+                text-align: center;
+
+                
+                > h2{
+                    margin-bottom: 30px;
+                    font-family: "Fraunces";
+                    font-weight: 900;
+                }
+
+                > p{
+                    font-weight: 700;
+                }
+            }
+
+        }
+        .alpha{
+            color: $darkDesaturatedCyan;
+        }
+        .beta{
+            color: $darkBlue;
+        }
+
+
+        @include breakpoint-down(small){
+            display: flex;
+            flex-direction: column;
+            line-height: 1.6;
+            .text-cont{
+                padding: 50px 20px;
+                text-align: center;
+            }
+            .specific-cont{
+                .text-part{
+                    padding: 0 20px;
+                }
+            }
+            .orange{
+                order: -1;
+            }
+        }
+    }
+    
+
+    &__testimonial-cont{
+        background-color: $white;
+        padding: 110px;
+        text-align: center;
+
+        > h2 {
+            font-family: "Fraunces";
+            font-weight: 700;
+            color: $grayishBlue;
+            letter-spacing: 10px;
+            margin-bottom: 50px;
+            text-transform: uppercase;
+
+        }
+
+        .testimonials{
+            > div{
+                
+                > img{
+                    border-radius: 50px;
+                    margin-bottom: 50px;
+                    width: 70px;
+                }
+                padding: 20px;
+
+                .text{
+                    margin-bottom: 50px;
+                    font-weight: 500;
+                    color: $darkGrayishBlue;
+                    line-height: 1.6;
+                }
+
+                .name{
+                    font-family: "Fraunce";
+                    font-weight: 900;
+                    font-size: 17px;
+                    color: $veryDarkDesaturatedBlue;
+                    margin-bottom: 15px;
+                }
+
+                .position{
+                    color: $grayishBlue;
+                }
+            }
+        }
+        @include breakpoint-down(small){
+            padding: 50px 0;
+            >h2{
+                font-size: 15px;
+                letter-spacing: 5px;
+            }
+            >div{
+                flex-direction: column;
+                > img{
+                    margin-bottom: 20px;
+                }
+                .text{
+                    margin-bottom: 20px;
+                }
+                .position{
+                    margin-bottom: 60px;
+                }
+            }
+        }
+    }
+
+    &__gallery-cont{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        > img{
+            width: 100%;
+        }
+
+        @include breakpoint-down(medium){
+            margin-top: -50px;
+            grid-template: "a a" "a a";
+        }
+    }
+
+
+    &__footer{
+        background-color: hsl(168, 61%, 61%);
+        padding: 50px 0;
+        text-align: center;
+        .logo{
+            color: $darkDesaturatedCyan;
+            margin-bottom: 20px;
+        }
+        
+        .links-cont{
+            > a{
+                color: $white;
+                font-weight: 600;
+
+                &:not(:last-child){
+                    margin-right: 30px;
+                }
+
+            }
+            margin-bottom: 40px;
+        }
+
+        .share-cont{
+            > a{
+                &:not(:last-child){
+                    margin-right: 20px;
+                }
+            }
+        }
+    }
+}
