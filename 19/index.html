@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="dist/style.css">
+  <script src="app/js/script.js"></script>
+  
+  
+  <title>Frontend Mentor | [Challenge Name Here]</title>
+
+</head>
+<body>
+  <div class="main-cont">
+    <div class="main-cont__toggle-cont flex flex-jc-sb flex-ai-c">
+      <div class="text-cont">
+        <h1 class="number">Social Media Dashboard</h1>
+        <p>Total Followers: <span>23,004</span></p>
+      </div>
+      <hr class="hr">
+      <div class="dark-cont flex flex-jc-sb flex-ai-c"">
+        <p>Dark Mode</p>
+        <label for="darkMode" class="toggle" id="toggleCont">
+          <input type="checkbox" id="darkMode" onclick="toggleDarkMode()">
+          <div class="dot"></div>
+        </label>
+      </div>
+    </div>
+    <div class="main-cont__dashboard-cont">
+      <div class="followers-cont followers-cont__first">
+        <p class="account flex flex-jc-c flex-ai-c"><img src="images/icon-facebook.svg" alt="social-media-icon"> @nathan</p>
+        <p class="followers">1987</p>
+        <p class="text"> FOLLOWERS</p>
+        <p class="today flex flex-jc-c flex-ai-c"><img src="images/icon-up.svg" alt="up"> 12 Today</p>
+      </div>
+      <div class="followers-cont followers-cont__second">
+        <p class="account flex flex-jc-c flex-ai-c"><img src="images/icon-twitter.svg" alt="social-media-icon"> @nathan</p>
+        <p class="followers">1044</p>
+        <p class="text"> FOLLOWERS</p>
+        <p class="today flex flex-jc-c flex-ai-c"><img src="images/icon-up.svg" alt="up"> 99 Today</p>
+      </div>
+      <div class="followers-cont followers-cont__third">
+        <p class="account flex flex-jc-c flex-ai-c"><img src="images/icon-instagram.svg" alt="social-media-icon"> @nathan</p>
+        <p class="followers">11K</p>
+        <p class="text"> FOLLOWERS</p>
+        <p class="today flex flex-jc-c flex-ai-c"><img src="images/icon-up.svg" alt="up"> 1532 Today</p>
+      </div>
+      <div class="followers-cont followers-cont__forth">
+        <p class="account flex flex-jc-c flex-ai-c"><img src="images/icon-youtube.svg" alt="social-media-icon"> @nathan</p>
+        <p class="followers">8239</p>
+        <p class="text"> FOLLOWERS</p>
+        <p class="today flex flex-jc-c flex-ai-c"><img src="images/icon-up.svg" alt="up"> 234 Today</p>
+      </div>
+    </div>
+    <h2 class="number">Overview - Today</h2>
+    <div class="main-cont__overview-cont">
+      <div class="stats-cont">
+        <div class="upper-cont flex flex-jc-sb flex-ai-c">
+          <p class="statstext">Page Views</p>
+          <img src="images/icon-facebook.svg" alt="icon">
+        </div>
+        <div class="bottom-cont flex flex-jc-sb flex-ai-c">
+          <p class="statstext number">87</p>
+          <p class="percent flex flex-ai-c flex-jc-c"><img src="images/icon-up.svg" alt="icon"> 303%</p>
+        </div>
+      </div>
+      <div class="stats-cont">
+        <div class="upper-cont flex flex-jc-sb flex-ai-c">
+          <p class="statstext">Likes</p>
+          <img src="images/icon-facebook.svg" alt="icon">
+        </div>
+        <div class="bottom-cont flex flex-jc-sb flex-ai-c">
+          <p class="statstext number">52</p>
+          <p class="percent flex flex-ai-c flex-jc-c"><img src="images/icon-up.svg" alt="icon"> 3%</p>
+        </div>
+      </div>
+      <div class="stats-cont">
+        <div class="upper-cont flex flex-jc-sb flex-ai-c">
+          <p class="statstext">Likes</p>
+          <img src="images/icon-instagram.svg" alt="icon">
+        </div>
+        <div class="bottom-cont flex flex-jc-sb flex-ai-c">
+          <p class="statstext number">5426</p>
+          <p class="percent flex flex-ai-c flex-jc-c"><img src="images/icon-up.svg" alt="icon"> 312%</p>
+        </div>
+      </div>
+      <div class="stats-cont">
+        <div class="upper-cont flex flex-jc-sb flex-ai-c">
+          <p class="statstext">Page Views</p>
+          <img src="images/icon-instagram.svg" alt="icon">
+        </div>
+        <div class="bottom-cont flex flex-jc-sb flex-ai-c">
+          <p class="statstext number">52k</p>
+          <p class="percent flex flex-ai-c flex-jc-c"><img src="images/icon-up.svg" alt="icon"> 1%</p>
+        </div>
+      </div>
+      <div class="stats-cont">
+        <div class="upper-cont flex flex-jc-sb flex-ai-c">
+          <p class="statstext">ReTweets</p>
+          <img src="images/icon-twitter.svg" alt="icon">
+        </div>
+        <div class="bottom-cont flex flex-jc-sb flex-ai-c">
+          <p class="statstext number">117</p>
+          <p class="percent flex flex-ai-c flex-jc-c"><img src="images/icon-up.svg" alt="icon"> 123%</p>
+        </div>
+      </div>
+      <div class="stats-cont">
+        <div class="upper-cont flex flex-jc-sb flex-ai-c">
+          <p class="statstext">Likes</p>
+          <img src="images/icon-twitter.svg" alt="icon">
+        </div>
+        <div class="bottom-cont flex flex-jc-sb flex-ai-c">
+          <p class="statstext number">502</p>
+          <p class="percent flex flex-ai-c flex-jc-c"><img src="images/icon-up.svg" alt="icon"> 456%</p>
+        </div>
+      </div>
+      <div class="stats-cont">
+        <div class="upper-cont flex flex-jc-sb flex-ai-c">
+          <p class="statstext">Likes</p>
+          <img src="images/icon-youtube.svg" alt="icon">
+        </div>
+        <div class="bottom-cont flex flex-jc-sb flex-ai-c">
+          <p class="statstext number">107</p>
+          <p class="percent flex flex-ai-c flex-jc-c"><img src="images/icon-up.svg" alt="icon"> 12%</p>
+        </div>
+      </div>
+      <div class="stats-cont">
+        <div class="upper-cont flex flex-jc-sb flex-ai-c">
+          <p class="statstext">Total Views</p>
+          <img src="images/icon-youtube.svg" alt="icon">
+        </div>
+        <div class="bottom-cont flex flex-jc-sb flex-ai-c">
+          <p class="statstext number">1407</p>
+          <p class="percent flex flex-ai-c flex-jc-c"><img src="images/icon-up.svg" alt="icon"> 303%</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

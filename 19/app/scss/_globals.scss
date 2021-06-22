@@ -1,0 +1,255 @@
+
+
+
+$veryDarkBlue : hsl(230, 17%, 14%);
+$veryDarkBluePt : hsl(232, 19%, 15%);
+$darkDesaturatedBlue : hsl(228, 28%, 20%);
+$desaturatedBlue  : hsl(228, 34%, 66%);
+$white : hsl(0, 0%, 100%);
+
+$veryPaleBluePt : hsl(225, 100%, 98%);
+$lightGrayishBlue : hsl(227, 47%, 96%);
+$darkGrayishBlue : hsl(228, 12%, 44%);
+$veryDarkBlue : hsl(230, 17%, 14%);
+
+
+$breakpoints-up : ("medium":"40em", "large":"64em", "xlarge": "87.5");
+$breakpoints-down: ("small":"39.975em", "medium":"63.975em", "large": "87.4375em");
+
+@mixin breakpoint-up($size){
+    @media (min-width: map-get($breakpoints-up, $size)){
+        @content;
+    }
+}
+
+@mixin breakpoint-down($size){
+    @media (max-width: map-get($breakpoints-down, $size)){
+        @content;
+    }
+}
+
+*{
+    transition: all 200ms ease-in-out;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+
+body{
+    background-color: $veryDarkBlue;
+    padding: 50px 150px;
+
+    font-family: "Helvetica";
+    @include breakpoint-down(medium){
+        padding: 50px 75px;
+    }
+    @include breakpoint-down(small){
+        padding: 50px 25px;
+    }
+}
+
+.flex{
+    display: flex;
+
+    &-jc-sb{
+        justify-content: space-between;
+    }
+
+    &-jc-c{
+        justify-content: center;
+    }
+
+    &-ai-c{
+        align-items: center;
+    }
+}
+
+.main-cont{
+
+    > h2{
+        margin-top: 40px;
+        margin-bottom: 30px;
+        color: $white;
+        @include breakpoint-down(small){
+            font-size: large;
+        }
+    }
+
+    .hr{
+        display: none;
+        @include breakpoint-down(medium){
+            display: block;
+            background-color: hsl(227, 47%, 96%);
+            width: 100%;
+            height: .5px;
+            margin: 10px 0;
+        }
+    }
+
+    &__toggle-cont{
+        margin-bottom: 50px;
+        @include breakpoint-down(medium){
+            flex-direction: column;
+            align-items: baseline;
+            .dark-cont{
+                justify-content: space-between;
+                width: 100%;
+            }
+        }
+        .text-cont{
+            > h1{
+                color: $white;
+                margin-bottom: 10px;
+                @include breakpoint-down(small){
+                    font-size: x-large;
+                }
+            }
+            > p{
+                color: $desaturatedBlue;
+                font-size: 13px;
+            }
+        }
+
+        .dark-cont{
+            > p{
+                font-size: 13px;
+                color: $desaturatedBlue;
+                margin-right: 10px;
+            }
+
+            .toggle{
+                background-image: linear-gradient(to right, hsl(210, 78%, 56%), hsl(146, 68%, 55%));
+                border-radius: 50px;
+                cursor: pointer;
+                width: 40px;
+                height: 23px;
+                position: relative;
+
+                .dot{
+                    position: absolute;
+                    background-color: $veryDarkBlue;
+                    border-radius: 50px;
+                    width:17px;
+                    height: 17px;
+                    top: 3px;
+                    right: 3px;
+                }
+
+                > input{
+                    appearance: none;
+                }
+                > input:checked + .dot{
+                    background-color: $white;
+                    transform: translateX(-17px);
+                }
+                > input:checked + .toggle{
+                    background-color: hsl(230, 22%, 74%);
+                }
+            }
+        }
+    }
+
+    &__dashboard-cont{
+        display: grid;
+
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-gap: 25px;
+        .followers-cont{
+            background-color: $darkDesaturatedBlue;
+            border-radius:0 0 5px 5px;
+            text-align: center;
+            padding: 25px 40px;
+
+            .account{
+                color: $desaturatedBlue;
+                margin-bottom: 20px;
+                font-weight: 600;
+                font-size: 12px;
+                > img{
+                    margin-right: 10px;
+                }
+            }
+            .followers{
+                color: $white;
+                font-size: 50px;
+            }
+            .text{
+                letter-spacing: 5px;
+                color: $desaturatedBlue;
+                margin-bottom: 30px;
+                font-size: 9px;
+            }
+            .today{
+                color: hsl(163, 72%, 41%);
+                font-size: 12px;
+                font-weight: 600;
+                > img{
+                    margin-right: 5px;
+                }
+            }
+
+            &__first{
+                border-top: hsl(208, 92%, 53%) solid 3px;
+            }
+            &__second{
+                border-top: hsl(203, 89%, 53%) solid 3px;
+            }
+            &__third{
+                border-top:  solid 3px;
+                border-image: 1 linear-gradient(to right, hsl(37, 97%, 70%), hsl(329, 70%, 58%));
+            }
+            &__forth{
+                border-top: hsl(348, 97%, 39%) solid 3px;
+
+            }
+        }
+        @include breakpoint-down(medium){
+            grid-template-columns: 1fr 1fr;
+        }
+        @include breakpoint-down(small){
+            grid-template-columns: 1fr;
+        }
+    }
+
+    &__overview-cont{
+        display: grid;
+
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-gap: 25px;
+        .stats-cont{
+            border-radius: 5px;
+            padding: 20px;
+            background-color: $darkDesaturatedBlue;
+
+            .upper-cont{
+                > p{
+                    color: $desaturatedBlue;
+                    font-size: 12px;
+                    font-weight: 600;
+                }
+                margin-bottom: 30px;
+            }
+
+            .bottom-cont{
+                .number{
+                    color: $white;
+                    font-size: 30px;
+                }
+                .percent{
+                    color: hsl(163, 72%, 41%);
+                    font-size: 12px;
+                    > img{
+                        margin-right: 5px;
+                    }
+                }
+            }
+        }
+        @include breakpoint-down(medium){
+            grid-template-columns: 1fr 1fr;
+        }
+        @include breakpoint-down(small){
+            grid-template-columns: 1fr;
+        }
+    }
+}
