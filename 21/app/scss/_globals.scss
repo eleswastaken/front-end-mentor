@@ -1,0 +1,242 @@
+
+
+$veryLightGrayishBlue : hsl(240, 78%, 98%);
+$lightGrayishBlue : hsl(234, 14%, 74%);
+$grayishBlue : hsl(233, 13%, 49%);
+$darkGrayishBlue : hsl(232, 13%, 33%);
+
+$breakpoints-up : ("medium":"40em", "large":"64em", "xlarge": "87.5");
+$breakpoints-down: ("small":"39.975em", "medium":"63.975em", "large": "87.4375em");
+
+@mixin breakpoint-up($size){
+    @media (min-width: map-get($breakpoints-up, $size)){
+        @content;
+    }
+}
+
+@mixin breakpoint-down($size){
+    @media (max-width: map-get($breakpoints-down, $size)){
+        @content;
+    }
+}
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+
+    transition: all 250ms ease-in-out;
+}
+
+
+
+body{
+    background-color: $veryLightGrayishBlue;
+    font-family: "Montserrat";
+
+}
+
+a{
+    text-decoration: none;
+    font-size: 12px;
+    letter-spacing: 2px;
+    font-weight: 600;
+}
+
+p{
+    font-size: 15px;
+}
+
+.flex{
+    display: flex;
+
+    &-jc-sb{
+        justify-content: space-between;
+    }
+
+    &-ai-c{
+        align-items: center;
+    }
+
+    &-jc-c{
+        justify-content: center;
+    }
+}
+
+.button{
+    width: 100%;
+    display: block;
+    text-transform: uppercase;
+    padding: 9px 0;
+    border-radius: 5px;
+    margin-top: 30px;
+}
+
+.main-cont{
+
+    text-align: center;
+    margin-top: 50px;
+
+    > h1{
+        color: $grayishBlue;
+    }
+
+    &__toggle-cont{
+        margin: 40px auto;
+        > p{
+            color: $grayishBlue;
+        }
+
+        > label{
+            width: 50px;
+            height: 27px;
+            background: linear-gradient(to right, hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+            border-radius: 50px;
+            margin: 0 10px;
+            position: relative;
+            cursor: pointer;
+            &:hover{
+                opacity: 0.7;
+            }
+            .dot{
+                position: absolute;
+                height: 21px;
+                width: 21px;
+                background-color: white;
+                border-radius: 50px;
+                top: 3px;
+                right: 3px;
+            }
+            > input{
+                appearance: none;
+            }
+            > input:checked + .dot{
+                transform: translateX(-23px);
+            }
+        }
+    }
+
+    &__card-cont{
+        .card{
+            background-color: white;
+            padding: 20px 40px;
+            box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+
+            .price-annually, .price-monthly{
+                color: $darkGrayishBlue;
+                font-size: 30px;
+                font-weight: 600;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 230px;
+                > span{
+                    font-size: 60px;
+                    font-weight: 700;
+                }
+            }
+            .price-annually{
+                display: none;
+            }
+            > h4{
+                font-weight: 500;
+                margin-bottom: 20px;
+            }
+            > hr{
+                margin: 15px 0;
+                color: white;
+                background-color: white;
+            }
+            .text{
+                color: $grayishBlue;
+                font-weight: 600;
+            }
+
+
+            &__first{
+                border-radius: 7px 0 0 7px;
+                > a{
+                    background: linear-gradient(to right, hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+                    border: 1px solid hsl(237, 63%, 74%);
+                    color: white;
+                    &:hover{
+                        background: none;
+                        background-color: white;
+                        color: hsl(237, 63%, 64%);
+                    }
+                }
+            }
+            &__second{
+                border-radius: 7px;
+                background: linear-gradient(to right, hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+                padding: 40px;
+                color: white;
+                > p{
+                    color: white !important;
+                }
+                > a{
+                    background-color: white;
+                    border: 1px solid white;
+                    color: $darkGrayishBlue;
+                    &:hover{
+                        background: linear-gradient(to right, hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+                        color: white;
+                    }
+                }
+            }
+            &__third{
+                border-radius: 0 7px 7px 0;
+                > a{
+                    background: linear-gradient(to right, hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+                    border: 1px solid hsl(237, 63%, 74%);
+                    color: white;
+                    &:hover{
+                        background: none;
+                        background-color: white;
+                        color: hsl(237, 63%, 64%);
+                    }
+                }
+            }
+        }
+    }
+    @include breakpoint-down(medium){
+        &__card-cont{
+            flex-direction: column;
+            
+            .card{
+                width: 60%;
+                margin: 20px;
+                border-radius: 7px;
+                .price-annually, .price-monthly{
+                    width: 100%;
+                }
+            }
+        }
+    }
+    @include breakpoint-down(small){
+        &__card-cont{
+            padding: 0 30px;
+            .card{
+                width: 100%;
+                margin: 20px;
+                .price-annually, .price-monthly{
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+    margin: 50px;
+}
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}

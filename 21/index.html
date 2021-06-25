@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="dist/style.css">
+  <script src="app/js/script.js"></script>
+  
+  <title>Frontend Mentor | [Challenge Name Here]</title>
+
+</head>
+<body>
+  <div class="main-cont">
+    <h1>Our Pricing</h1>
+    <div class="main-cont__toggle-cont flex flex-ai-c flex-jc-c">
+      <p>Annually</p>
+      <label for="plan-toggle" onclick="togglePlans()">
+        <input type="checkbox" id="plan-toggle">
+        <div class="dot"></div>
+      </label>
+      <p>Monthly</p>
+    </div>
+    <div class="main-cont__card-cont flex flex-jc-c flex-ai-c">
+      <div class="card card__first">
+        <h4>Basic</h4>
+        <p class="price-monthly">&dollar;<span>19.99</span></p>
+        <p class="price-annually">&dollar;<span>199.99</span></p>
+        <hr>
+        <p class="text">500 GB Storage</p>
+        <hr>
+        <p class="text">2 Users Allowed</p>
+        <hr>
+        <p class="text">Send up to 3 GB</p>
+        <hr>
+        <a class="button" href="#">Learn More</a>
+      </div>
+      <div class="card card__second">
+        <h4>Professional</h4>
+        <p class="price-monthly">&dollar;<span>24.99</span></p>
+        <p class="price-annually">&dollar;<span>249.99</span></p>
+        <hr>
+        <p class="text">1 TB Storage</p>
+        <hr>
+        <p class="text">5 Users Allowed</p>
+        <hr>
+        <p class="text">Send up to 10 GB</p>
+        <hr>
+        <a class="button" href="#">Learn More</a>
+      </div>
+      <div class="card card__third">
+        <h4>Master</h4>
+        <p class="price-monthly">&dollar;<span>39.99</span></p>
+        <p class="price-annually">&dollar;<span>399.99</span></p>
+        <hr>
+        <p class="text">2 TB Storage</p>
+        <hr>
+        <p class="text">10 Users Allowed</p>
+        <hr>
+        <p class="text">Send up to 20 GB</p>
+        <hr>
+        <a class="button" href="#">Learn More</a>
+      </div>
+    </div>
+  </div>
+
+
+
+
+  
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">eleswastaken</a>.
+  </div>
+</body>
+</html>

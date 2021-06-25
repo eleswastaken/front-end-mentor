@@ -1,0 +1,249 @@
+
+
+
+.intro-cont{
+    padding: 0 120px;
+    background: url("../images/bg-pattern-intro-left-desktop.svg") no-repeat bottom -300px left, url("../images/bg-pattern-intro-right-desktop.svg") no-repeat top right;
+    background-color: $darkViolet;
+    height: 80vh;
+    margin-bottom:  300px;
+    padding-bottom: 300px ;
+
+    &__text-cont{
+        flex: 1;
+        
+        .hr{
+            margin: 60px 0 40px;
+            width: 30%;
+            background-color: $veryLightGray;
+        }
+
+        > h1{
+            font-family: serif;
+            font-size: 75px;
+            color: $veryLightGray;
+            margin-bottom: 30px;
+        }
+
+        > p{
+            color: $veryLightGray;
+            margin-bottom: 40px;
+        }
+
+        > a{
+            border: 1px solid $veryLightGray; 
+            color: $veryLightGray;
+            text-transform: uppercase;
+            &:hover{
+                background-color: $veryLightGray;
+                color: $veryDarkViolet;
+            }
+        }
+    }
+
+    &__img-cont{
+        flex: 1;
+        position: relative;
+        >img{
+            position: absolute;
+            top: 60px;
+            width: 100%;
+        }
+    }
+    @include breakpoint-down(medium){
+        background: none;
+        background-color: $darkViolet;
+        flex-direction: column-reverse;
+        padding: 0;
+        margin: 0 0 50px;
+        height: auto;
+        
+        &__text-cont{
+        background: url("../images/bg-pattern-intro-left-mobile.svg") no-repeat top  left, url("../images/bg-pattern-intro-right-mobile.svg") no-repeat bottom right;
+        background-color: $darkViolet;
+        padding: 50px 60px;
+        margin-top: -5px;
+            text-align: center;
+            .hr{
+                display: none;
+            }
+            > h1{
+                font-size: 50px;
+            }
+            > p{
+                line-height: 1.6;
+                font-size: 13px;
+            }
+        }
+
+        &__img-cont{
+            > img{
+                position: initial;
+                width: 100%;
+            }
+        }
+    }
+    @include breakpoint-down(small){
+        &__text-cont{
+            padding: 50px 20px;
+        }
+    }
+}
+
+
+.advantages-cont{
+    padding: 0 120px;
+    .hr{
+        margin-bottom: 50px;
+        width: 120px;
+        background-color: $veryLightGray;
+        height: 1px;
+    }
+    > h1{
+        color: $veryDarkViolet;
+        font-family: serif;
+        font-size: 60px;
+        margin-bottom: 70px;
+    }
+    .proofs-cont{
+
+        .proof{
+
+            &:not(:last-child){
+                margin-right: 40px;
+            }
+
+            > img{
+                margin-bottom: 30px;
+            }
+            > h4{
+                margin-bottom: 20px;
+                font-family: serif;
+                font-size: 30px;
+            }
+
+            > p{
+                color: $grayishBlue;
+            }
+        }
+
+    }
+
+    @include breakpoint-down(medium){
+        text-align: center;
+        padding: 0 60px;
+        .hr{
+            margin: 0 auto 50px;
+        }
+        > h1{
+            font-size: 40px;
+        }
+        .proofs-cont{
+            flex-direction: column;
+
+            .proof{
+                text-align: center;
+                margin: 0 0 70px !important;
+            }
+        }
+    }
+    @include breakpoint-down(small){
+        padding: 0 20px;
+    }
+}
+
+
+.footer-cta{
+    margin: 150px 120px;
+    padding: 50px;
+    background: url("../images/bg-pattern-how-we-work-desktop.svg") no-repeat right;
+    background-color: $darkViolet;
+    > h2{
+        color: $veryLightGray;
+        width: 50%;
+        font-family: serif;
+        font-size: 60px;
+    }
+    > a{
+        border: 2px solid $veryLightGray; 
+        color: $veryLightGray;
+        &:hover{
+            background-color: $veryLightGray;
+            color: $veryDarkViolet;
+        }
+    }
+    @include breakpoint-down(medium){
+        background: url("../images/bg-pattern-how-we-work-mobile.svg") no-repeat top right;
+        background-color: $darkViolet;  
+        flex-direction: column;
+        text-align: center;
+        margin: 70px 60px;
+        padding: 30px 0;
+        > h2{
+            margin-bottom: 50px;
+            font-size: 40px;
+        }
+    }
+    @include breakpoint-down(small){
+        margin: 50px 20px;
+    }
+}
+
+
+
+.footer{
+    background: url("../images/bg-pattern-footer-desktop.svg") no-repeat top left;
+    background-color: $veryLightGray;
+    padding: 50px 120px;
+    .upper-cont{
+    }
+    > hr{
+        margin: 30px 0;
+        background-color: $veryLightGray;
+
+    }
+    .bottom-cont{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+
+        .links{
+            > a{
+                display: block;
+                color: $veryDarkViolet;
+                text-transform: uppercase;
+                &:not(:last-child){
+                    margin-bottom: 15px;
+                }
+                &:first-child{
+                    color: $grayishBlue;
+                    margin-bottom: 30px;
+                }
+
+            }
+        }
+    }
+    @include breakpoint-down(medium){
+        background: url("../images/bg-pattern-footer-mobile.svg") no-repeat top left;
+        background-color: $veryLightGray;    
+        text-align: center;
+        padding: 50px 60px;
+        .upper-cont{
+            flex-direction: column;
+            > a{
+                margin-bottom: 15px;
+            }
+        }
+        .bottom-cont{
+            grid-template-columns: 1fr 1fr;
+            .links{
+                margin-bottom: 40px;
+            }
+        }
+    }
+    @include breakpoint-down(small){
+        padding: 50px 20px;
+        .bottom-cont{
+            grid-template-columns: 1fr;
+        }
+    }
+}

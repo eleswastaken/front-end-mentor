@@ -1,0 +1,62 @@
+
+
+$darkViolet : hsl(256, 26%, 20%);
+$grayishBlue : hsl(216, 30%, 68%);
+$veryDarkViolet : hsl(270, 9%, 17%);
+$darkGrayishViolet : hsl(273, 4%, 51%);
+$veryLightGray : hsl(0, 0%, 98%);
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    transition: all 250ms ease-in-out;
+}
+
+body{
+    font-family: "Montserrat";
+
+    background: url("../images/bg-pattern-intro-left-desktop.svg") no-repeat top 400px left, url("../images/bg-pattern-intro-right-desktop.svg") no-repeat top right;
+    background-color: white;
+}
+
+a{
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.button{
+    padding: 10px 20px;
+    border: solid 2px;
+
+
+}
+
+.flex{
+    display: flex;
+
+    &-jc-sb{
+        justify-content: space-between;
+    }
+
+    &-ai-c{
+        align-items: center;
+    }
+}
+
+
+.hide-for-mobile{
+   @include breakpoint-down(medium){
+       display: none;
+   }
+}
+
+.hide-for-desktop{
+    @include breakpoint-up(large){
+        display: none;
+    }
+}
+
+
+

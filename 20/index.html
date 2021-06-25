@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="dist/style.css">
+  <script src="app/js/script.js"></script>
+  
+  <title>Frontend Mentor | Insure landing page</title>
+
+</head>
+<body>
+  <header id="header" class="header flex flex-jc-sb flex-ai-c">
+    <a href="#"><img src="images/logo.svg" alt="logo"></a>
+    <div class="header__mobile-menu hide-for-desktop" onclick="showLinks()">
+      <img src="images/icon-hamburger.svg" alt="">
+    </div>
+    <div id="headerLinks" class="header__links hide-for-mobile">
+      <a class="" href="#">How we work</a>
+      <a class="" href="#">Blog</a>
+      <a class="" href="#">Account</a>
+      <a class="button" href="#">View plans</a>
+    </div>
+  </header>
+
+  <div class="intro-cont flex">
+    <div class="intro-cont__text-cont">
+
+      <hr class="hr">
+      <h1>Humanizing your insurance.</h1>
+      <p>Get your life insurance coverage easier and faster. We blend our expertise and technology to help you find the plan that’s right for you. Ensure you and your loved ones are protected.</p>
+      <a class="button" href="#">View plans</a>
+    </div>
+    <div class="intro-cont__img-cont">
+      <img class="hide-for-mobile" src="images/image-intro-desktop.jpg" alt="happy-family">
+      <img class="hide-for-desktop" src="images/image-intro-mobile.jpg" alt="happy-family">
+    </div>
+  </div>
+
+  <div class="advantages-cont">
+    <hr class="hr">
+    <h1>We're different</h1>
+    <div class="proofs-cont flex ">
+      <div class="proof">
+        <img src="images/icon-snappy-process.svg" alt="proof-icon">
+        <h4>Snappy Proces</h4>
+        <p>
+          Our application process can be completed in minutes, not hours. Don’t get 
+          stuck filling in tedious forms.
+        </p>
+      </div>
+      <div class="proof">
+        <img src="images/icon-snappy-process.svg" alt="proof-icon">
+        <h4>Affordable Prices</h4>
+        <p>
+          We don’t want you worrying about high monthly costs. Our prices may be low, 
+          but we still offer the best coverage possible.
+        </p>
+      </div>
+      <div class="proof">
+        <img src="images/icon-snappy-process.svg" alt="proof-icon">
+        <h4>People First</h4>
+        <p>
+          Our plans aren’t full of conditions and clauses to prevent payouts. We make 
+          sure you’re covered wh</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-cta flex flex-jc-sb flex-ai-c">
+    <h2>Find out more about how we work</h2>
+    <a class="button" href="#">How we work</a>
+  </div>
+
+  <footer class="footer">
+    <div class="upper-cont flex flex-ai-c flex-jc-sb">
+      <a href=""><img src="images/logo.svg" alt="logo"></a>
+      <div>
+        <a href=""><img src="images/icon-facebook.svg" alt="social-media-share"></a>
+        <a href=""><img src="images/icon-twitter.svg" alt="social-media-share"></a>
+        <a href=""><img src="images/icon-pinterest.svg" alt="social-media-share"></a>
+        <a href=""><img src="images/icon-instagram.svg" alt="social-media-share"></a>
+      </div>
+    </div>
+    <hr>
+    <div class="bottom-cont">
+      <div class="links">
+        <a href="">Our Company</a>
+        <a href="">How We Work</a>
+        <a href="">View Plans</a>
+        <a href="">Why Insure?</a>
+        <a href="">Reviews</a>
+      </div>
+      <div class="links">
+        <a href="">FAQ</a>
+        <a href="">Term of use</a>
+        <a href="">Privacy Policy</a>
+        <a href="">Cookies</a>
+      </div>
+      <div class="links">
+        <a href="">Contact</a>
+        <a href="">Sales</a>
+        <a href="">Support</a>
+        <a href="">Live Chat</a>
+      </div>
+      <div class="links">
+        <a href="">Others</a>
+        <a href="">Careers</a>
+        <a href="">Press</a>
+        <a href="">Licenses</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
