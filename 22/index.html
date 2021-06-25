@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow&family=Barlow+Condensed:wght@400;700&display=swap">
+  <link rel="stylesheet" href="dist/style.css">
+  <script src="app/js/script.js"></script>
+  
+  <title>Frontend Mentor | Project tracking intro component</title>
+
+</head>
+<body>
+  <div class="main-cont">
+    <header class="header flex flex-ai-c flex-jc-sb">
+      <a class="header__logo" href="#"><img src="images/logo.svg" alt=""></a>
+      <div id="mobileMenu" class="header__mobile-menu hide-for-desktop" onclick="showMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div id="linksMenu" class="header__links hide-for-mobile flex flex-ai-c">
+        <a class="link" href="#">Product</a>
+        <a class="link" href="#">Features</a>
+        <a class="link" href="#">Pricing</a>
+        <div class="dot"></div>
+        <a class="link" href="#">Login</a>
+      </div>
+    </header>
+    <div class="intro-cont flex flex-ai-c">
+      <div>
+        <p class="highlight"><span>New</span>  Monograph Dashboard</p> 
+        <h1>Powerful insights into your team</h1>
+        <p class="text">Project planning and time tracking for agile teams</p>
+        <a class="button" href="#">Schedule a demo</a>
+        <p class="highlight button-text">to see a live preview</p>
+      </div>
+      <div>
+        <img src="images/illustration-devices.svg" alt="illustration-devices">
+      </div>
+    </div>
+  
+  </div>
+  
+  <footer>
+    <p class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="#">eleswastaken</a>.
+    </p>
+  </footer>
+</body>
+</html>

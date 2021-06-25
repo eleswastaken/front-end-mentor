@@ -1,0 +1,194 @@
+
+$breakpoints-up : ("medium":"40em", "large":"64em", "xlarge": "87.5");
+$breakpoints-down: ("small":"39.975em", "medium":"63.975em", "large": "87.4375em");
+
+@mixin breakpoint-up($size){
+    @media (min-width: map-get($breakpoints-up, $size)){
+        @content;
+    }
+}
+
+@mixin breakpoint-down($size){
+    @media (max-width: map-get($breakpoints-down, $size)){
+        @content;
+    }
+}
+
+$veryDarkBlue : hsl(230, 29%, 20%);
+$darkGrayishBlue : hsl(230, 11%, 40%);
+$grayishBlue : hsl(231, 7%, 65%);
+$lightGrayishBlue : hsl(207, 33%, 95%);
+
+$red : hsl(0, 100%, 68%);
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    transition: all 350ms ease-in-out
+}
+
+
+
+body{
+
+    font-family: "Barlow", sans-serif;
+}
+
+
+.flex{
+    display:flex;
+
+    &-jc-c{
+        justify-content: center;
+    }
+    &-jc-sb{
+        justify-content: space-between;
+    }
+    &-ai-c{
+        align-items: center;
+    }
+}
+
+a{
+    text-decoration: none;  
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 13px;
+}
+
+.hide-for-desktop{
+    @include breakpoint-up(large){
+        display: none;
+    }
+}
+.hide-for-mobile{
+    @include breakpoint-down(medium){
+        display: none;
+    }
+}
+
+.main-cont{
+    background: url("../images/illustration-devices.svg") no-repeat center right -400px, url("../images/bg-pattern.svg") no-repeat top -100px right -800px;
+    padding: 70px 120px;
+    height: 100vh;
+
+    .intro-cont{
+        
+        > div{
+            flex: 1;
+
+            &:first-child{
+                margin-top: 80px;
+                > p{
+                    font-size: 15px;
+                    > span{
+                        background-color: $veryDarkBlue;
+                        border-radius: 50px;
+                        color: white;
+                        padding: 5px 10px;
+                    }
+                    margin-bottom: 20px;
+                }
+                > h1{
+                    text-transform: uppercase;
+                    margin-bottom: 30px;
+                    font-size: 50px;
+                }
+                .text{
+                    margin-bottom: 60px;
+                    color: $grayishBlue;
+                }
+                .highlight{
+                    text-transform: uppercase;
+                    letter-spacing: 2px;
+                }
+
+                .button{
+                    padding: 15px 30px;
+                    background-color: $red;
+                    border-radius: 5px;
+                    color: white;
+                    margin-right: 10px;
+                    &:hover{
+                        opacity: 0.7;
+                    }
+                    &-text{
+                    color: $grayishBlue;
+                    display: inline;
+                    }
+                }
+            }
+            &:last-child{
+                > img{
+                    display: none;
+                }
+            }
+        }
+    }
+
+    @include breakpoint-down(medium){
+        padding: 70px 60px;
+
+        background: url("../images/bg-pattern.svg") no-repeat top -100px right -1000px;
+        .intro-cont{
+            flex-direction: column-reverse;
+            >div{
+                &:first-child{
+                    h1{
+                        font-size: 30px;
+                    }
+                    .highlight{
+                        font-size: 12px;
+                        letter-spacing: 0;
+                    }
+                    > a{
+                        font-size: 12px;
+                    }
+                    .button{
+                        padding: 15px 20px;
+                    }
+                }
+
+                &:last-child{
+                    > img{
+                        display: block;
+                        width: 70%; 
+                        margin: 0 auto;
+                    }
+                }
+            } 
+        }
+    }
+    @include breakpoint-down(small){
+        padding: 40px 20px;
+
+        background: url("../images/bg-pattern.svg") no-repeat top -100px right -1200px;
+        .intro-cont{
+            flex-direction: column-reverse;
+            >div{
+                &:last-child{
+                    > img{
+                        display: block;
+                        width: 100%; 
+                        margin: 0 auto;
+                    }
+                }
+            } 
+        }
+    }
+}
+
+
+
+
+
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+    margin: 50px;
+}
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
