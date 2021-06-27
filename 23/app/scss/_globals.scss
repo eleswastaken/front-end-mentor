@@ -1,0 +1,436 @@
+
+
+
+$strongCyan : hsl(171, 66%, 44%);
+$lightBlue : hsl(233, 100%, 69%);
+$darkGrayishBlue : hsl(210, 10%, 33%);
+$grayishBlue : hsl(201, 11%, 66%);
+
+
+$breakpoints-up : ("medium":"40em", "large":"64em", "xlarge": "87.5");
+$breakpoints-down: ("small":"39.975em", "medium":"63.975em", "large": "87.4375em");
+
+@mixin breakpoint-up($size){
+    @media (min-width: map-get($breakpoints-up, $size)){
+        @content;
+    }
+}
+
+@mixin breakpoint-down($size){
+    @media (max-width: map-get($breakpoints-down, $size)){
+        @content;
+    }
+}
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    transition: all 250ms ease-in-out; 
+}
+
+
+body{
+    background: url("../images/bg-header-desktop.png") no-repeat top;
+
+    font-family: "Montserrat", sans-serif;
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+
+
+.hide-for-desktop{
+    @include breakpoint-up(large){
+        display: none;
+    }
+}
+.hide-for-mobile{
+    @include breakpoint-down(medium){
+        display: none;
+    }
+}
+
+.flex{
+    display: flex;
+    &-jc-c{
+        justify-content: center;
+    }
+    &-jc-sb{
+        justify-content: space-between;
+    }
+    &-ai-c{
+        align-items: center;
+    }
+    &-column{
+        @include breakpoint-down(medium){
+            flex-direction: column;
+        }
+    }
+    &-column-r{
+        @include breakpoint-down(medium){
+            flex-direction: column-reverse;
+        }
+    }
+}
+
+a{
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.button{
+    padding: 17px 40px;
+    color: white;
+    border-radius: 50px;
+    &:hover{
+        opacity: .7;
+    }
+}
+
+
+
+.main-cont{
+    &__intro-cont{
+        text-align: center;
+        padding: 130px ;
+
+        .logo{
+            margin-bottom: 80px;
+        }
+        > h1{
+            color: $darkGrayishBlue;
+            margin: auto;
+            margin-bottom: 30px;
+            width: 60%; 
+        }
+        > p{
+            color: $grayishBlue;
+            margin: auto;
+            margin-bottom: 60px;
+            width: 60%; 
+        }
+        > div{
+            > a {
+                &:first-child{
+                    background-color: $strongCyan;
+                    margin-right: 10px;
+                }
+                &:last-child{
+                    background-color: $lightBlue;
+                }
+            }
+        }
+
+        @include breakpoint-down(medium){
+            padding: 130px 60px 30px;
+            .logo{
+                margin-bottom: 60px;
+            }
+            > h1{
+                width: 100%;
+                margin-bottom: 20px;
+            }
+            > p{
+                width: 100%;
+                margin-bottom: 40px;
+            }
+            > div{
+                > a{
+                    margin-right: 0 !important;
+                    margin: 0 auto 20px !important;
+                    width: 60%;
+                }
+            }
+        }
+        @include breakpoint-down(small){
+            padding: 130px 30px 30px;
+            > div{
+                > a{
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+    &__second-cont{
+        text-align: center;
+
+        > h2{
+            margin: 30px auto;
+            color: $darkGrayishBlue;
+        }
+        > p{
+            width: 60%;
+            margin: 0 auto 150px;
+            color: $grayishBlue;
+        }
+        > p.second{
+            margin-bottom: 70px;
+        }
+        > p.third{
+            margin-bottom: 50px;
+        }
+        > img.second{
+            width: 65%;
+        }
+
+        .bottom-cont{
+            margin-bottom:  250px;
+            > div{
+                position: relative;
+                flex: 1;
+                text-align: left;
+                > img{
+                    position: absolute;
+                    top: -230px;
+                    left: -30px;
+                    width: 103%;
+                }
+
+                &:last-child{
+                    > h3{
+                        color: $darkGrayishBlue;
+                        margin: 0 200px 25px 100px; 
+                        font-weight: 600;
+                    }
+                    > p{
+                        color: $grayishBlue;
+                        margin-left: 100px;
+                        margin-right: 100px;
+                        &:not(:last-child){
+                            margin-bottom: 70px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .benefits-cont{
+            padding: 0 160px;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-gap: 40px;
+
+            margin-bottom: 70px;
+            > div{
+                > img{
+                    margin-bottom: 20px;
+                }
+                > h3{
+                    color: $darkGrayishBlue;
+                    margin-bottom: 20px;
+                    font-weight: 600;
+                }
+                > p{
+                    color: $grayishBlue;
+                    font-size: 17px;
+                }
+            }
+
+            @include breakpoint-down(medium){
+                padding: 0;
+                grid-template-columns: 1fr;
+                > div{
+                    > p{
+                        margin: auto;
+                        width: 60%;
+                    }
+                }
+            }
+            @include breakpoint-down(small){
+                > div{
+                    > p{
+                        width: 100%;
+                    }
+                }
+            }
+        }
+        .proof-cont{
+            padding: 0 160px 70px;
+
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+            align-items: center;
+            justify-items: center;
+
+            > img{
+                width: 130px;
+            }
+            @include breakpoint-down(medium){
+                padding: 0 60px 70px;
+                grid-template-columns: 1fr 1fr;
+                grid-gap: 40px;
+            }
+            @include breakpoint-down(small){
+                padding: 0 30px 70px;
+                grid-template-columns: 1fr;
+                grid-gap: 50px;
+            }
+        }
+        .second-cta{
+            margin-bottom: 130px;
+            > a {
+                &:first-child{
+                    background-color: $strongCyan;
+                    margin-right: 10px;
+                }
+                &:last-child{
+                    background-color: $lightBlue;
+                }
+            }
+            @include breakpoint-down(medium){
+                margin-bottom: 80px;
+                > a{
+                    margin-right: 0 !important;
+                    margin: 0 auto 20px !important;
+                    width: 60%;
+                }
+            }
+            @include breakpoint-down(small){
+                margin-bottom: 50px;
+                > a{
+                    width: 100%;
+                }
+            }
+        }
+        
+        @include breakpoint-down(medium){
+            > p{
+                width: 100%;
+                margin-bottom: 50px;
+            }
+            padding: 60px;
+            .bottom-cont{
+                margin-bottom: 150px;
+                > div{
+                    > img{
+                        position: initial;
+                        width: 60%;
+                        margin-bottom: 50px;
+                    }
+                    text-align: center;
+                    > h3{
+                        margin: 0 0 30px !important;
+                    }
+                    > p{
+                        margin: 0 0 50px !important;
+                    }
+                }
+            }
+
+            > img.second{
+                width: 85%;
+            }
+        }
+        @include breakpoint-down(small){
+            padding: 30px;
+            .bottom-cont{
+                margin-bottom: 100px;
+                > div{
+                    > img{
+                        width: 100%;
+                    }
+                }
+            }
+
+            > img.second{
+                width: 100%;
+            }
+        }
+    }
+}
+
+
+.footer{
+    background-color: #00000008;
+    padding: 30px 160px;
+
+    &__logo{
+        width: 60px;
+        height: 60px;
+        margin-right: 100px;
+    }
+
+    &__links{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: 20px 70px;
+
+        > a{
+            color: $grayishBlue;
+            font-weight: 500;
+            &:hover{
+                color: $strongCyan;
+            }
+        }
+    }
+
+    &__social{
+        > a{
+            &:not(:last-child){
+                margin-right: 10px;
+            }
+        }
+    }
+
+    
+
+    @include breakpoint-down(medium){
+        padding: 60px;
+
+        &__logo{
+            margin-right: 60px;
+        }
+
+        &__links{
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+    @include breakpoint-down(small){
+        flex-direction: column;
+        padding: 30px;
+        text-align: center;
+
+        &__logo{
+            margin-right: 0;
+            margin-bottom: 20px;
+        }
+
+        &__links{
+            grid-template-columns: 1fr;
+            margin-bottom: 30px;
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.attribution { 
+    background-color: #00000008;
+    font-size: 11px; text-align: center;
+    padding: 30px 0;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+    text-transform: lowercase;
+    font-size: 11px;
+}
