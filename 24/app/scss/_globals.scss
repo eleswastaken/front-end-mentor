@@ -1,0 +1,370 @@
+
+
+$pink : hsl(322, 100%, 66%);
+
+$veryPaleCyan : hsl(193, 100%, 96%);
+$veryDarkCyan : hsl(192, 100%, 9%);
+$grayishBlue : hsl(208, 11%, 55%);
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    transition: all 250ms ease-in-out;
+}
+
+
+$breakpoints-up : ("medium":"40em", "large":"64em", "xlarge": "87.5");
+$breakpoints-down: ("small":"39.975em", "medium":"63.975em", "large": "87.4375em");
+
+@mixin breakpoint-up($size){
+    @media (min-width: map-get($breakpoints-up, $size)){
+        @content;
+    }
+}
+
+@mixin breakpoint-down($size){
+    @media (max-width: map-get($breakpoints-down, $size)){
+        @content;
+    }
+}
+.hide-for-desktop{
+    @include breakpoint-up(large){
+        display: none;
+    }
+}
+.hide-for-mobile{
+    @include breakpoint-down(medium){
+        display: none;
+    }
+}
+
+.flex{
+    display: flex;
+    &-jc-sb{
+        justify-content: space-between;
+    }
+    &-jc-c{
+        justify-content: center;
+    }
+    &-ai-c{
+        align-items: center;
+    }
+    &-column{
+        @include breakpoint-down(small){
+            flex-direction: column;
+        }
+    }
+    &-column-r{
+        @include breakpoint-down(medium){
+            flex-direction: column-reverse;
+        }
+    }
+}
+
+
+body{
+    background-color: white;
+    
+    font-size: 18px;
+
+    line-height: 1.5;
+
+    @include breakpoint-down(medium){
+        font-size: 17px;
+    }
+    @include breakpoint-down(small){
+        font-size: 16px;
+    }
+}
+
+h1,h2,h3,h4{
+    font-family: "Poppins", sans-serif;
+    color: $veryDarkCyan;
+}
+
+p{
+    font-family: "Open Sans", sans-serif;
+    color: $grayishBlue;
+}
+
+a{
+    font-family: "Open Sans", sans-serif;
+    font-size: 13px;
+    text-decoration: none;
+}
+
+.button{
+    padding: 15px 70px;
+    border-radius: 50px;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+
+    &:hover{
+        opacity: .7;
+    }
+    @include breakpoint-down(medium){
+        padding: 13px 50px;
+    }
+    @include breakpoint-down(small){
+        padding: 7px 35px;
+    }
+}
+
+.main-cont{
+
+
+    .intro-cont{
+        min-height: 105vh;
+        background: url("../images/bg-hero-desktop.svg") no-repeat center;
+        background-color: $veryPaleCyan;
+        padding: 60px 80px;
+
+        .header{
+            margin-bottom: 70px;
+            &__logo{
+                > img{
+                    width: 200px;
+                }
+            }
+            > a.button{
+                color: $veryDarkCyan;
+                background-color: white;
+                font-weight: 600;
+            }
+
+        }
+
+        .intro-main{
+            > div{
+                flex:0.8;
+
+                > h1{
+                    margin-bottom: 55px;
+                }
+
+                > p{
+                    margin-bottom: 40px;
+                    color: $veryDarkCyan;
+                    font-weight: 400;
+                }
+                > a{
+                    color: white;
+                    background-color: $pink;
+                }
+            }
+            > img{
+                flex:1;
+                width: 100%;
+            }
+        }
+    }
+
+    .second-cont{
+        padding: 160px 100px 0;
+        margin-bottom: 200px;
+        > div{
+            box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+            border-radius: 10px;
+            padding: 60px 20px 60px 120px;
+
+            &:nth-child(2){
+                flex-direction: row-reverse;
+                > div{
+                    margin-left: 120px;
+                }
+            }
+
+            &:not(:last-child){
+                margin-bottom: 30px;
+            }
+
+            > div{
+                flex: 0.9;
+                > h2{
+                    margin-bottom: 30px;
+                }
+            }
+
+            > img{
+                flex: 1;
+                width: 100%;
+            }
+        }
+
+    }
+
+    position: relative;
+    .final-cta{
+        box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 10px 0px;
+        border-radius: 10px;
+        background-color: white;
+        width: 800px;
+        text-align: center;
+        position: absolute;
+        margin: auto;
+
+        bottom: -300px;
+        right: 0;
+        left: 0;
+
+        padding: 50px 0;
+        > h2{
+            margin-bottom: 30px;
+        }
+        > a{
+            color: white;
+            background-color: $pink;
+        
+        }
+
+        @include breakpoint-down(medium){
+            width: 90%;
+        }
+        @include breakpoint-down(small){
+        }
+    }
+    
+    
+    @include breakpoint-down(medium){
+        .intro-cont{
+            padding: 50px 60px;
+            .header{
+                &__logo{
+                    > img{
+                        width: 170px;
+                    }
+                }
+            }
+            .intro-main{
+                >div{
+                    margin-bottom: 60px;
+                }
+            }
+        }
+        .second-cont{
+            padding: 50px 65px 0;
+            > div{
+                padding: 20px;
+                text-align: center;
+                > img{
+                    margin-bottom: 30px;
+                }
+                > div{
+                    > h2{
+                        margin-bottom: 25px;
+                    }
+                }
+                &:nth-child(2){
+                    flex-direction: column-reverse;
+                    > div{
+                        margin: 0;
+                    }
+                }
+            }
+        }
+    }
+    @include breakpoint-down(small){
+        .intro-cont{
+            padding: 40px 20px 0;
+            .header{
+                &__logo{
+                    > img{
+                        width: 140px;
+                    }
+                }
+            }
+            .intro-main{
+                text-align: center;
+            }
+        }
+        .second-cont{
+            padding: 50px 30px;
+            > div{
+                padding: 20px;
+            }
+        }
+    }
+}   
+
+
+
+
+.footer{
+    background-color: $veryDarkCyan;
+    padding: 200px 100px 50px;
+    .upper-footer{
+        > div{
+            flex: 1;
+        }
+
+        .first-cont{
+            .logo{
+                margin-bottom: 20px;
+            }
+            > p{
+                width: 350px;
+                color: white;
+                > img{
+                    margin-right: 10px;
+                }
+                margin-bottom: 20px;
+            }
+        }
+
+        .links{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-gap: 20px;
+            > a{
+                color: white;
+                font-size: 15px;
+
+                &:hover{
+                    opacity: .7;
+                }
+            }
+        }
+    }
+
+    @include breakpoint-down(medium){
+        padding: 200px 60px 50px;
+        flex-direction: column;
+        .upper-footer{
+            align-items: baseline;
+            .first-cont{
+                margin-bottom: 40px;
+            }
+            .links{
+                text-align: right;
+                grid-template-columns: 1fr;
+                grid-gap: 30px;
+                margin-bottom: 70px;
+            }
+        }
+    }
+    @include breakpoint-down(small){
+        padding: 170px 30px 50px;
+        .upper-footer{
+            .first-cont{
+                > P{
+                    width: 320px;
+                }
+            }
+            .links{
+                text-align: left;
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
