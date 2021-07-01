@@ -1,0 +1,447 @@
+
+
+
+$veryDarkBlue : hsl(243, 87%, 12%);
+$desaturatedBlue : hsl(238, 22%, 44%);
+$brightBlue : hsl(224, 93%, 58%);
+$moderateCyan : hsl(170, 45%, 43%);
+
+$lightGrayishBlue : hsl(240, 75%, 98%);
+$lightGray : hsl(0, 0%, 75%);
+
+$breakpoints-up : ("medium":"40em", "large":"64em", "xlarge": "87.5");
+$breakpoints-down: ("small":"39.975em", "medium":"63.975em", "large": "87.4375em");
+
+@mixin breakpoint-up($size){
+    @media (min-width: map-get($breakpoints-up, $size)){
+        @content;
+    }
+}
+
+@mixin breakpoint-down($size){
+    @media (max-width: map-get($breakpoints-down, $size)){
+        @content;
+    }
+}
+
+.flex{
+    display: flex;
+
+    &-jc-sb{
+        justify-content: space-between;
+    }
+
+    &-jc-c{
+        justify-content: center;
+    }
+    &-ai-c{
+        align-items: center;
+    }
+}
+
+.hide-for-desktop{
+    @include breakpoint-up(large){
+        display: none;
+    }
+}
+
+
+
+.hide-for-mobile{
+    @include breakpoint-down(medium){
+        display: none;
+    }
+}
+
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+a, h1, h2, h3{
+    text-decoration: none;
+    font-family: "Raleway", sans-serif;
+    color: $veryDarkBlue;
+}
+h1, h2, h3{
+    font-weight: 600;
+}
+body{
+    background-color: white;
+    color: $veryDarkBlue;
+    line-height: 1.5;
+    font-size: 16px;
+    font-family: "Open Sans", sans-serif;
+}
+
+button, .button{
+    transition: 250ms ease-in-out;
+    &:hover{
+        opacity: 0.7;
+    }
+}
+
+.main-cont{
+    .intro-cont{
+        background: url("../images/bg-curve-desktop.svg") no-repeat bottom;
+        background-color: white;
+        padding: 60px 50px 0;
+
+        .header{
+            margin-bottom:70px;
+
+            .logo{
+                width: 150px;
+            }
+            .links{
+                > a{
+                    width: 100px;
+                    &:not(:last-child){
+                        margin-right: 30px;
+                    }
+
+                    &:hover{
+                        font-weight: 600;
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+
+        > div{
+            padding-bottom: 200px;
+            > .img{
+                flex: 1;
+                > img{
+                    width: 100%;
+                }
+            }
+            > .text-cont{
+                flex: 1;
+                > h1{
+                    margin-bottom: 20px;
+                }
+                > p{
+                    margin-bottom: 25px;
+                }
+
+                > form{
+                    > input{
+                        width: 50%;
+                        padding: 10px;
+                        outline: none;
+                        min-height: 41px;
+                    }
+                    > .button{
+                        width: 40%;
+                        background-color: $brightBlue;
+                        color: white;
+                        border-radius: 2px;
+                        padding: 12px 20px;
+                    }
+                }
+            }
+        }
+        @include breakpoint-down(medium){
+            padding: 40px 30px;
+            .header{
+                .logo{
+                    width: 130px;
+                }
+                .links{
+                    > a{
+                        margin-right: 10px !important;
+                    }
+                }
+            }
+            >div{
+                flex-direction: column-reverse;
+                > .img{
+                    width: 60%;
+                }
+                > .text-cont{
+                    width: 500px;
+                    text-align: center;
+                    margin: auto;
+
+                    > form{
+                        > input{
+                            width: 100%;
+                            margin-bottom: 20px;
+                        }
+                        > a {
+                            width: 100% !important;
+                            display: block;
+                            padding: 10px 20px !important;
+                        }
+                    }
+                }
+            }
+        }
+        @include breakpoint-down(small){
+            background: url("../images/bg-curve-mobile.svg") no-repeat bottom;
+            background-color: white;
+            padding: 30px 20px;
+            .header{
+                .logo{
+                    width: 100px;
+                }
+                .links{
+                    > a{
+                        margin-right: 5px !important;
+                    }
+                }
+            }
+            >div{
+                width: 100%;
+                > .img{
+                    width: 100%;
+                }
+                > .text-cont{
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+    
+    .second-cta{
+        padding:50px 60px 100px;
+        background-color: $lightGrayishBlue;
+        > .img{
+            flex: 1;
+            > img{
+                width: 100%;
+            }
+        }
+        > div{
+            width: 100%;
+            flex: 1;
+            > h1{
+                margin-bottom: 20px;
+            }
+            > p{
+                margin-bottom: 20px;
+            }
+            > a{
+                color: $moderateCyan;
+                border-bottom: 1px solid;
+                width: 185px;
+                display: flex;
+                align-items: center;
+                margin-bottom: 30px;
+                > img{
+                    margin-left: 6px;
+                }
+
+                &:hover{
+                 color: white;
+                }
+            }
+
+            .comment-cont{
+                background-color: white;
+                box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+                border-radius: 7px;
+            
+                padding: 20px; 
+                width: 300px;
+                > p{
+                    margin-bottom: 15px;
+                    font-size: 14px;
+                }
+                > div{
+                    > img{
+                        border-radius: 50px;
+                        width: 30px;
+                        margin-right: 10px;
+                    }
+                    .text{
+                        .name{
+                            font-weight: 600;
+                            font-size: 12px;
+                        }
+                        .position{
+                            font-size: 10px;
+                        }
+                    }
+                }
+
+            }
+        }
+
+        @include breakpoint-down(medium){
+            flex-direction: column-reverse;
+            > .img{
+                margin-bottom: 60px;
+                margin-right: 0;
+                width: 60%;
+            }
+            > div{
+                width: 500px;
+                .comment-cont{
+                    margin: auto;
+                }
+            }
+        }
+        @include breakpoint-down(small){
+            padding: 40px 20px;
+            > .img{
+                width: 100%;
+            }
+            > div{
+                width: 100%;
+                > h1{
+                    font-size: 17px;
+                }
+            }
+        }
+    }
+
+    .email-form{
+        background-color: $desaturatedBlue;
+        padding: 70px 50px;
+        > div{
+            flex: 1;
+            > h2,p {
+                color: white ;
+            }
+        }
+        > form{
+            flex: 1;
+            > input{
+                border-radius: 3px;
+                border: none;
+                display: block;
+                margin:0 70px;
+                width: 70%;
+                padding: 10px;
+                margin-bottom: 20px;
+            }
+            > button{
+                color: white;
+                border-radius: 3px;
+                background-color: $brightBlue;
+                border: none;
+                margin-left: 70px;
+                padding: 10px 30px; 
+            }
+        }
+        @include breakpoint-down(medium){
+            flex-direction: column;
+            > div{
+                text-align: center;
+                width: 500px;
+            }
+            > form{
+                width: 500px;
+                > input {
+                    width: 100%;
+                    margin: 20px auto;
+                }
+                > button{
+                    width: 100%;
+                    margin: auto;
+                }
+            }
+        }
+        @include breakpoint-down(small){
+            padding: 40px;
+            > div{
+                width: 100%;
+            }
+            > form{
+                width: 100%;
+            }
+        }
+    }
+
+
+    footer{
+        background-color: $veryDarkBlue;
+        padding: 50px;
+        > a{
+            > img{
+                width: 150px;
+                margin-bottom: 30px;
+            }
+        }
+        @include breakpoint-down(small){
+            padding: 20px;
+        }
+    }
+
+    .footer{
+
+        color: white;
+        
+        &-info{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            > div{
+                width: 300px;
+            }
+            .info-icon{
+                max-height: 18px;
+                margin-right: 10px;
+            }
+            @include breakpoint-down(medium){
+                grid-template-columns: 1fr;
+            }
+        }
+        &-links{
+            > div{
+                flex-direction: column;
+                &:not(:last-child){
+                    margin-right: 40px;
+                }
+                > a {
+                    color: white;
+                    &:not(:last-child){
+                        margin-bottom: 20px;
+                    }
+                }
+            }
+        }
+
+        @include breakpoint-down(small){
+            flex-direction: column;
+
+            &-info{
+                >div{
+                    &:last-child{
+                        margin: 30px 0;
+                    }
+                }
+            }
+            &-links{
+                flex-direction: column;
+                > div{
+                    margin-bottom: 30px;
+                    >a{
+                        margin-bottom: 20px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
