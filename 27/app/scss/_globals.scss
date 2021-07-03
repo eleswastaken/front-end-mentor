@@ -1,0 +1,386 @@
+
+
+$pink : hsl(322, 100%, 66%);
+$lightPink : hsl(321, 100%, 78%);
+$lightRed : hsl(0, 100%, 63%);
+
+$veryDarkCyan : hsl(192, 100%, 9%);
+$veryPaleBlue : hsl(207, 100%, 98%);
+
+$breakpoints-up : ("medium":"40em", "large":"64em", "xlarge": "87.5");
+$breakpoints-down: ("small":"39.975em", "medium":"63.975em", "large": "87.4375em");
+
+@mixin breakpoint-up($size){
+    @media (min-width: map-get($breakpoints-up, $size)){
+        @content;
+    }
+}
+
+@mixin breakpoint-down($size){
+    @media (max-width: map-get($breakpoints-down, $size)){
+        @content;
+    }
+}
+
+
+.hide-for-desktop{
+    @include breakpoint-up(large){
+        display: none;
+    }
+}
+.hide-for-mobile{
+    @include breakpoint-down(medium){
+        display: none;
+    }
+}
+.flex{
+    display: flex;
+    &-jc-sb{
+        justify-content: space-between;
+    }
+    &-jc-c{
+        justify-content: center;
+    }
+    &-ai-c{
+        align-items: center;
+    }
+    &-column{
+        @include breakpoint-down(small){
+            flex-direction: column;
+        }
+    }
+    &-column-r{
+        @include breakpoint-down(medium){
+            flex-direction: column-reverse;
+        }
+    }
+}
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    background-color: white;
+    font-family: "Open Sans", sans-serif;
+    font-size: 20px;  
+    @include breakpoint-down(medium){
+        font-size: 18px;
+    }  
+    @include breakpoint-down(small){
+        font-size: 15px;
+    }  
+}
+
+h1, h2{
+    color: $veryDarkCyan;
+    font-family: "Poppins", sans-serif;
+}
+
+a{
+    text-decoration: none;
+}
+.cta-button{
+    background-color: $pink;
+    color: white;
+    border-radius: 100px;
+    padding: 25px 70px;
+    margin-bottom: 100px;
+    @include breakpoint-down(medium){
+        padding: 15px 30px;
+    }
+}
+.main-cont{
+
+
+    .intro-cont{
+        background: url("../images/bg-section-top-desktop-1.svg") no-repeat bottom;
+        padding: 50px 60px;
+        text-align: center;
+
+        .header{
+            margin-bottom: 150px;
+            .logo{
+                width: 200px;
+            }
+            .button{
+                border-radius: 100px;
+                border: 2px solid $pink;
+                color: $pink;
+                padding: 5px 20px;
+            }
+        }
+
+        > h1{
+            margin-bottom: 40px;
+        }
+        > p{ 
+            color: $veryDarkCyan;
+            margin: auto;
+            margin-bottom: 70px;
+            width: 600px;
+        }
+
+
+        .image{
+            margin: 100px auto;
+            width: 900px;
+            > img{
+                width: 100%;
+            }
+        }
+
+        .stats-cont{
+            width: 700px;
+            margin: 100px auto 200px;
+            .stats{
+                > img{
+                    float: left;
+                }
+                .number{
+                    color: $veryDarkCyan;
+                    font-size: 80px;
+                    font-weight: 700;
+                }
+                .text{
+                    color: silver;
+                }
+            }
+
+        }
+        
+        @include breakpoint-down(medium){
+            padding: 40px;
+            .header{
+                margin-bottom: 100px;
+                .logo{
+                    width:150px;
+                }
+            }
+            > h1{
+                margin-bottom: 20px;
+            }
+            > p{
+                margin-bottom: 50px;
+                width: 80%;
+            }
+            .image{
+                width: 80%;
+                margin: 70px auto;
+            }
+            .stats-cont{
+                margin: 70px auto;
+                flex-direction: column;
+                width: 100%;
+                .stats{
+                    &:first-child{
+                        margin-bottom: 40px;
+                    }
+                }
+            }
+        }
+        @include breakpoint-down(small){
+            background: url("../images/bg-section-top-mobile-1.svg") no-repeat bottom;
+            padding: 30px 20px;
+            .header{
+                .logo{
+                    width:120px;
+                }
+            }
+            > p{width: 100%;}
+            .image{
+                width: 100%;
+                margin: 50px auto;
+            }
+
+        }
+    }
+
+    
+    .first-cont{
+        padding: 70px 120px;
+        background-color: $veryPaleBlue;
+        .text-cont{
+            flex: 1;
+            > h2 {
+                margin-bottom: 40px;
+            }
+            > p{
+                width: 90%;
+                font-size: 18px;
+            }
+        }
+        .image{
+            flex: 1;
+            > img{
+                width: 100%;
+            }
+        }
+
+        @include breakpoint-down(medium){
+            flex-direction: column-reverse;
+            padding: 70px 60px;
+            text-align: center;
+            .text-cont{
+                > p{
+                    width: 100%;
+                    font-size: 16px;
+                }
+            }
+            .image{
+                margin-bottom: 50px;
+                > img{
+                    width: 70%;
+                }
+            }
+        }
+        @include breakpoint-down(small){
+            padding: 50px 20px;
+            .image{
+                > img{
+                    width: 100%;
+                }
+            }
+        }
+    }
+    .second-cont{
+        background: url("../images/bg-section-top-desktop-2.svg") no-repeat bottom, url("../images/bg-section-bottom-desktop-1.svg") no-repeat top;
+        background-color: white;
+        padding: 200px 120px;
+        .text-cont{
+            > p{
+                width: 100%;
+            }
+        }
+        .image{
+            margin-right: 100px;
+        }
+        @include breakpoint-down(medium){
+            flex-direction: column;
+            padding: 200px 60px;
+            .image{
+                margin-right: 0;
+            }
+        }
+        @include breakpoint-down(small){
+            background: url("../images/bg-section-top-mobile-2.svg") no-repeat bottom, url("../images/bg-section-bottom-mobile-1.svg") no-repeat top;
+            padding: 170px 20px;
+        }
+    }
+
+    .last-cta{
+        background: url("../images/bg-footer-top-desktop.svg") no-repeat bottom, url("../images/bg-section-bottom-desktop-2.svg") no-repeat top;
+        text-align: center;
+        padding: 300px 20px;
+        > h1{
+            margin-bottom: 50px;
+        }
+        @include breakpoint-down(small){
+            background: url("../images/bg-footer-top-mobile.svg") no-repeat bottom, url("../images/bg-section-bottom-mobile-2.svg") no-repeat top;
+            padding: 200px 20px 300px;
+        }
+    }
+}
+
+.footer{
+    background-color: $veryDarkCyan;
+    color: white;
+    padding: 70px 120px;
+
+    .info{
+        flex: 1;
+        .logo{
+            margin-bottom: 30px;
+            width: 200px;
+        }
+        font-size: 18px;
+        > p{
+            margin-bottom: 30px;
+            width: 420px;
+        }
+        > div{
+            margin-bottom: 20px;
+            > img{
+                margin-right: 10px;
+            }
+        }
+    }
+    .newsletter{
+        flex: 1;
+        > h3{
+            text-transform: uppercase;
+            font-weight: 700;
+            margin-bottom: 30px;
+        }
+        > p {
+            font-size: 18px;
+            width: 450px;
+            margin-bottom: 30px;
+        }
+        > form{
+            > input{
+                width: 60%;
+                min-height: 36px;
+
+                border: none;
+                border-radius: 4px;
+                text-indent: 15px;
+            }
+            > button{
+                width: 30%;
+                padding: 10px;
+
+                border: none;
+                border-radius: 4px;
+                background-color: $pink;
+                color: white;
+            }
+        }
+    }
+
+
+    @include breakpoint-down(medium){
+        padding: 70px 60px;
+        .info{
+            > p{
+                width: 100%;
+                font-size: 16px;
+            }
+        }
+        .newsletter{
+            > p{
+                font-size: 16px;
+                width: 100%;
+            }
+
+            > form{
+                margin-bottom: 40px;
+                flex-direction: column;
+                > input{
+                    margin-bottom: 20px;
+                    width: 400px;
+                }
+                > button{
+                    width: 200px;
+                    margin-right: 0;
+                }
+            }
+        }
+    }
+    @include breakpoint-down(small){
+        padding: 50px 20px;
+        .newsletter{
+            > form{
+                > input{
+                    width: 100%;
+                }
+                > button{
+                    width: 50%;
+                    margin-left: 50%;
+                }
+            }
+        }
+    }
+}
