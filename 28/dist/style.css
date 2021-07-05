@@ -1,0 +1,296 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.firstTHEME {
+  --main-bg: hsl(222, 26%, 31%);
+  --keypad-toggle-bg: hsl(223, 31%, 20%);
+  --screen-bg: hsl(224, 36%, 15%);
+  --reset-key-bg: hsl(225, 21%, 49%);
+  --reset-key-shadow: hsl(224, 28%, 35%);
+  --equal-key-bg: hsl(6, 63%, 50%);
+  --equal-key-shadow: hsl(6, 70%, 34%);
+  --key-bg: hsl(30, 25%, 89%);
+  --key-shadow: hsl(28, 16%, 65%);
+  --second-number: silver;
+  --second-sign: grey;
+  --key-color: hsl(221, 14%, 31%);
+  --reset-color: hsl(0, 0%, 100%);
+  --screen-color: hsl(0, 0%, 100%);
+  --equal-color: hsl(0, 0%, 100%);
+}
+
+.secondTHEME {
+  --main-bg: hsl(0, 0%, 90%);
+  --keypad-toggle-bg: hsl(0, 5%, 81%);
+  --screen-bg:  hsl(0, 0%, 93%);
+  --reset-key-bg: hsl(185, 42%, 37%);
+  --reset-key-shadow: hsl(185, 58%, 25%);
+  --equal-key-bg: hsl(25, 98%, 40%);
+  --equal-key-shadow: hsl(25, 99%, 27%);
+  --key-bg: hsl(45, 7%, 89%);
+  --key-shadow:hsl(35, 11%, 61%);
+  --second-number: #878181;
+  --second-sign: #878181;
+  --key-color: hsl(60, 10%, 19%);
+  --reset-color: hsl(0, 0%, 100%);
+  --screen-color: hsl(60, 10%, 19%);
+  --equal-color: hsl(0, 0%, 100%);
+}
+
+.thirdTHEME {
+  --main-bg: hsl(268, 75%, 9%);
+  --keypad-toggle-bg: hsl(268, 71%, 12%);
+  --screen-bg: hsl(268, 71%, 12%);
+  --reset-key-bg: hsl(281, 89%, 26%);
+  --reset-key-shadow: hsl(285, 91%, 52%);
+  --equal-key-bg:hsl(176, 100%, 44%);
+  --equal-key-shadow:hsl(177, 39%, 37%);
+  --key-bg: hsl(268, 47%, 21%);
+  --key-shadow: hsl(290, 70%, 36%);
+  --second-number: hsl(51.6, 47.2%, 38.6%);
+  --second-sign: hsl(52, 100%, 62%);
+  --key-color: hsl(52, 100%, 62%);
+  --reset-color: hsl(0, 0%, 100%);
+  --screen-color: hsl(52, 100%, 62%);
+  --equal-color: hsl(198, 20%, 13%);
+}
+
+body {
+  background-color: var(--main-bg);
+  font-family: "Spartan", sans-serif;
+  padding: 50px 0;
+}
+
+@media (max-width: 39.975em) {
+  body {
+    padding: 70px 20px;
+  }
+}
+
+.main-cont {
+  width: 500px;
+  margin: auto;
+}
+
+@media (max-width: 39.975em) {
+  .main-cont {
+    width: 100%;
+  }
+  .main-cont .output-cont {
+    height: 120px !important;
+  }
+}
+
+.main-cont .header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 20px;
+  color: var(--screen-color);
+}
+
+.main-cont .header > label {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 10px;
+}
+
+.main-cont .header > label > p {
+  margin-right: 15px;
+  text-transform: uppercase;
+}
+
+.main-cont .header > label .theme-number {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  position: absolute;
+  top: -20px;
+  right: 4px;
+  width: 40px;
+}
+
+.main-cont .header > label > input {
+  width: 50px;
+  -webkit-appearance: none;
+  background-color: var(--keypad-toggle-bg);
+  border-left: solid 4px var(--keypad-toggle-bg);
+  border-right: solid 3px var(--keypad-toggle-bg);
+  height: 18px;
+  border-radius: 100px;
+}
+
+.main-cont .header > label > input::-moz-range-track {
+  background-color: var(--keypad-toggle-bg);
+  height: 18px;
+  width: 100%;
+  border-radius: 100px;
+}
+
+.main-cont .header > label > input::-ms-fill-lower, .main-cont .header > label > input::-ms-fill-upper {
+  background: transparent;
+}
+
+.main-cont .header > label > input::-ms-track {
+  width: 50px;
+  cursor: pointer;
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+  background-color: var(--keypad-toggle-bg);
+  height: 18px;
+  width: 100%;
+  border-radius: 100px;
+}
+
+.main-cont .header > label > input:focus {
+  outline: none;
+}
+
+.main-cont .header > label > input::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 12px;
+  height: 12px;
+  background-color: var(--equal-key-bg);
+  border-radius: 100px;
+  border: none;
+}
+
+.main-cont .header > label > input::-moz-range-thumb {
+  width: 12px;
+  height: 12px;
+  background-color: var(--equal-key-bg);
+  border-radius: 100px;
+  border: none;
+}
+
+.main-cont .header > label > input::-ms-thumb {
+  width: 12px;
+  height: 12px;
+  background-color: var(--equal-key-bg);
+  border-radius: 100px;
+  border: none;
+  margin-top: -14px;
+}
+
+.main-cont .output-cont {
+  background-color: var(--screen-bg);
+  border-radius: 10px;
+  height: 150px;
+  padding: 20px;
+  margin-bottom: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.main-cont .output-cont #main-number {
+  color: var(--screen-color);
+  font-size: 42px;
+  position: absolute;
+  top: 50px;
+  bottom: 50px;
+  right: 20px;
+}
+
+.main-cont .output-cont #secondary-number {
+  color: var(--second-number);
+  font-size: 22px;
+  position: absolute;
+  top: 20px;
+  bottom: 50px;
+  right: 20px;
+}
+
+.main-cont .output-cont #sign {
+  color: var(--second-sign);
+  font-size: 25px;
+  position: absolute;
+  top: 30px;
+  bottom: 50px;
+  left: 20px;
+}
+
+.main-cont .keypad {
+  background-color: var(--keypad-toggle-bg);
+  border-radius: 10px;
+  padding: 20px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 15px;
+}
+
+.main-cont .keypad > button {
+  background-color: var(--key-bg);
+  color: var(--key-color);
+  min-height: 50px;
+  border-radius: 10px;
+  font-family: "Spartan", sans-serif;
+  font-size: 25px;
+  border: none;
+  border-bottom: 3px solid var(--key-shadow);
+}
+
+.main-cont .keypad > button:active {
+  border-bottom: 2px solid var(--key-shadow);
+  border-top: 1px solid var(--key-shadow);
+  border-left: 1px solid var(--key-shadow);
+  border-right: 1px solid var(--key-shadow);
+}
+
+.main-cont .keypad #keyDel, .main-cont .keypad #keyReset {
+  background-color: var(--reset-key-bg);
+  border-bottom: 3px solid var(--reset-key-shadow);
+  color: var(--reset-color);
+  font-size: 18px;
+  letter-spacing: 2px;
+}
+
+.main-cont .keypad #keyDel:active, .main-cont .keypad #keyReset:active {
+  border-top: 1px solid var(--reset-key-shadow);
+  border-left: 1px solid var(--reset-key-shadow);
+  border-bottom: 2px solid var(--reset-key-shadow);
+  border-right: 1px solid var(--reset-key-shadow);
+}
+
+.main-cont .keypad #keyReset {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-column: 1 / 3;
+}
+
+.main-cont .keypad #keyEqual {
+  -ms-grid-column: 3;
+  -ms-grid-column-span: 2;
+  grid-column: 3 / 5;
+  background-color: var(--equal-key-bg);
+  border-bottom: 3px solid var(--equal-key-shadow);
+  color: var(--equal-color);
+  font-size: 25px;
+}
+
+.main-cont .keypad #keyEqual:active {
+  border-top: 1px solid var(--equal-key-shadow);
+  border-bottom: 2px solid var(--equal-key-shadow);
+  border-left: 1px solid var(--equal-key-shadow);
+  border-right: 1px solid var(--equal-key-shadow);
+}

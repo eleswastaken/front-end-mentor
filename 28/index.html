@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Spartan:wght@700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="dist/style.css">
+
+  <script src="app/js/main.js"></script>
+
+  <title>Frontend Mentor | Calculator app</title>
+
+</head>
+<body onload="loadTheme()">
+  <div class="main-cont">
+
+    <div class="header">
+      <h1>calc</h1>
+      <label for="">
+        <p>theme</p>
+        <div class="theme-number">
+          <div>1</div>
+          <div>2</div>
+          <div>3</div>
+        </div>
+        <input id="themeToggle" onclick="selectTheme()" onchange="selectTheme()" type="range" min="1" max="3" value="1">
+      </label>
+    </div>
+  
+    <div class="output-cont">
+      <p id="main-number"></p>
+      <p id="secondary-number"></p>
+      <p id="sign"></p>
+    </div>
+  
+    <div class="keypad">
+      <button onclick="showNum(7)" id="key7">7</button>
+      <button onclick="showNum(8)" id="key8">8</button>
+      <button onclick="showNum(9)" id="key9">9</button>
+      <button onclick="delLast()" id="keyDel">DEL</button>
+      <button onclick="showNum(4)" id="key4">4</button>
+      <button onclick="showNum(5)" id="key5">5</button>
+      <button onclick="showNum(6)" id="key6">6</button>
+      <button onclick="calc('+')" id="keyPlus">+</button>
+      <button onclick="showNum(1)" id="key1">1</button>
+      <button onclick="showNum(2)" id="key2">2</button>
+      <button onclick="showNum(3)" id="key3">3</button>
+      <button onclick="calc('-')" id="keyMinus">-</button>
+      <button onclick="showNum('.')" id="keyDot">.</button>
+      <button onclick="showNum(0)" id="key0">0</button>
+      <button onclick="calc('/')" id="keyDevide">/</button>
+      <button onclick="calc('x')" id="keyMulti">x</button>
+
+      <button onclick="reset()" id="keyReset">RESET</button>
+      <button onclick="showResult()" id="keyEqual">=</button>
+  
+    </div>
+
+  </div>
+
+</body>
+</html>
