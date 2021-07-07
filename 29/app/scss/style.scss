@@ -1,0 +1,142 @@
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+
+body{
+    background-color: white;
+    font-family: "Red Hat Text", sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+    
+    @media (max-width: 550px){
+        font-size: 8px;
+        .main-cont{
+            .inner-cont{
+                width: 100%;
+            }
+        }
+    }
+}
+
+
+.main-cont{
+    background:url("../images/pattern-hills.svg") no-repeat bottom right,
+                url("../images/bg-stars.svg") no-repeat center;
+    background-color: hsl(234, 17%, 12%);
+    height: 100vh;
+
+
+    .inner-cont{
+        width: 600px;
+        margin: 0 auto;
+        text-align: center;
+        padding: 100px 0;
+
+        > h1{
+            color: hsl(0, 0%, 100%);
+            margin-bottom: 100px;
+        }
+        .text-cont{
+            display: flex;
+            justify-content: space-between;
+            > p{
+                width: 120px;
+                color: hsl(237, 18%, 59%);
+                font-size: 12px;
+            }
+        }
+
+        .countdown-cont{
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            > div{
+                width: 120px;
+                height: 120px;
+                background-color: #27293b;
+                border-radius: 5px 5px 0 0;
+
+                color: hsl(345, 95%, 68%);
+                font-size: 70px;
+                font-weight: 700;
+                letter-spacing: 0px;
+                position: relative;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                perspective: 1000px;
+
+                flex-direction: column;
+                >p{
+                    position: absolute;
+                }
+                > div{
+                    overflow: hidden;
+                }
+                .Rotate .upper-cont {
+                    transform: rotateX(360deg);
+                    &-front{
+                        > p{
+                            transition-delay: .4s;
+                            top: 26%;
+                            transform: rotateX(-180deg);
+
+                        }
+                    }
+                }
+                
+                .upper-cont{
+                    flex: 1;
+                    width: 100%;
+
+                    background-color: transparent;
+                    border-radius: 5px 5px 0 0;
+
+
+                    transition: transform 2s;
+                    transform-style: preserve-3d;
+                    
+                    transform-origin: bottom;
+
+                    position: relative;
+                    
+                    &-front{
+                        background-color: #27293b;
+                        position: absolute;
+                        width: 100%;
+                        height: 100%;
+                        backface-visibility:inherit;
+                        transition-delay: .4s;
+
+                        > p{
+                            position: absolute;
+                            width: 100%;
+                            bottom: -76%;
+                        }        
+                    }
+                }
+                .bottom-cont{
+                    flex: 1;
+                    order: 1;
+                    z-index: -1;
+                    width: 100%;
+                    backface-visibility: hidden;
+                    background-color: hsl(236, 21%, 26%);
+                    border-radius: 0 0 5px 5px ;
+
+                    position: relative;
+                    > p{
+                        position: absolute;
+                        width: 100%;
+                        top: -76%;
+                    }
+                }
+            }
+        }
+    }
+}
