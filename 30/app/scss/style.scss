@@ -1,0 +1,243 @@
+
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: "Josefin Sans", sans-serif;
+    transition: 250ms all ease-in-out;
+
+}
+
+.lightTheme{
+    --theme-icon : url("../images/icon-sun.svg");
+    --bg : hsl(0, 0%, 98%);
+    --bg-image-desktop : url("../images/bg-desktop-light.jpg");
+    --bg-image-mobile : url("../images/bg-mobile-light.jpg");
+    --todo-bg: white;
+    --checkbox : hsl(233, 11%, 74%);
+    --checkbox-hover : grey;
+    --text-done : hsl(233, 11%, 84%);
+    --text-todo : hsl(235, 19%, 35%);
+    --text-input-placeholder :  hsl(235, 19%, 35%);
+    --text-input-color : hsl(235, 19%, 35%);
+    --info-hover : hsl(235, 19%, 35%);
+    --info-color : hsl(236, 9%, 61%);
+    --cont-devider: hsl(233, 11%, 74%);
+    --todo-devider: hsl(236, 33%, 92%);
+}
+.darkTheme{
+    --theme-icon : url("../images/icon-moon.svg");
+    --bg : hsl(235, 21%, 11%);
+    --bg-image-desktop : url("../images/bg-desktop-dark.jpg");
+    --bg-image-mobile : url("../images/bg-mobile-dark.jpg");
+    --todo-bg: hsl(235, 24%, 19%);
+    --checkbox : hsl(234, 11%, 52%);
+    --checkbox-hover : hsl(237, 14%, 26%);
+    --text-done : hsl(234, 11%, 52%);
+    --text-todo : hsl(234, 39%, 85%);
+    --text-input-placeholder : hsl(234, 11%, 52%);
+    --text-input-color : hsl(234, 39%, 85%);
+    --info-hover : hsl(234, 39%, 85%);
+    --info-color : hsl(234, 11%, 52%);
+    --cont-devider: hsl(234, 11%, 52%);
+    --todo-devider: hsl(233, 14%, 35%);
+
+}
+
+body{
+    background: var(--bg-image-desktop) no-repeat center top;
+    background-color: var(--bg);
+    padding: 100px 0;
+
+
+    > p{
+        display: none;
+    }
+    @media (max-width: 550px){
+        background: var(--bg-image-mobile) no-repeat center top;
+        background-color: var(--bg);
+        padding: 30px 0;
+    }
+}
+
+.todo{
+    width: 100%;
+    background-color: var(--todo-bg);
+    display: flex;
+    border-radius: 6px 6px 0 0;
+
+    align-items: center;
+
+    padding: 15px;
+
+    .checkbox-field{
+        min-width: 20px;
+        min-height: 20px;
+        border-radius: 100px;
+        border: 1px solid var(--checkbox);
+        margin-right: 20px;
+        &:hover{
+            border-color: var(--checkbox-hover);
+        }
+    }
+    > input{
+        background-color: var(--todo-bg);
+        color: var(--text-todo);
+        width: 100%;
+        border: none;
+        outline: none;
+        font-size: 16px;
+        @media (max-width: 550px){
+            font-size: 14px;;
+        }
+    }
+}
+
+.main-cont{
+
+    width: 600px;
+    margin: 0 auto;
+    @media (max-width: 550px){
+        width: 90%;
+    }
+    .header{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        margin-bottom: 40px;
+
+        .logo{
+            text-transform: uppercase;
+            letter-spacing: 12px;
+            color: white;
+        }
+        .themeIcon{
+            width: 25px;
+            height: 25px;
+            background: var(--theme-icon) no-repeat center;
+            background-size: cover;
+        }
+    }
+    
+    .new-todo{
+        margin-bottom: 20px;
+        border-radius: 6px;
+        #newTodoInput{
+            color: var(--text-input-color);
+            &::placeholder{
+                color: var(--text-input-placeholder);
+            }
+        }
+    }
+
+    .todos-cont{
+        border-radius: 6px;
+        background-color: var(--todo-bg);
+        box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+
+        .done-todos{
+            > div{ 
+                .checkbox-field{
+                    background: url("../images/icon-check.svg") no-repeat center, linear-gradient(to right, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+                    border: none;
+                }
+                > input{
+                    color: var(--text-done);
+                    text-decoration: line-through;
+                } 
+            }
+        }
+ 
+        .left-todos, .done-todos{            
+            > div{
+                &:last-child{
+                    border-bottom: 1px solid var(--cont-devider);
+                }
+                &:not(:last-child){
+                    border-bottom: 1px solid var(--todo-devider);
+                }
+                .checkbox-field{
+                    cursor: pointer;
+                }
+                > input{
+                    cursor: pointer;
+                }
+                .cross-image{
+                    display: none;
+                    opacity: 0;
+                    width: 15px;
+                    height:15px;
+                    cursor: pointer;
+                }
+                &:hover .cross-image{
+                    transition: .2s ease-in-out;
+                    display: block;
+                    opacity: 1;
+                }
+            }
+        }
+
+        .info-cont{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            padding: 12px 15px;
+            font-size: 13px;
+            color: var(--info-color);
+            
+            .clear-completed, .items-left{
+                font-weight: 400;
+            }
+            .clear-completed{
+                width: 105px;
+                cursor: pointer;
+                transition: .2s ease-in-out;
+                text-align: center;
+                &:hover{
+                    color: var(--info-hover);
+                }
+            }
+            position: relative;
+            .sorting{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;    
+                font-weight: 700;
+                > p{
+                    cursor: pointer;
+                    &:first-child{
+                        color: hsl(220, 98%, 61%);
+                    }
+                    &:not(:last-child){
+                        margin-right: 20px;
+                    }
+                    transition: .2s ease-in-out;
+                    &:hover{
+                        color: var(--info-hover);
+                    }
+                }
+
+                @media (max-width: 550px){
+                    position: absolute;
+                    box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+                    background-color: var(--todo-bg);
+                    padding: 15px 30px;
+                    border-radius: 6px;
+                    bottom: -60px;
+                    left: 0;
+                    width: 100%;
+                    > p{
+                        margin: 0 !important;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.cross-image{
+    display: block !important;
+}

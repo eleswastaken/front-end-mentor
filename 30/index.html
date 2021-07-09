@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="dist/style.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;500;700&display=swap" rel="stylesheet"> 
+  
+  
+  <title>Frontend Mentor | Todo app</title>
+
+</head>
+<body>
+  <div class="main-cont">
+    <header class="header">
+      <h1 class="logo">Todo</h1>
+      <div class="themeIcon">
+        
+      </div>
+    </header>
+    
+    <div class="new-todo todo">
+      <div class="checkbox-field">
+      </div>
+      <input id="newTodoInput" type="text" placeholder="Create a new todo...">
+    </div>
+
+    <div class="todos-cont">
+
+      <div class="done-todos">
+        <div id="todo1" class="todo">
+          <div onclick="markDone('todo1')" class="checkbox-field"></div>
+          <input type="text" value="Groceries">
+          <img class="cross-image" onclick="deleteTodo('todo1')" src="images/icon-cross.svg" alt="crossIcon">
+        </div>
+        <div id="todo1" class="todo">
+          <div onclick="markDone('todo1')" class="checkbox-field"></div>
+          <input type="text" value="To-Do App">
+          <img class="cross-image" onclick="deleteTodo('todo1')" src="images/icon-cross.svg" alt="crossIcon">
+        </div>
+      </div>
+      <div class="left-todos">
+        <div id="todo1" class="todo">
+          <div onclick="markDone('todo1')" class="checkbox-field"></div>
+          <input type="text" value="Fist of seltzer water on the rocks">
+          <img class="cross-image" onclick="deleteTodo('todo1')" src="images/icon-cross.svg" alt="crossIcon">
+        </div>
+        <div id="todo1" class="todo">
+          <div onclick="markDone('todo1')" class="checkbox-field"></div>
+          <input type="text" value="Seed on the ground">
+          <img class="cross-image" onclick="deleteTodo('todo1')" src="images/icon-cross.svg" alt="crossIcon">
+        </div>
+      </div>
+      <div class="info-cont">
+        <div class="items-left"> 
+          <p><span id="itemsLeft"></span> items left</p>
+        </div>
+        <div class="sorting">
+          <p onclick="showSort('all', this)">All</p>
+          <p onclick="showSort('active', this)">Active</p>
+          <p onclick="showSort('completed', this)">Completed</p>     
+        </div>
+        <div class="clear-completed">
+          <p onclick="clearCompleted()">Clear Completed</p>          
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <p>Drag and drop to reorder list</p>
+
+  <!-- Add dynamic number -->
+
+  <script src="app/js/main.js"></script>
+  
+
+</body>
+</html>
