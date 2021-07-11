@@ -76,6 +76,23 @@ function setTip(button, buttonTip){
 };
 
 function calculate(){
-    totalAmount.innerHTML = Math.round(bill/people*100)/100;
+    totalAmount.innerHTML = Math.round(bill/people*100)/100 + Math.round(bill/people/100*tip*100)/100;;
     tipAmount.innerHTML = Math.round(bill/people/100*tip*100)/100;
+    resetButton.style.opacity = '1';
+}
+
+function setReset(){
+}
+function reset(){
+    bill = 0;
+    tip = 0;
+    value = 0;
+    console.log(bill, tip, people);
+
+    for(child of document.getElementsByTagName("input")){
+        child.value = '';
+    };
+    customTip.style.backgroundColor = "hsla(172, 67%, 45%, 40%)";
+    calculate();
+    setButton(null);
 }
