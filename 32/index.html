@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="dist/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <title>Frontend Mentor | Tip calculator app</title>
+
+</head>
+<body>
+
+  <div class="logo">
+    <img src="images/logo.svg" alt="logo">
+  </div>
+
+  <div class="main-cont">
+    <div class="selection-cont">
+      <div class="bill-number">
+        <div>
+          <p>Bill</p>
+          <p id="errorBill">Can't be zero</p>
+        </div>
+        <input id="billInput" type="text" placeholder="0">
+      </div>
+      <div class="select-tip">
+        <p>Select Tip %</p>
+        <div class="tips">
+          <button class="tip" onclick="setTip(this, 5)">5%</button>
+          <button class="tip" onclick="setTip(this, 10)">10%</button>
+          <button class="tip" onclick="setTip(this, 15)">15%</button>
+          <button class="tip" onclick="setTip(this, 25)">25%</button>
+          <button class="tip" onclick="setTip(this, 50)">50%</button>
+          <input id="customTip" type="text" placeholder="Custom">
+        </div>
+      </div>
+      <div class="people-number">
+        <div>
+          <p>Number of People</p>
+          <p id="errorPeople">Can't be zero</p>
+        </div>
+        <input id="peopleNumber" type="text" placeholder="1">
+      </div>
+    </div>
+
+    <div class="output-cont">
+      <div class="tip-output">
+        <div>
+          <p>Tip Amount</p>
+          <p>/ person</p>
+        </div>
+        <p >$<span id="tipAmount">0</span></p>
+      </div>
+      <div class="total-output">
+        <div>
+          <p>Total</p>
+          <p>/ person</p>
+        </div>
+        <p >$<span id="total">0</span></p>
+      </div>
+      <button id="resetButton">reset</button>
+    </div>
+  </div>
+</body>
+<script src="app/js/main.js"></script>
+</html>

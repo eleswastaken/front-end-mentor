@@ -1,0 +1,285 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0;
+  font-family: "Space Mono", sans-serif;
+  margin: 0;
+}
+
+body {
+  background-color: #c5e4e7;
+  padding: 70px 0 0;
+  font-size: 17px;
+}
+
+@media (max-width: 900px) {
+  body {
+    padding: 50px 0 0;
+  }
+  body .logo {
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  body {
+    padding: 20px 0 0;
+    font-size: 14px;
+  }
+}
+
+.logo {
+  width: 100px;
+  margin: 0 auto;
+  margin-bottom: 50px;
+}
+
+.logo > img {
+  width: 100%;
+}
+
+input {
+  background-color: #f4fafa;
+  border-radius: 5px;
+  color: #00494d;
+  font-size: 24px;
+  text-align: right;
+  width: 100%;
+  border: none;
+}
+
+input:focus {
+  outline: 2px solid #26c0ab;
+}
+
+.main-cont {
+  background-color: white;
+  border-radius: 17px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 900px;
+  margin: 0 auto;
+  padding: 30px;
+}
+
+.main-cont > div {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+@media (max-width: 900px) {
+  .main-cont {
+    width: 70%;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding: 20px;
+  }
+  .main-cont .selection-cont {
+    padding: 20px !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .main-cont {
+    width: 100%;
+    border-radius: 20px 20px 0 0;
+  }
+  .main-cont .output-cont {
+    padding: 30px !important;
+  }
+  .main-cont .output-cont > div > div > p {
+    font-size: 14px !important;
+  }
+}
+
+.main-cont .selection-cont {
+  padding: 20px;
+  padding-right: 50px;
+}
+
+.main-cont .selection-cont .bill-number {
+  margin-bottom: 30px;
+}
+
+.main-cont .selection-cont .bill-number > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.main-cont .selection-cont .bill-number > div > p {
+  color: #00494d;
+}
+
+.main-cont .selection-cont .bill-number > div #errorBill {
+  color: red;
+  display: none;
+}
+
+.main-cont .selection-cont .bill-number > input {
+  background: url("../images/icon-dollar.svg") no-repeat left 10px center;
+  background-color: #f4fafa;
+}
+
+.main-cont .selection-cont .bill-number > input::-webkit-input-placeholder {
+  font-size: 24px;
+  text-align: right;
+}
+
+.main-cont .selection-cont .bill-number > input:-ms-input-placeholder {
+  font-size: 24px;
+  text-align: right;
+}
+
+.main-cont .selection-cont .bill-number > input::-ms-input-placeholder {
+  font-size: 24px;
+  text-align: right;
+}
+
+.main-cont .selection-cont .bill-number > input::placeholder {
+  font-size: 24px;
+  text-align: right;
+}
+
+.main-cont .selection-cont .select-tip {
+  margin-bottom: 30px;
+}
+
+.main-cont .selection-cont .select-tip > p {
+  margin-bottom: 10px;
+  color: #00494d;
+}
+
+.main-cont .selection-cont .select-tip .tips {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 20px;
+}
+
+.main-cont .selection-cont .select-tip .tips > button {
+  background-color: #00494d;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-size: 24px;
+  padding: 10px 0;
+}
+
+.main-cont .selection-cont .select-tip .tips > input::-webkit-input-placeholder {
+  color: #00494d;
+  font-size: 24px;
+  text-align: center;
+}
+
+.main-cont .selection-cont .select-tip .tips > input:-ms-input-placeholder {
+  color: #00494d;
+  font-size: 24px;
+  text-align: center;
+}
+
+.main-cont .selection-cont .select-tip .tips > input::-ms-input-placeholder {
+  color: #00494d;
+  font-size: 24px;
+  text-align: center;
+}
+
+.main-cont .selection-cont .select-tip .tips > input::placeholder {
+  color: #00494d;
+  font-size: 24px;
+  text-align: center;
+}
+
+.main-cont .selection-cont .people-number {
+  color: #00494d;
+}
+
+.main-cont .selection-cont .people-number > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.main-cont .selection-cont .people-number > div #errorPeople {
+  display: none;
+  color: red;
+}
+
+.main-cont .selection-cont .people-number > input {
+  background: url("../images/icon-person.svg") no-repeat left 10px center;
+  background-color: #f4fafa;
+}
+
+.main-cont .output-cont {
+  background-color: #00494d;
+  border-radius: 15px;
+  padding: 50px 40px 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: relative;
+}
+
+.main-cont .output-cont > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.main-cont .output-cont > div > p {
+  font-size: 44px;
+  font-weight: 700;
+  color: #26c0ab;
+}
+
+.main-cont .output-cont > div > div > p:first-child {
+  font-size: 20px;
+  color: white;
+}
+
+.main-cont .output-cont > div > div > p:last-child {
+  font-size: 18px;
+  color: #7f9c9f;
+}
+
+.main-cont .output-cont .tip-output {
+  margin-bottom: 40px;
+}
+
+.main-cont .output-cont .total-output {
+  margin-bottom: 100px;
+}
+
+.main-cont .output-cont > button {
+  font-size: 24px;
+  text-transform: uppercase;
+  padding: 10px 0;
+  background-color: #26c0ab;
+  color: #00494d;
+  opacity: .4;
+  border: none;
+  border-radius: 5px;
+}
