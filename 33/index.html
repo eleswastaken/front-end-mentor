@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="dist/style.css">
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap" rel="stylesheet">
+  <title>Frontend Mentor | IP Address Tracker</title>
+
+</head>
+<body onload="starter()">
+  <div class="main-cont">
+    <div class="info-cont">
+      <h1>IP Address Tracker</h1> 
+
+      <div class="search-cont">
+        <input id="searchInput" autofocus='on' type="text" placeholder="Search for any IP address or domain" value="frontendmentor.com">
+        <div onclick="" id="searchButton">
+          <img src="images/icon-arrow.svg" alt="icon-arrow">
+        </div>
+      </div>
+      
+      <div class="info-block">
+        <div>
+          <p>IP Address</p>
+          <p id="ipAddress">162.255.119.254</p>
+        </div>
+        <div>
+          <p>Location</p>
+          <p id="location">New York City,
+            10001</p>
+        </div>
+        <div>
+          <p>Timezone</p>
+          <p>UTC <span id="timeZone">-04:00</span></p>
+        </div>
+        <div>
+          <p>ISP</p>
+          <p id="isp">Namecheap</p>
+        </div>
+      </div>
+      
+    </div>
+    <div id="mapid">
+
+    </div>
+  </div>
+   
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+
+  
+  <script src="app/js/main.js"></script>
+</body>
+</html>
