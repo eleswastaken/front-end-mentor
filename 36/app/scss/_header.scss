@@ -1,0 +1,112 @@
+
+
+.header{
+    padding: 20px 150px;
+    background-color: $white;
+
+    &-mobile-menu{
+        .menu-span{
+            display: block;
+            height: 2px;
+            width: 25px;
+            background-color: $darkBlue;
+            &:not(:last-child){
+                margin-bottom: 5px;;
+            }
+        }
+    }
+
+
+    #mobileMenu{
+        display: none;
+    }
+
+
+    &-links{
+        > a{
+            color: $grayishBlue;
+            position: relative;
+            > span{
+                width: 105%;
+                height: 3px;
+                bottom: -30px;
+                display: block;
+                background-image: linear-gradient(to right, $limeGreen, $brightCyan);
+                position: absolute;
+                display: none;
+            }
+            &:not(:last-child){
+                margin-right: 20px;
+            }
+            transition: 150ms ease-in-out;
+            &:hover{
+                color: $darkBlue;
+                >span{
+                    display: block;
+                }
+            }
+        }
+    }  
+    @include breakpoint-down(small){
+        position: fixed;
+        width: 100%;
+        z-index: 2  ;
+        #mobileMenu:checked ~ &-mobile-menu .menu-span{
+            transform-origin: 2.5px 1.5px;
+            &:first-child{
+                transform: rotate(45deg);
+            }
+            &:nth-child(2){
+                opacity: 0;
+            }
+            &:last-child{
+                transform: rotate(-45deg);
+            }
+        }
+        #mobileMenu:checked ~ &-links{
+            left: 5%;
+            position: fixed;
+        }
+        &-mobile-menu{
+            > span{
+                transition: all 250ms ease-in-out;
+            }
+        }
+        &-links{
+            flex-direction: column;
+            position: absolute;
+            background-color: $white;
+            box-shadow: 0 21px 40px 10px grey;
+            border-radius: 4px;
+            width: 90%;
+            top: 75px;
+            left: -130%;
+            text-align: center;
+            padding: 25px;
+            transition: all 250ms ease-in-out;
+            > a {
+                display: block;
+                width: 100%;
+                color: $darkBlue;
+                &:not(:last-child){
+                    margin-bottom: 25px;
+                }
+            }
+        }
+    }
+
+
+
+    &-cta{
+        @include breakpoint-down(medium){
+            display: none;
+        }
+    }
+
+    @include breakpoint-down(medium){
+        padding: 20px 70px;
+    }
+    @include breakpoint-down(small){
+        padding: 15px 25px;
+    }
+}     

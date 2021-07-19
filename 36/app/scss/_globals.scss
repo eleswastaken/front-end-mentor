@@ -1,0 +1,344 @@
+
+
+.flex{
+    display: flex;
+
+    &-jc-sb{
+        justify-content: space-between;
+    }
+
+    &-ai-c{
+        align-items: center;
+    }
+}
+
+.hide-for-mobile{
+    @include breakpoint-down(small){
+        display: none;
+    }
+}
+.hide-for-desktop{
+    @include breakpoint-up(medium){
+        display: none;
+    }
+}
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+a{
+    text-decoration: none;
+    font-size: 16px;
+}
+p{
+    font-weight: 300;
+}
+.button{
+    padding: 10px 30px;
+    border-radius: 50px;
+    background-image: linear-gradient(to right, $limeGreen, $brightCyan);
+    color: $white;
+    transition: 150ms ease-in-out;
+    &:hover{
+        opacity: .4;
+    }
+}
+
+body{
+
+    font-family: "Public Sans", sans-serif;
+    line-height: 1.5;
+    font-size: 18px;
+}
+
+
+.main-cont{
+    
+    
+    .intro-cont{
+        height: 100vh;
+        overflow: hidden;
+        background: url("../images/bg-intro-desktop.svg") no-repeat right -500px bottom -70px;
+        background-color: $veryLightGray;
+        position: relative;
+        .dummy-div{
+            height: 80px;
+            width: 100%;
+            position: absolute;
+            bottom: 0;
+            background-color: $lightGrayishBlue;
+        }
+        .text-cont{
+            width: 50%;
+            padding: 0 0 0 150px;
+            > h1{
+                font-weight: 500;
+                color: $darkBlue;
+                width: 300px;
+                margin-bottom: 20px;
+            }
+            > p{
+                color: $grayishBlue;
+                width: 460px;
+                margin-bottom: 50px;
+            }
+        }
+        .hero-cont{
+            width: 50%;
+            >img{
+                margin: -100px 0 0 100px;
+                width: 100%;
+                position: relative;
+                z-index: 1;
+            }
+        }
+        @include breakpoint-down(medium){
+            flex-direction: column-reverse;
+            height: unset;
+            background: none;
+            background-color: $veryLightGray;
+            .text-cont{
+                width: 100%;
+                text-align: center;
+                padding: 0 0 40px;
+                > h1{
+                    margin:0 auto 30px;
+                }
+                > p{
+                    width: 500px;
+                    margin: 0 auto 50px;
+                }
+                > a{
+                    margin-bottom: 50px;
+                }
+            }
+            .dummy-div{
+                display: none   ;
+            }
+            .hero-cont{
+                width: 100%;
+                background: url("../images/bg-intro-desktop.svg") no-repeat right -300px bottom;
+                > img{ 
+                    width: 60%;
+                    margin: -150px 0 0;
+                    margin-left: 20%;
+                }
+            }
+        }
+        @include breakpoint-down(small){
+            height: 100vh;
+            .text-cont{
+                padding: 0 25px 50px;
+                > p{
+                    width: 100%;
+                }
+            }
+            .hero-cont{
+                background: url("../images/bg-intro-mobile.svg") no-repeat center bottom;
+                padding:0 25px;
+                > img{
+                    width: 100%;
+                    margin: 50px 0;
+                }
+            }
+        }
+    }
+
+    .benefits-cont{
+        padding: 0 150px 50px;
+        background-color: $lightGrayishBlue;
+        > h2{
+            color: $darkBlue;
+            margin-bottom: 30px;
+            font-weight: 500;
+        }
+        > p{
+            color: $grayishBlue;
+            width: 60%;
+            margin-bottom: 60px;
+        }
+
+        .benefits{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-gap: 20px;
+
+            .benefit{
+                .image{
+                    width: 70px;
+                    margin-bottom: 30px;
+                    > img{
+                        width: 100%;
+                    }
+                }
+                > h3{
+                    color: $darkBlue;
+                    margin-bottom: 30px;
+                    font-weight: 500;
+                }
+                > p{
+                    color: $grayishBlue;
+                    font-size: 16px;
+                }
+            }
+        }
+        @include breakpoint-down(medium){
+            padding: 70px;
+            text-align: center;
+            > p{
+                width: 100%;
+            }
+            .benefits{
+                grid-template-columns: 1fr 1fr;
+                grid-gap: 50px 30px ;
+                .benefit{
+                    .image{
+                        margin: 0 auto 30px;
+                    }
+                }
+            }
+        }
+        @include breakpoint-down(small){
+            padding: 50px 25px;
+            .benefits{
+                grid-template-columns: 1fr;
+                grid-gap: 50px;
+            }
+        }
+    }
+
+    .articles-cont{
+        padding: 50px 150px;
+        background-color: $veryLightGray;
+        > h2{
+            color: $darkBlue;
+            margin-bottom: 30px;
+            font-weight: 500;
+        }
+
+        .articles{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-gap: 20px;
+            
+            .article{
+                border-radius: 4px;
+                overflow: hidden;
+                background-color: $white;
+                cursor: pointer;
+                &:hover{
+                    .text-cont > h4{
+                        color: $brightCyan;
+                    }
+                }
+                .text-cont{
+                    padding:10px 20px;
+                    .author{
+                        font-size: 12px;
+                        color: $grayishBlue;
+                        margin-bottom: 10px;
+                    }
+                    .brief{
+                        font-size: 13px;
+                        color: $grayishBlue;
+                    }
+                    > h4{
+                        font-size: 16px;
+                        font-weight: 300;
+                        color: $darkBlue;
+                        margin-bottom: 10px;
+                        transition: 150ms ease-in-out;
+                    }
+                }
+                .image{
+                    max-height: 150px;
+                    overflow: hidden;
+                    >img{
+                        width: 100%;
+                    }
+                }
+            }
+        }
+        @include breakpoint-down(medium){
+            padding: 50px 70px;
+            .articles{
+                grid-template-columns: 1fr 1fr;
+                grid-gap: 50px 30px;
+            }
+        }
+        @include breakpoint-down(small){
+            padding: 50px 25px;
+            .articles{
+                grid-template-columns: 1fr;
+            }
+        }
+    }
+
+    .footer{
+        background-color: $darkBlue;
+        padding: 30px 150px;
+
+        .first{
+            .share{
+                margin-right: 100px;
+                .logo{
+                    margin-bottom: 30px;
+                }
+                .social-media{
+                    .image{
+                        margin: 5px;
+                    }
+                }
+            }
+            .links{
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                grid-gap: 10px 100px;
+                > a{
+                    color: $white;
+                    font-size: 14px;
+                    &:hover{
+                        color: $limeGreen;
+                    }
+                }
+            }
+        }
+        .second{
+            text-align: right;
+            > p{
+                    font-size: 14px;
+                    margin: 20px 0;
+                    color: $grayishBlue;
+            }
+        }
+        @include breakpoint-down(medium){
+            padding: 30px 70px;
+            flex-direction: column;
+            .first{
+                text-align: center;
+                flex-direction: column;
+                margin-bottom: 50px;
+                .share{
+                    margin: 0;
+                    margin-bottom: 20px;
+                    width: 100%;
+                    .social-media{
+                        justify-content: space-between;
+                    }
+                }
+            }
+            .second{
+                text-align: center;
+            }
+        }
+        @include breakpoint-down(small){
+            padding: 20px 25px;
+            .first .links{
+                grid-template-columns: 1fr;
+            }
+        }
+    }
+}
