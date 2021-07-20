@@ -1,0 +1,79 @@
+
+
+.header{
+    padding: 25px 150px;
+
+    .mobile-menu{
+        > span{
+            display: block;
+            width: 25px;
+            height: 3px;
+            background-color: $veryDarkBlue;
+            transition: 150ms ease-in-out;
+            &:not(:last-child){
+                margin-bottom: 3px;
+            }
+        }
+    }
+    .links{
+        >a{
+            color: $darkBlue;
+            transition: 150ms ease-in-out;
+            &:not(:last-child){
+                margin-right: 30px;
+            }
+            &:hover{
+                color: $darkGrayishBlue;
+            }
+        }
+        @include breakpoint-down(small){
+            position: absolute;
+            background-color: white;
+            border-radius: 4px;
+            box-shadow: 0px 5px 13px -4px $darkBlue;
+            top: 70px;
+            display: flex;
+            flex-direction: column;
+            width: 90%;
+            text-align: center;
+            left: -130%;
+            padding: 20px;
+            transition: 150ms ease-in-out;
+            > a{
+                &:not(:last-child){
+                    margin: 0 0 20px;
+                }
+            }
+        }
+    }
+    #mobileMenu:checked ~ .links{
+        left: 5%; 
+    }
+    #mobileMenu{
+        display: none;
+    }
+    #mobileMenu:checked ~ .mobile-menu span{
+        transform-origin: 4px 2px;
+        &:first-child{
+            transform: rotate(45deg);
+        }
+        &:nth-child(2){
+            opacity: 0;
+        }
+        &:last-child{
+            transform: rotate(-45deg);
+        }
+    }
+    @include breakpoint-down(medium){
+        padding: 20px 70px;
+        .header-cta{
+            display: none;
+        }
+    }
+    @include breakpoint-down(small){
+        padding: 15px 25px;
+        position: fixed;
+        width: 100%;
+    }
+
+}
