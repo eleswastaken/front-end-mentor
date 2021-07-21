@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="dist/style.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">  
+  <title>Frontend Mentor | Shortly URL shortening API Challenge</title>
+ 
+</head>
+<body>
+
+  <div class="main-cont">
+    <header class="header flex flex-ai-c flex-jc-sb">
+      <div class="logo"><img src="images/logo.svg" alt="logo"></div>
+      <input type="checkbox" name="mobileMenu" id="mobileMenu">
+      <label for="mobileMenu" class="mobile-menu hide-for-desktop">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+      <div class="menu flex flex-ai-c flex-jc-sb ">
+        <div class="menu-links">
+          <a href="#">Features</a>
+          <a href="#">Pricing</a>
+          <a href="#">Resources</a>
+        </div>
+        <hr class="mobile-devider hide-for-desktop">
+        <div class="menu-buttons">
+          <a href="#">Login</a>
+          <a class="button" href="#">Sign Up</a>
+        </div>
+      </div>
+    </header>
+
+    <div class="intro-cont flex">
+      <div class="text-cont">
+        <h1>More than just shorter links</h1>
+        <p>
+          Build your brand’s recognition and get detailed insights 
+          on how your links are performing.
+        </p>
+        <a class="button" href="#">Get Started</a>
+      </div>
+      <div class="hero-cont">
+        <img src="images/illustration-working.svg" alt="a man working behind a pc">
+      </div>
+    </div>
+
+
+    <div class="second-cont">
+      <div class="shorten-link flex flex-ai-c flex-jc-sb">
+        <input type="text" id="linkInput" placeholder="Shorten a link here...">
+        <p id="linkError">Please add a link</p>
+        <a id="linkButton" onclick="starter()" class="button">Shorten It!</a>
+      </div>
+
+      <div class="shortened-links">
+        
+        <div class="shortened-link flex flex-ai-c flex-jc-sb">
+          <p id="link1" class="link">frontendmentor.com</p>
+          <hr class="hide-for-desktop">
+          <div class="flex flex-ai-c">
+            <p id="shortenedLink1" class="shortenedLink">https://shrtco.de/1263y</p>
+            <button onclick="copyLink('1')" class="copyIt">Copy</button>
+          </div>
+        </div>
+ 
+        <div class="shortened-link flex flex-ai-c flex-jc-sb">
+          <p id="link2" class="link">frontendmentor.com</p>
+          <hr class="hide-for-desktop">
+          <div class="flex flex-ai-c">
+            <p id="shortenedLink2" class="shortenedLink">https://shrtco.de/1263y</p>
+            <button onclick="copyLink('2')" class="copyIt">Copy</button>
+          </div>
+        </div>
+
+        <div class="shortened-link flex flex-ai-c flex-jc-sb">
+          <p id="link3" class="link">google.com</p>
+          <hr class="hide-for-desktop">
+          <div class="flex flex-ai-c">
+          <p id="shortenedLink3" class="shortenedLink">https://shrtco.de/gojs2h</p>
+          <button onclick="copyLink('3')" class="copyIt">Copy</button>
+          </div>
+        </div>
+
+      </div>
+
+
+      <h1>Advanced Statistics</h1>
+      <p>
+        Track how your links are performing across the web with our 
+        advanced statistics dashboard.
+      </p> 
+      <div class="benefits-cont flex">
+        <div class="floating-line"></div>
+        <div class="benefit">
+          <div class="image"><img src="images/icon-brand-recognition.svg" alt="benefits image"></div>
+          <h3>Brand Recognition</h3>
+          <p>
+            Boost your brand recognition with each click. Generic links don’t 
+            mean a thing. Branded links help instil confidence in your content.
+          </p>
+        </div>
+        <div class="benefit">
+          <div class="image"><img src="images/icon-detailed-records.svg" alt="benefits image"></div>
+          <h3>Detailed Records</h3>
+          <p>
+            Gain insights into who is clicking your links. Knowing when and where 
+            people engage with your content helps inform better decisions.
+          </p>
+        </div>
+        <div class="benefit">
+          <div class="image"><img src="images/icon-fully-customizable.svg" alt="benefits image"></div>
+          <h3>Fully Customizable</h3>
+          <p>
+            Improve brand awareness and content discoverability through customizable 
+            links, supercharging audience engagement.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="last-cta">
+      <h1>Boost your links today</h1>
+      <a class="button" href="#">Get Started</a>
+    </div>
+
+    <div class="footer flex flex-jc-sb">
+      <div class="logo"><img src="images/logo.svg" alt="logo"></div>
+      <div class="right-cont flex">
+        <div class="links flex">
+          <div>
+            <a href="#">  Features</a>
+            <a href="#">  Link Shortening</a>
+            <a href="#">  Branded Links</a>
+            <a href="#">  Analytics</a>
+          </div>
+          <div>
+            <a href="#">  Resources</a>
+            <a href="#">  Blog</a>
+            <a href="#">  Developers</a>
+            <a href="#">  Support</a>
+          </div>
+          <div>
+            <a href="#">  Company</a>
+            <a href="#">  About</a>
+            <a href="#">  Our Team</a>
+            <a href="#">  Careers</a>
+            <a href="#">  Contact</a>
+          </div>   
+        </div>
+        <div class="social-media flex">
+            <a href="#"><img src="images/icon-twitter.svg" alt="social media twitter"></a>
+            <a href="#"><img src="images/icon-facebook.svg" alt="social media facebook"></a>
+            <a href="#"><img src="images/icon-pinterest.svg" alt="social media pinterest"></a>
+            <a href="#"><img src="images/icon-instagram.svg" alt="social media instagram"></a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="app/js/main.js"></script>
+</body>
+</html>
