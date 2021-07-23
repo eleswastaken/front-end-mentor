@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="dist/style.css">
+  
+  <title>Frontend Mentor | Bookmark landing page</title>
+  
+</head>
+<body>
+  <div class="main-cont">
+    <header class="header flex flex-ai-c flex-jc-sb">
+      <a href="#" class="logo"><img src="images/logo-bookmark.svg" alt="logo"></a>
+      <input type="checkbox" style="display: none;" name="mobileMenu" id="mobileMenu">
+      <label for="mobileMenu" class="mobile-menu hide-for-desktop">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+
+      <div class="links">
+        <hr class="hide-for-desktop">
+        <a href="#">Features</a>
+        <hr class="hide-for-desktop">
+        <a href="#">Pricing</a>
+        <hr class="hide-for-desktop">
+        <a href="#">Contact</a>
+        <hr class="hide-for-desktop">
+        <a class="button" href="#">Login</a>
+
+        <div class="social-media hide-for-desktop">
+          <a href="#"><img src="images/icon-twitter.svg" alt="social media twitter share"></a>
+          <a href="#"><img src="images/icon-facebook.svg" alt="social media twitter share"></a>
+        </div>
+      </div>
+    </header>
+
+    <div class="intro-cont flex flex-ai-c flex-jc-sb">
+      <div class="text-cont">
+        <h1>A Simple Bookmark Manager</h1>
+        <p>
+          A clean and simple interface to organize your favourite websites. Open a new 
+          browser tab and see your sites load instantly. Try it for free.
+        </p>
+        <a class="button" href="#">Get it on Chrome</a>
+        <a class="button" href="#">Get it on Firefox</a>
+      </div>
+      <div class="hero-cont">
+        <img src="images/illustration-hero.svg" alt="tablet illustration">
+        <div class="hero-bg"></div>
+      </div>
+    </div>
+
+
+    <div class="slider-cont">
+        <h2>Features</h2>
+        <p>
+          Our aim is to make it quick and easy for you to access your favourite websites. 
+          Your bookmarks sync between your devices so you can access them on the go.
+        </p>
+        <div class="slider-menu flex">
+          <div class="select-slider"></div>
+          <hr class="hide-for-desktop">
+          <p onclick="nextTab(1)">Simple Bookmarking</p>
+          <hr class="hide-for-desktop">
+          <p onclick="nextTab(2)">Speedy Searching</p>
+          <hr class="hide-for-desktop">
+          <p onclick="nextTab(3)">Easy Sharing</p>
+          <hr class="">
+        </div>
+
+        <div class="slider">
+          <div class="slider-bg"></div>
+          <div class="slide flex flex-ai-c">
+            <div class="image"><img src="images/illustration-features-tab-1.svg" alt="tab illustration"></div>
+            <div class="text-cont">
+              <h2>Bookmark in one click</h2>
+              <p>
+                Organize your bookmarks however you like. Our simple drag-and-drop interface 
+                gives you complete control over how you manage your favourite sites.
+              </p>
+              <a class="button" href="#">More Info</a>
+            </div>
+          </div>
+          <div class="slide flex flex-ai-c">
+            <div class="image"><img src="images/illustration-features-tab-2.svg" alt="tab illustration"></div>
+            <div class="text-cont">
+              <h2>Intelligent search</h2>
+              <p>
+                Our powerful search feature will help you find saved sites in no time at all. 
+                No need to trawl through all of your bookmarks.
+              </p>
+              <a class="button" href="#">More Info</a>
+            </div>
+          </div>
+          <div class="slide flex flex-ai-c">
+            <div class="image"><img src="images/illustration-features-tab-3.svg" alt="tab illustration"></div>
+            <div class="text-cont">
+              <h2>Share your bookmarks</h2>
+              <p>
+                Easily share your bookmarks and collections with others. Create a shareable 
+                link that you can send at the click of a button.
+              </p>
+              <a class="button" href="#">More Info</a>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <div class="download-cont">
+      <h2 >Download the extension</h1>
+      <p>
+        We’ve got more browsers in the pipeline. Please do let us know if you’ve 
+        got a favourite you’d like us to prioritize.
+      </p>
+      <div class="extensions flex flex-jc-sb">
+        <div class="extension">
+          <div class="image"><img src="images/logo-chrome.svg" alt="chrome logo"></div>
+          <h4>Add to Chrome</h4>
+          <p>Minimum version 62</p>
+          <hr>
+          <a class="button" href="#">Add & Install Extension</a>
+        </div>
+        <div class="extension">
+          <div class="image"><img src="images/logo-firefox.svg" alt="chrome logo"></div>
+          <h4>Add to Firefox</h4>
+          <p>Minimum version 55</p>
+          <hr>
+          <a class="button" href="#">Add & Install Extension</a>
+        </div>
+        <div class="extension">
+          <div class="image"><img src="images/logo-opera.svg" alt="chrome logo"></div>
+          <h4>Add to Opera</h4>
+          <p>Minimum version 46</p>
+          <hr>
+          <a class="button" href="#">Add & Install Extension</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-cont">
+      <h2>Frequently Asked Questions</h2>
+      <p>
+        Here are some of our FAQs. If you have any other questions you’d like 
+        answered please feel free to email us.
+      </p>
+      <div class="questions">
+        <hr>
+        <div class="question-cont">
+          <input type="checkbox" name="checkbox" id="openCheckbox1">
+          <label class="flex flex-jc-sb" for="openCheckbox1">
+            <p>What is Bookmark?</p>
+            <div><img src="images/icon-arrow.svg" alt="arrow open question"></div>
+          </label>
+          <div class="answer">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tincidunt 
+              justo eget ultricies fringilla. Phasellus blandit ipsum quis quam ornare mattis.
+            </p>
+          </div>
+        </div>
+        <hr>
+        <div class="question-cont">
+          <input type="checkbox" name="checkbox" id="openCheckbox2">
+          <label class="flex flex-jc-sb" for="openCheckbox2">
+            <p>How can I request a new browser?</p>
+            <div><img src="images/icon-arrow.svg" alt="arrow open question"></div>
+          </label>
+          <div class="answer">
+            <p>
+              Vivamus luctus eros aliquet convallis ultricies. Mauris augue massa, ultricies non ligula. 
+              Suspendisse imperdiet. Vivamus luctus eros aliquet convallis ultricies. Mauris augue massa, 
+              ultricies non ligula. Suspendisse imperdie tVivamus luctus eros aliquet convallis ultricies. 
+              Mauris augue massa, ultricies non ligula. Suspendisse imperdiet.
+            </p>
+          </div>
+        </div>
+        <hr>
+        <div class="question-cont">
+          <input type="checkbox" name="checkbox" id="openCheckbox3">
+          <label class="flex flex-jc-sb" for="openCheckbox3">
+            <p>Is there a mobile app?</p>
+            <div><img src="images/icon-arrow.svg" alt="arrow open question"></div>
+          </label>
+          <div class="answer">
+            <p>
+              Sed consectetur quam id neque fermentum accumsan. Praesent luctus vestibulum dolor, ut condimentum 
+              urna vulputate eget. Cras in ligula quis est pharetra mattis sit amet pharetra purus. Sed 
+              sollicitudin ex et ultricies bibendum.
+            </p>
+          </div>
+        </div>
+        <hr>
+        <div class="question-cont">
+          <input type="checkbox" name="checkbox" id="openCheckbox4">
+          <label class="flex flex-jc-sb" for="openCheckbox4">
+            <p>What about other Chromium browsers?</p>
+            <div><img src="images/icon-arrow.svg" alt="arrow open question"></div>
+          </label>
+          <div class="answer">
+            <p>
+              Integer condimentum ipsum id imperdiet finibus. Vivamus in placerat mi, at euismod dui. Aliquam 
+              vitae neque eget nisl gravida pellentesque non ut velit.
+            </p>
+          </div>
+        </div>
+        <hr>
+      </div>
+
+      <a class="button" href="#">More Info</a>
+    </div>
+
+
+    <div class="subscribe-cont">
+      <p>35,000+ already joined</p>
+      <h2>Stay up-to-date with what we’re doing</h2>
+      <div class="flex flex-jc-sb">
+        <label for="emailInput">
+          <input placeholder="Enter your email adress..." type="text" id="emailInput">
+          <p id="emailError">Whoops, make sure it's an email</p>
+        </label>
+        <button onclick="validateEmail()">Contact Us</button>
+      </div>
+    </div>
+
+    <div class="footer flex flex-ai-c">
+      <a href="#" class="logo"><img src="images/logo-bookmark.svg" alt="logo"></a>
+      <div class="the-rest flex flex-ai-c flex-jc-sb">
+        <div class="links flex">
+          <a href="#">Features</a>
+          <a href="#">Pricing</a>
+          <a href="#">Contact</a>
+        </div>
+        <div class="social-media flex">
+          <a href="#"><img src="images/icon-twitter.svg" alt="share twitter"></a>
+          <a href="#"><img src="images/icon-facebook.svg" alt="share facebook"></a>
+        </div>
+      </div>
+    </div>
+  </div> 
+ 
+  <script src="app/js/main.js"></script>
+</body>
+</html>

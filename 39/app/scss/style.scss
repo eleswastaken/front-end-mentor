@@ -1,0 +1,53 @@
+
+$softBlue: hsl(231, 69%, 60%);
+$softRed: hsl(0, 94%, 66%);
+
+$grayishBlue: hsl(229, 8%, 60%);
+$veryDarkBlue: hsl(229, 31%, 21%);
+
+$breakpoints-up : ("medium":"40em", "large":"64em", "xlarge": "87.5");
+$breakpoints-down: ("small":"39.975em", "medium":"63.975em", "large": "87.4375em");
+
+@mixin breakpoint-up($size){
+    @media (min-width: map-get($breakpoints-up, $size)){
+        @content;
+    }
+}
+
+@mixin breakpoint-down($size){
+    @media (max-width: map-get($breakpoints-down, $size)){
+        @content;
+    }
+}
+
+.flex{
+    display: flex;
+
+    &-jc-sb{
+        justify-content: space-between;
+    }
+
+    &-ai-c{
+        align-items: center;
+    }
+}
+
+.hide-for-mobile{
+    @include breakpoint-down(small){
+        display: none;
+    }
+}
+.hide-for-desktop{
+    @include breakpoint-up(medium){
+        display: none;
+    }
+}
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+@import "header";
+@import "globals";
