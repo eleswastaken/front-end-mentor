@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <link rel="stylesheet" href="dist/style.css">
+  
+  <title>Frontend Mentor | Rock, Paper, Scissors</title>
+
+</head>
+<body>
+  <div class="main-cont">
+    <header class="header">
+      <div class="logo"><img src="images/logo.svg" alt="logo"></div>
+      <div class="score-cont">
+        <p>score</p>
+        <p id="scoreNum">00</p>
+      </div>
+    </header>
+
+    <div class="picked">
+      <p class="you-picked">you picked</p>
+      <p class="house-picked">the house picked</p>  
+    </div>
+    <div class="results-cont">
+      <p>you loose</p>
+      <button onclick="window.location.reload()">play again</button>
+    </div>
+    <div class="action-cont">
+      <!-- <div class="dot"></div> -->
+      <div onclick="moveIcon(this)" class="gameIcon rock">
+        <div class="inner-cont">
+          <img src="images/icon-rock.svg" alt="">
+        </div>
+      </div>
+      <div onclick="moveIcon(this)" class="gameIcon paper">
+        <div class="inner-cont">
+          <img src="images/icon-paper.svg" alt="">
+        </div>
+      </div>
+      <div onclick="moveIcon(this)" class="gameIcon scissors">
+        <div class="inner-cont">
+          <img src="images/icon-scissors.svg" alt="">
+        </div>
+      </div>
+    </div>
+
+    <!-- The Modal -->
+    <div id="rulesCont" class="rules">
+
+      <!-- Modal content -->
+      <div class="rules-content">
+        <div class="upper-cont">
+          <p>rules</p>
+          <div class="close-rules"><img src="images/icon-close.svg" alt="close icon"></div>
+        </div>
+        <div class="image"><img src="images/image-rules.svg" alt="rules"></div>
+      </div>
+
+    </div>
+    <button id="rulesButton">rules</button>
+    
+  </div>
+  <script src="app/js/main.js"></script>
+</body>
+</html>

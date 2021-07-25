@@ -1,0 +1,368 @@
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body{
+
+    font-family: "", sans-serif;
+    text-transform: uppercase;
+    overflow: hidden;
+}
+
+
+.main-cont{
+    background: linear-gradient(to bottom,hsl(214, 47%, 23%), hsl(237, 49%, 15%));
+
+    height: 100vh;
+    padding: 30px 0;
+    position: relative;
+    @media (max-width: 700px){
+        padding: 25px;
+    }
+    .header{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 700px;
+        margin: auto;
+        border: 2px solid hsl(217, 16%, 45%);
+        border-radius: 15px;
+        padding: 15px 20px;
+
+        .logo{
+
+            > img{
+                width: 100%;
+            }
+        }
+        .score-cont{
+            background-color: white;
+            width: 130px;
+            border-radius: 15px;;
+            display: flex;
+            flex-direction: column;
+            padding: 10px 0;
+            > p{
+                color: hsl(229, 64%, 46%);
+                margin: auto;
+                font-weight: 600;
+            }
+            #scoreNum{
+                color: hsl(229, 25%, 31%);
+                font-size: 60px;
+            }
+        }
+        @media (max-width: 700px) {
+            width: 100%;
+        }
+        @media (max-width: 500px){
+            .logo{
+                width: 100px;
+            }
+            .score-cont{
+                width: 100px;
+                > p{
+                    font-size: 15px;
+                }
+                #scoreNum{
+                    font-size: 30px;
+                }
+            }
+        }
+    }
+    .results-cont{
+        width: 200px;
+
+        text-align: center;
+        color: white;
+        display: none;
+        position: absolute;
+        z-index: 1;
+        top: 50%;
+        left: 50%;
+        margin-left: -100px;
+        @media (max-width: 800px) {
+            top: 65%;
+        }
+        > p{
+            font-size: 30px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        >button{
+            width: 100%;
+            padding: 10px 0;
+            border: none;
+            background-color: white;
+            color: hsl(214, 47%, 23%);
+            border-radius: 6px;
+            font-size: 15px;
+            font-weight: 500;
+            text-transform: uppercase;
+
+            &:hover,&:active{
+                color: hsl(349, 71%, 52%);
+            }
+        }
+    }
+    .picked{
+        width: 565px;
+        color: white;
+        font-weight: 600;
+        display: none;
+        justify-content: space-between;
+        text-align: center;
+        position: absolute;
+        top: 220px;
+        left: 50%;
+        margin-left: -275px;;
+        > p{
+            font-size: 20px;
+        }
+        
+        @media (max-width: 700px) {
+            width: 400px;
+            margin-left: -180px;
+        }
+        @media (max-width: 500px){
+            width: 270px;
+            margin-left: -125px;
+            top: 200px;
+            > p{
+                font-size: 14px;
+            }
+        }
+    }
+    .action-cont{
+        width: 251px;
+        height: 221.5px;
+        background: url("../images/bg-triangle.svg") no-repeat top left;
+        background-size: 100%;
+        // background-color: hsl(214, 47%, 23%);
+        margin: 150px auto 0;
+        // animation-name: spin;
+        // animation-duration: 15000ms;
+        // animation-iteration-count: infinite;
+        // animation-timing-function: linear;
+        position: relative;
+        @media (max-width: 700px) {
+            transform: scale(0.6);
+        }
+        @media (max-width: 500px){
+            margin: 70px auto 0;
+        }
+        .gameIcon{
+            width: 170px;
+            height: 170px;
+            background-color: white;
+            border-radius: 100px;
+            position: absolute;
+            cursor: pointer;
+            // transform-origin: 200px 200px;
+            transform: scale(1.1);
+            .inner-cont{
+                padding: 30px 40px;
+                > img{
+                    width: 100%;
+                }
+                width: 130px;
+                height: 130px;
+                background-color: white;
+                border-radius: 100px;
+                border-top: 6px solid hsl(217, 16%, 75%);
+            }
+            transition: 150ms cubic-bezier(0.165, 0.84, 0.44, 1);
+            // &:hover{
+            //     border-color: transparent;
+            //     transform: translateY(4px);
+            // }
+        }
+        .computer-choice{
+            animation-name: slideIn;
+            animation-duration: 150ms;
+            animation-iteration-count: 1;
+            animation-timing-function: linear;            
+            @media (min-width: 500px) {
+                transform: scale(1.6);
+            }
+            @extend .gameIcon;
+        }
+        .dot{
+            top: 50%;
+            left: 50%;
+            width: 4px;
+            height: 4px;
+            background-color: white;
+            border-radius: 10px;
+            margin-left: -2px;
+            margin-top: -2px;
+            z-index: 12;
+        }
+        .rock{
+            top: -85px;
+            left: -85px;
+            background: linear-gradient(to top, hsl(349, 71%, 52%), hsl(349, 70%, 56%));
+            border-bottom:hsla(0, 0%, 0%, 0.4) 7px solid;
+            padding: 20px;
+            &-move{
+        
+                top: 0px;
+                left: -85px;
+                @media (min-width: 500px) {
+                    transform: scale(1.6);
+                }
+            }
+            &-comp{
+                top: 0;
+                left: 100%;
+                margin-left: -85px;
+            }
+        }
+        .paper{
+            // display: none;
+            top: -85px;
+            right: -85px;
+            background: linear-gradient(to top, hsl(230, 89%, 62%) ,hsl(230, 89%, 65%));
+            border-bottom:hsla(0, 0%, 0%, 0.4) 9px solid;
+            padding: 20px;
+            &-move{
+        
+                @media (min-width: 500px) {
+                    transform: scale(1.6);
+                }
+                top: 0px;
+                left: -85px;
+            }
+            &-comp{
+                top: 0;
+                left: 100%;
+                margin-left: -85px;
+            }
+        }
+        .scissors{
+            // display: none;
+            bottom: -85px;
+            left: 50%;
+            margin-left: -85px;
+            background: linear-gradient(to top, hsl(39, 89%, 49%), hsl(40, 84%, 53%));
+            border-bottom:hsla(0, 0%, 0%, 0.3) 9px solid;
+            padding: 20px; 
+            &-move{
+        
+                @media (min-width: 500px) {
+                    transform: scale(1.6);
+                }
+                left: -85px;
+                top: 0px;
+                margin: 0;
+            }
+            &-comp{
+                top: 0;
+                left: 100%;
+            }
+        }
+    }
+
+    #rulesButton{
+        position: absolute;
+        bottom: 50px;
+        right: 50px;
+        background-color: transparent;
+        color: hsl(217, 13%, 53%);
+        border: 2px hsl(217, 13%, 53%) solid;
+        border-radius: 10px;
+        padding: 9px 35px;
+        font-size: 16px;
+        font-weight: 600;
+        text-transform: uppercase;
+        max-width: 126px;
+        @media (max-width: 500px){
+            right: 50%;
+            margin-right: -63px;
+        }
+    }
+    
+    .rules {
+        display: none; 
+        position: fixed; 
+        z-index: 1; 
+        left: 0;
+        top: 0;
+        width: 100%; 
+        height: 100%; 
+        overflow: auto; 
+        background-color: rgb(0,0,0);  
+        background-color: rgba(0,0,0,0.4); 
+        animation-name: fadeIn;
+        animation-duration: 0.4s;
+
+        .rules-content {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            margin: -185px 0 0 -175px;
+            background-color: #fefefe;
+            border-radius: 10px;
+            width: 350px; 
+            height: 370px;
+            animation-name: slideInRules;
+            animation-duration: 0.4s;
+            padding: 25px;
+            .upper-cont{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 25px;
+                > p{
+                    color:hsl(214, 47%, 23%);
+                    font-weight: 600;
+                    font-size: 25px;
+                }
+            }
+            .image{
+                width: 300px;
+                > img{width: 100%;}
+            }
+        }
+        @media (max-width: 500px){
+            .rules-content{
+                height: 100vh;
+                width: 100%;
+                top: 0;
+                left: 0;
+                margin: 0;
+                animation-name: fadeIn;
+                padding-top: 100px;
+                .upper-cont{
+                    justify-content: space-around;
+                    margin-bottom: 80px;
+                    .close-rules{
+                        position: absolute;
+                        bottom: 50px;
+                    }
+                }
+            }
+        }
+    }
+    
+} 
+
+@keyframes slideInRules {
+    from {top: -360px; opacity: 0}
+    to {top: 50%; opacity: 1}
+} 
+@keyframes fadeIn {
+    from {opacity: 0} 
+    to {opacity: 1}
+}
+@keyframes slideIn {
+    from{
+        transform: scale(0);
+    }
+    to{
+        transform: scale(1.6);
+    }
+}
