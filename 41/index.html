@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="dist/style.css">
+    
+    <title>Countries Information</title>
+</head>
+<body class="dark-mode">
+    <header class="header flex flex-ai-c flex-jc-sb">
+        <h1 class="logo">Where in the world?</h1>
+        <div onclick="switchMode()" class="theme-switch flex flex-ai-c">
+            <div class="image"><img src="images/icon-moon.svg" alt=""></div>
+            <p class="hide-for-mobile">Dark Mode</p>
+        </div>
+    </header>
+    <div class="main-cont">
+        <div class="upper-cont flex flex-ai-c flex-jc-sb">
+            <div class="search-cont flex flex-ai-c">
+                <div class="image"><img src="images/search.svg" alt=""></div>
+                <input oninput="searchCountry()" onchange="searchCountry()" type="text" placeholder="Search for a country...">
+            </div>
+            <div class="div flex">
+                <div class="perpage-filter">
+                    <p>Per Page:</p>
+                    <input oninput="showPerPage(this)" onchange="showPerPage(this)" type="text" value="8" placeholder="8">
+                </div>
+                <label class="filter-dropdown">
+                    <input type="checkbox">
+                    <p>Filter by Region <img src="images/icon-arrow.svg" alt=""></p>
+                    <div class="dropdown">
+                        <p onclick="filterRegion('Africa')">Africa</p>
+                        <p onclick="filterRegion('Americas')">Americas</p>
+                        <p onclick="filterRegion('Asia')">Asia</p>
+                        <p onclick="filterRegion('Europe')">Europe</p>
+                        <p onclick="filterRegion('Oceania')">Oceania</p>
+                    </div>
+                </label>
+            </div>
+        </div>
+        <div class="countries-cont"></div>
+
+        <div class="country-info flex"> 
+        </div>
+    </div>
+
+    <script src="app/js/main.js"></script>
+</body>
+</html>
