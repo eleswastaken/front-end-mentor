@@ -1,0 +1,170 @@
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-color: #fff;
+    font-family: "Inter", sans-serif;
+}
+img {
+    max-width: 100%;
+}
+.testimonials {
+    background-color: #fff;
+    padding: 40px 0 0;
+    position: relative;
+    &-controllers {
+        border-radius: 50px;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+
+        display: flex;
+        width: 78px;
+        height: 40px;
+        overflow: hidden;
+        
+        position: absolute;
+        top: 483px;
+        left: calc(100vw / 2 - 800px / 2 + 480px);
+        z-index: 2;
+        button {
+            border: none;
+            background-color: #fff;
+            // display: inline;
+            width: 50%;
+            height: 100%;
+            transition: 20ms ease-in-out;
+            &:first-child {
+                padding: 12.5px 14.1px;
+            }
+            &:last-child {
+                padding: 12.5px 14px;
+            }
+            > img {
+                width: 100%;
+
+            }
+            &:hover {
+                background-color: hsl(0, 0%, 95%);
+            }
+            &:active {
+                background-color: hsl(0, 0%, 85%);
+            }
+        }
+        @media (max-width: 850px) {
+            top: 452px;
+            left: 50%;
+            margin-left: -39px;
+        }
+        @media (max-width: 450px) {
+            top: calc(100vw - 50px - 4px);
+        }
+    }
+    
+    &-slider {
+        .testimonial-wrapper {
+            
+            background: url("../../images/pattern-quotes.svg") no-repeat calc(100vw / 2 - 800px / 2 + 50px) 142px,
+                        url("../../images/pattern-bg.svg") no-repeat calc(100vw / 2 - 800px / 2 + 350px) 60px;
+            background-size: 100px, 500px;
+            @media (max-width: 850px) {
+                background-position: 50% calc(352px + 135px),
+                                     50% 35px;
+                background-size: 100px, 450px;
+            }
+            @media (max-width: 450px) {
+                background-position: 50% calc(calc(100vw - 50px) + 39px),
+                                     50% 21px;
+                background-size: 78px, calc(100vw - 60px);
+
+            }
+        }
+        .testimonial {
+            &:not(:first-child) {
+                display: none;
+            }
+            padding: 180px 0;
+            max-width: 786px;
+            margin: auto;
+            // background: url("../../images/pattern-quotes.svg") no-repeat 78px 142px,;
+                        // url("../../images/pattern-bg.svg") no-repeat 350px 60px;
+            background-size: 120px, 500px;
+            .comment {
+                color: hsl(240, 38%, 20%);
+                display: block;
+                font-size: 22px;
+                font-weight: 300;
+                letter-spacing: 1px;
+                line-height:  1.6;
+                max-width: 494px;
+                margin-bottom: 28px;
+                position: relative;
+                z-index: 2;
+            }
+            .name-position {
+                color: hsl(240, 18%, 77%);
+                > strong { 
+                    color: hsl(240, 38%, 20%);
+                }
+                br {
+                    display: none;
+                }
+            }
+            .picture {
+                position: relative;
+                > img {
+                    border-radius: 5px;
+                    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+                    position: absolute;
+                    width: 352px;
+
+                    top: -69px;
+                    left: 432px;
+                    z-index: 1;
+                }
+            }
+            @media (max-width: 850px) {
+                text-align: center;
+                padding: 80px 20px;
+                // background: url("../../images/pattern-quotes.svg") no-repeat 50% calc(352px + 100px);
+                .comment {
+                    margin: auto;
+                    margin-bottom: 25px;
+                }
+                .name-position {
+                    br {
+                        display: block;
+                    }
+                    line-height: 1.5;
+                }
+                .picture {
+                    // display: none;
+                    margin-bottom: 66px;
+                    > img {
+                        position: initial;
+                    }
+                }
+            }
+            @media (max-width: 450px) {
+                padding: 50px 29px;
+                // background: url("../../images/pattern-quotes.svg") no-repeat 50% calc(calc(100vw - 50px) + 30px);
+                // background-size: 78px;
+                .comment {
+                    margin-bottom: 23px;
+                }
+                .picture {
+                    margin-bottom: 64px;
+                    img {
+                        width: calc(100% - 50px);
+                    }
+                }
+            }
+        }
+    }
+}
+.attribution {
+    text-align: center;
+    margin: 0 auto 20px;
+    font-size: 12px;
+}
