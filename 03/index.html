@@ -1,72 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
-    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-    <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-    <title>Frontend Mentor | FAQ Accordion Card</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./src/css/style.css">
+  
+  <title>Frontend Mentor | FAQ Accordion Card</title>
 
 </head>
 <body>
-    <script>
-      function display(win){
-        if (document.getElementById(win).style.display == "block"){
-          document.getElementById(win).style.display = "none";
-          document.getElementById(win).style.fontWeight = "400";
-          document.getElementsByClassName("arrow")[document.getElementById(win).id[0]-1].style.transform = "rotate(0deg)";
-          document.getElementById(document.getElementById(win).id[0] + "-ques").style.fontWeight = "400"
-        } else{
-          document.getElementById(document.getElementById(win).id[0] + "-ques").style.fontWeight = "700"
-          document.getElementById(win).style.display = "block";
-          document.getElementsByClassName("arrow")[document.getElementById(win).id[0]-1].style.transform = "rotate(180deg)";
-        }
-      }
-    </script>
-
-    <div class="main-cont">
-        <div class="image-cont">
-            <img id="mob-img" src="images/illustration-woman-online-mobile.svg" alt="faq-vector">
-            <img id="box-img" src="images/illustration-box-desktop.svg" alt="faq-vector">
-        </div>
-        <div class="text-cont">
-            <h2>FAQ</h2>
-            <div class="question" id="1-ques" onclick="display('1-answ')">How many team members can I invite?
-              <img src="images/icon-arrow-down.svg" class="arrow" alt="question-arrow">
-              <p id="1-answ">You can invite up to 2 additional users on the Free plan. There is no limit on 
-              team members for the Premium plan.</p>
-            </div>
-
-            <div class="question" id="2-ques" onclick="display('2-answ')">What is the maximum file upload size?
-              <img src="images/icon-arrow-down.svg" class="arrow" alt="question-arrow">
-              <p id="2-answ">No more than 2GB. All files in your account must fit your allotted storage space.</p>
-            </div>
-
-            <div class="question" id="3-ques" onclick="display('3-answ')">How do I reset my password?
-              <img src="images/icon-arrow-down.svg" class="arrow" alt="question-arrow">
-              <p id="3-answ">Click “Forgot password” from the login page or “Change password” from your profile page.
-              A reset link will be emailed to you.</p>
-            </div>
-
-            <div class="question" id="4-ques" onclick="display('4-answ')">Can I cancel my subscription?
-              <img src="images/icon-arrow-down.svg" class="arrow" alt="question-arrow">
-              <p id="4-answ">Yes! Send us a message and we’ll process your request no questions asked.</p>
-            </div>
-
-            <div class="question" id="5-ques" onclick="display('5-answ')">Do you provide additional support?
-              <img src="images/icon-arrow-down.svg" class="arrow" alt="question-arrow">
-              <p id="5-answ">Chat and email support is available 24/7. Phone lines are open during normal business hours.</p>
-            </div>
-        </div>
-
+  <section id="faq">
+    <div class="illustration">
+      <img class="box" src="./images/illustration-box-desktop.svg" width="191" height="184" alt="An illustration of a box with an at.">
+      <img class="mobile" src="./images/illustration-woman-online-mobile.svg" alt="An illustration of a woman using media-content.">
     </div>
-        
-    
-    <div class="attribution">
-      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-      Coded by <a href="#">eleswastaken</a>.
+    <div class="faq-content">
+      <h3>FAQ</h3>
+      <div class="question-wrapper">
+        <input type="radio" name="faq" id="question-1">
+        <label for="question-1">
+          <p class="question">How many team members can I invite?</p>
+        </label>
+        <div class="answer-wrapper">
+          <p class="answer">You can invite up to 2 additional users on the Free plan. There is no limit on team members for the Premium plan.</p>
+        </div>
+      </div>
+      <hr>
+      <div class="question-wrapper">
+        <input type="radio" name="faq" id="question-2">
+        <label for="question-2">
+          <p class="question">What is the maximum file upload size?</p>
+        </label>
+        <div class="answer-wrapper">
+          <p class="answer">No more than 2GB. All files in your account must fit your allotted storage space.</p>
+        </div>
+      </div>
+      <hr>
+      <div class="question-wrapper">
+        <input type="radio" name="faq" id="question-3">
+        <label for="question-3">
+          <p class="question">How do I reset my password?</p>
+        </label>
+        <div class="answer-wrapper">
+          <p class="answer"> Click “Forgot password” from the login page or “Change password” from your profile page. A reset link will be emailed to you.</p>
+        </div>
+      </div>
+      <hr>
+      <div class="question-wrapper">
+        <input type="radio" name="faq" id="question-4">
+        <label for="question-4">
+          <p class="question">Can I cancel my subscription?</p>
+        </label>
+        <div class="answer-wrapper">
+          <p class="answer"> Yes! Send us a message and we’ll process your request no questions asked.</p>
+        </div>
+      </div>
+      <hr>
+      <div class="question-wrapper">
+        <input type="radio" name="faq" id="question-5">
+        <label for="question-5">
+          <p class="question">Do you provide additional support?</p>
+        </label>
+        <div class="answer-wrapper">
+          <p class="answer">Chat and email support is available 24/7. Phone lines are open during normal business hours.</p>
+        </div>
+      </div>
+      <hr>
     </div>
+  </section>
+  <div class="attribution">
+    <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a><br>
+    Coded by <a href="https://github.com/eleswastaken">eleswastaken</a>.
+  </div>
+  
 </body>
 </html>
