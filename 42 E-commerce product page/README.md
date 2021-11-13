@@ -16,8 +16,7 @@ Users should be able to:
 ![](./screenshots/2.png)
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Live Site URL: [GitHub Pages](https://eleswastaken.github.io/front-end-mentor/42%20E-commerce%20product%20page/)
 
 ## My process
 
@@ -38,4 +37,4 @@ I've learned a lot about accessebility. I discovered tools to test it. I've lear
 - Twitter - [@eleswastaken](https://www.twitter.com/eleswastaken)
 
 ## Acknowledgement
-Thanks to [@Frontendmentor](https://www.frontendmentor.io/)
+Thanks to [@frontendmentor](https://www.frontendmentor.io/)
