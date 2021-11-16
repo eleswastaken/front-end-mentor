@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer utilities {
+
+    .navbar > li:not(:last-child) {
+        @apply mr-6 xl:mr-10;
+    }
+    .navbar > li {
+        @apply text-black md:text-white lowercase;
+    }
+    .navbar > li a {
+        @apply relative flex items-center;
+    }
+    .navbar > li a:hover::after {
+        transform: scale(1);
+    }
+    .navbar > li a::after {
+        content: "";
+        @apply w-full h-0.5 block bg-white absolute top-6 scale-0 ;
+    }
+    img {
+        width: 100%;
+    }
+}
