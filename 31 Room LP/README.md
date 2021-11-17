@@ -10,7 +10,7 @@ Users should be able to:
 - See hover states for all interactive elements on the page
 - Navigate the slider using either their mouse/trackpad or keyboard
 
-### Screenshot
+### Screenshots
 
 ![Laptop View](screenshots/1.png)
 ![iPad View](screenshots/2.png)
