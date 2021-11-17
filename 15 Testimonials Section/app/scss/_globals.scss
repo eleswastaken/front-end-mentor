@@ -1,0 +1,115 @@
+
+
+*{
+    box-sizing: border-box;
+    padding:0;
+    margin: 0;
+}
+
+
+
+body{
+    background-color: #ccc;
+    padding: 70px 130px;
+}
+
+
+
+p{
+    font-size: 13px
+}
+
+.parent-container{
+    display: grid;
+
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+
+    grid-row-gap: 25px;
+    grid-column-gap: 25px;
+
+    .child-container{
+        border-radius: 10px;
+        padding: 35px;
+
+        .profile-cont{
+            margin-bottom: 20px;
+            display: flex;
+
+            .profile-picture {
+                width: 30px;
+                border-radius: 50px;
+                border: 1px solid white;
+                margin-right: 15px;
+            }
+
+            .name-cont{
+
+                .name{
+                    font-size: 15px;
+                }
+                .status{
+                    opacity: 0.5;
+                }
+            }
+        }
+
+        .title{
+            font-size: 22px;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .subtitle{
+            opacity: 0.7;
+        }
+    }
+
+
+    .child1{
+        background: url("../images/bg-pattern-quotation.svg") no-repeat top left 80%;
+        background-color: $moderateViolet;
+        grid-column-start: 1;
+        grid-column-end: 3;
+        color: $white;
+    }
+    .child2{
+        background-color: $veryDarkGrayishBlue;
+        color: $white;
+    }
+    .child3{
+        background-color: $white;
+        color: $veryDarkBlackishBlue;
+    }
+    .child4{
+        background-color: $veryDarkBlackishBlue;
+        grid-column-start: 2;
+        grid-column-end: 4;
+        color: $white;
+        .profile-picture{
+            border: 1px solid $moderateViolet;
+        }
+    }
+    .child5{
+        background-color: $white;
+        grid-column-start: 4;
+        grid-row-start: 1;
+        grid-row-end: 3;
+        color: $veryDarkBlackishBlue;
+    }
+}
+
+@media (max-width: 850px) {
+    body{
+
+    }
+    .parent-container{
+        display: flex;
+        flex-direction: column;
+    }
+    
+}
+@media (max-width: 450px) {
+    body{
+        padding: 20px;
+    }
+}

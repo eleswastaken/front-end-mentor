@@ -1,4 +1,4 @@
-# Frontend Mentor - Room homepage 
+# Frontend Mentor - Room homepage
 
 [Room homepage](https://www.frontendmentor.io/challenges/room-homepage-BtdBY_ENq).
 
