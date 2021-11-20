@@ -14,6 +14,16 @@ ol, ul {
     margin-left: 8px;
 }
 
+.tag {
+    @apply rounded-md text-center py-[2px] px-2 lowercase mb-3 text-white;
+}
+.tag:not(:last-child) {
+    margin-right: 0.75rem;
+}
+.tag a {
+    /* @apply  */
+}
+
 @layer utilities {
     
 }
