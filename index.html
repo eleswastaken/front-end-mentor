@@ -16,17 +16,23 @@
 <body class="bg-black">
 
     <header class="w-full h-12  bg-primaryOrange">
-        <div class="main-wrapper max-w-screen-2xl bg-transparent h-full w-full mx-auto flex justify-around items-center">
-            <div class="skeleton h-7 w-80 bg-almostBlack rounded-md">
-                <p class="text-gray-800 text-center">doesn't yet work</p>
+        <div class="main-wrapper max-w-screen-2xl bg-transparent h-full w-full px-5 mx-auto flex justify-around items-center">
+            <div class="skeleton h-7 max-w-xs w-full mr-5 bg-almostBlack rounded-md">
+                <!-- <p class="text-gray-800 text-center">doesn't yet work</p> -->
             </div>
             <!-- <div class="skeleton h-7 w-80 bg-almostBlack rounded-sm"></div> -->
-            <div class="skeleton h-8 w-8 bg-almostBlack rounded-full"></div>
+            <div class="skeleton h-8 w-8 min-h-[2rem] min-w-[2rem] bg-almostBlack rounded-full"></div>
         </div>
     </header>
     
-    <main class=" max-w-screen-2xl mx-auto w-full h-full p-11">
-        <ul class="w-full grid grid-cols-[repeat(auto-fit,minmax(330px,1fr))] gap-10 justify-items-center">
+    <main class=" max-w-screen-2xl mx-auto w-full h-full px-5 py-10
+        sm:p-9
+        md:p-12
+        lg:p-16
+    ">
+        <ul class="w-full grid grid-cols-[repeat(auto-fit,minmax(320px,1fr))] gap-7 justify-items-center
+
+        ">
 
             <li class="max-w-md w-full bg-primaryOrange overflow-hidden rounded-lg">
                 <div class="max-h-[250px] overflow-hidden" >
@@ -65,7 +71,6 @@
                     </a>
                 </div>
             </li>
-
             <!-- <li class="max-w-md w-full bg-primaryOrange overflow-hidden rounded-lg">
                 <div class="max-h-[250px] overflow-hidden" >
                     <a href="" target="_blank" class="w-full h-full" tabindex="-1">
@@ -88,7 +93,9 @@
         </ul>
 
         <p class="text-xl text-white text-center m-16">More Coming soon...</p>
-        <a href="https://github.com/eleswastaken" class="text-center text-gray-800 text-center w-full block">eleswastaken</a>
+        <div class="text-center w-full block">
+            <a href="https://github.com/eleswastaken" class="text-center text-gray-800">eleswastaken</a>
+        </div>
     </main>
     
     
