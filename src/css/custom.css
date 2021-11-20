@@ -15,7 +15,7 @@ ol, ul {
 }
 
 .tag {
-    @apply rounded-md text-center py-[2px] px-2 lowercase mb-3 text-white;
+    @apply rounded-md text-center py-[2px] px-2 uppercase mb-3 text-white;
 }
 .tag:not(:last-child) {
     margin-right: 0.75rem;

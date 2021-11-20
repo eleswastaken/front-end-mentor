@@ -15,7 +15,7 @@
 </head>
 <body class="bg-main1">
 
-    <header class="w-full h-12 bg-accent1 fixed top-0 left-0">
+    <header class="w-full h-12 bg-accent1 fixed top-0 left-0 z-10">
         <div class="main-wrapper max-w-screen-2xl bg-transparent h-full w-full px-5 mx-auto flex justify-around items-center">
             <!-- <div class="skeleton h-7 max-w-xs w-full mr-5 bg-elements1 rounded-md">
                 <p class="text-gray-800 text-center">doesn't yet work</p>
@@ -32,57 +32,56 @@
         md:p-12
         lg:p-16
     ">
-        <ul id="cards-grid" class="w-full grid grid-cols-[repeat(auto-fit,minmax(320px,1fr))] gap-7 justify-items-center
+        <ul id="cards-container" class="w-full grid grid-cols-[repeat(auto-fit,minmax(320px,1fr))] gap-7 justify-items-center
 
         ">
-
-            <li class="max-w-md w-full bg-accent1 overflow-hidden rounded-lg">
+            <li class="max-w-md w-full bg-accent1 overflow-hidden rounded-lg relative">
                 <div class="max-h-[250px] overflow-hidden" >
                     <a href="https://eleswastaken.github.io/front-end/31%20Room%20LP/" target="_blank" class="w-full h-full" tabindex="-1">
                         <img class="transition-transform ease-in-out duration-300 hover:scale-105" class="object-contain" src="./assets/screenshots/1.png" alt="Room - Furniture Company Landing Page">
                     </a>
                 </div>
-                <div class="px-6 py-4 relative">
+                <div class="px-6 py-4">
                     <h3><a href="https://eleswastaken.github.io/front-end/31%20Room%20LP/" target="_blank" aria-label="Live Preview" title="Live Preview" 
                         class="external text-white text-2xl font-semibold" >Room Landing Page</a></h3>
                     <p class=" text-white text-opacity-70 text-base"> <time datetime="2021-11-16">November 16th, 2021</time></p>
-                    <a href="https://github.com/eleswastaken/front-end/tree/master/31%20Room%20LP" target="_blank" aria-label="Github Repository" class="absolute w-10 h-10 top-1/2 right-5 -mt-5 flex justify-center items-center">
+                    <a href="https://github.com/eleswastaken/front-end/tree/master/31%20Room%20LP" target="_blank" aria-label="Github Repository" class="absolute w-10 h-10 top-5 right-5 flex justify-center items-center rounded-md bg-accent1 shadow-lg">
                         <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="none" viewBox="0 0 16 16">
                             <title>Github Repo</title>
-                            <path fill="#424242" d="M7.938 1a6.936 6.936 0 0 0-2.194 13.519c.347.06.477-.147.477-.33 0-.164-.009-.71-.009-1.292-1.743.321-2.194-.424-2.332-.815-.078-.2-.417-.815-.712-.98-.242-.13-.59-.45-.008-.46.546-.008.936.504 1.066.712.625 1.05 1.622.754 2.021.572.06-.45.243-.754.442-.928-1.543-.173-3.156-.771-3.156-3.425a2.7 2.7 0 0 1 .71-1.865c-.069-.173-.311-.884.07-1.838 0 0 .581-.182 1.908.711a6.438 6.438 0 0 1 1.734-.234c.59 0 1.18.078 1.735.234 1.327-.902 1.908-.711 1.908-.711.381.954.138 1.665.069 1.838.442.486.711 1.102.711 1.865 0 2.662-1.622 3.252-3.165 3.425.251.217.468.633.468 1.284 0 .928-.009 1.673-.009 1.908 0 .182.13.398.477.33a6.949 6.949 0 0 0 4.2-9.238A6.935 6.935 0 0 0 7.937 1z"/>
+                            <path fill="#fff" d="M7.938 1a6.936 6.936 0 0 0-2.194 13.519c.347.06.477-.147.477-.33 0-.164-.009-.71-.009-1.292-1.743.321-2.194-.424-2.332-.815-.078-.2-.417-.815-.712-.98-.242-.13-.59-.45-.008-.46.546-.008.936.504 1.066.712.625 1.05 1.622.754 2.021.572.06-.45.243-.754.442-.928-1.543-.173-3.156-.771-3.156-3.425a2.7 2.7 0 0 1 .71-1.865c-.069-.173-.311-.884.07-1.838 0 0 .581-.182 1.908.711a6.438 6.438 0 0 1 1.734-.234c.59 0 1.18.078 1.735.234 1.327-.902 1.908-.711 1.908-.711.381.954.138 1.665.069 1.838.442.486.711 1.102.711 1.865 0 2.662-1.622 3.252-3.165 3.425.251.217.468.633.468 1.284 0 .928-.009 1.673-.009 1.908 0 .182.13.398.477.33a6.949 6.949 0 0 0 4.2-9.238A6.935 6.935 0 0 0 7.937 1z"/>
                         </svg>
                     </a>
-                    <ul class="tag-container flex flex-wrap w-60 mt-3">
+                    <!-- <ul class="tag-container flex flex-wrap w-60 mt-3">
                         <li class="tag bg-blue-700">#tailwindcss</li>
                         <li class="tag bg-red-600">#html</li>
                         <li class="tag bg-blue-800">#css</li>
                         <li class="tag bg-yellow-300">#vanillajs</li>
-                    </ul>
+                    </ul> -->
                 </div>
             </li>
 
-            <li class="max-w-md w-full bg-accent1 overflow-hidden rounded-lg">
+            <li class="max-w-md w-full bg-accent1 overflow-hidden rounded-lg relative">
                 <div class="max-h-[250px] overflow-hidden" >
                     <a href="https://eleswastaken.github.io/front-end/42%20E-commerce%20product%20page/" target="_blank" class="w-full h-full" tabindex="-1">
                         <img class="transition-transform ease-in-out duration-300 hover:scale-105" class="object-contain" src="./assets/screenshots/2.png" alt="Room - Furniture Company Landing Page">
                     </a>
                 </div>
-                <div class="px-6 py-4 relative">
+                <div class="px-6 py-4">
                     <h3><a href="https://eleswastaken.github.io/front-end/42%20E-commerce%20product%20page/" target="_blank" aria-label="Live Preview" title="Live Preview" 
                         class="external text-white text-2xl font-semibold">Sneakers Product Page</a></h3>
                     <p class=" text-white text-opacity-70 text-base"> <time datetime="2021-11-14">November 14th, 2021</time></p>
-                    <a href="https://github.com/eleswastaken/front-end/tree/master/42%20E-commerce%20product%20page" target="_blank" aria-label="Github Repository" class="absolute w-10 h-10 top-1/2 right-5 -mt-5 flex justify-center items-center">
+                    <a href="https://github.com/eleswastaken/front-end/tree/master/42%20E-commerce%20product%20page" target="_blank" aria-label="Github Repository" class="absolute w-10 h-10 top-5 right-5 flex justify-center items-center bg-accent1 rounded-md shadow-lg">
                         <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="none" viewBox="0 0 16 16">
                             <title>Github Repo</title>
-                            <path fill="#424242" d="M7.938 1a6.936 6.936 0 0 0-2.194 13.519c.347.06.477-.147.477-.33 0-.164-.009-.71-.009-1.292-1.743.321-2.194-.424-2.332-.815-.078-.2-.417-.815-.712-.98-.242-.13-.59-.45-.008-.46.546-.008.936.504 1.066.712.625 1.05 1.622.754 2.021.572.06-.45.243-.754.442-.928-1.543-.173-3.156-.771-3.156-3.425a2.7 2.7 0 0 1 .71-1.865c-.069-.173-.311-.884.07-1.838 0 0 .581-.182 1.908.711a6.438 6.438 0 0 1 1.734-.234c.59 0 1.18.078 1.735.234 1.327-.902 1.908-.711 1.908-.711.381.954.138 1.665.069 1.838.442.486.711 1.102.711 1.865 0 2.662-1.622 3.252-3.165 3.425.251.217.468.633.468 1.284 0 .928-.009 1.673-.009 1.908 0 .182.13.398.477.33a6.949 6.949 0 0 0 4.2-9.238A6.935 6.935 0 0 0 7.937 1z"/>
+                            <path fill="#fff" d="M7.938 1a6.936 6.936 0 0 0-2.194 13.519c.347.06.477-.147.477-.33 0-.164-.009-.71-.009-1.292-1.743.321-2.194-.424-2.332-.815-.078-.2-.417-.815-.712-.98-.242-.13-.59-.45-.008-.46.546-.008.936.504 1.066.712.625 1.05 1.622.754 2.021.572.06-.45.243-.754.442-.928-1.543-.173-3.156-.771-3.156-3.425a2.7 2.7 0 0 1 .71-1.865c-.069-.173-.311-.884.07-1.838 0 0 .581-.182 1.908.711a6.438 6.438 0 0 1 1.734-.234c.59 0 1.18.078 1.735.234 1.327-.902 1.908-.711 1.908-.711.381.954.138 1.665.069 1.838.442.486.711 1.102.711 1.865 0 2.662-1.622 3.252-3.165 3.425.251.217.468.633.468 1.284 0 .928-.009 1.673-.009 1.908 0 .182.13.398.477.33a6.949 6.949 0 0 0 4.2-9.238A6.935 6.935 0 0 0 7.937 1z"/>
                         </svg>
                     </a>
                     
-                    <ul class="tag-container flex flex-wrap w-60 mt-3">
+                    <!-- <ul class="tag-container flex flex-wrap w-60 mt-3">
                         <li class="tag bg-red-600">#html</li>
                         <li class="tag bg-blue-800">#css</li>
                         <li class="tag bg-yellow-300">#vanillajs</li>
-                    </ul>
+                    </ul> -->
                 </div>
             </li>
             <!-- <li class="max-w-md w-full bg-accent1 overflow-hidden rounded-lg">
