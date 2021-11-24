@@ -8,19 +8,25 @@ let currentSlide = 0;
 
 setSlide(currentSlide)
 // for buttons to be exactly between images in case there is a scrollbar
-if (window.innerWidth - document.body.offsetWidth) {
-    swipeButtons.forEach(btn => btn.style.width = 'calc(10vw / 2 - 1px)')
+// if (window.innerWidth - document.body.offsetWidth == 17 && window.innerWidth > 1240) {
+//     swipeButtons.forEach(btn => btn.style.width = 'calc(10vw / 2 - 1px)')
+// }
+if (window.innerWidth - document.body.offsetWidth == 17 && window.innerWidth > 1240) {
+    swipeButtons.forEach(btn => btn.style.width = 'calc(5vw - 1px)')
 }
 window.addEventListener('resize', function(event) {
-    // everything below is solely for those who resize their browsers(for some reason :| )
-    setSlide(currentSlide)
-    if (window.innerWidth - document.body.offsetWidth) {
-        swipeButtons.forEach(btn => btn.style.width = 'calc(5vw - 1px)')
-    } else if (window.innerWidth < 540) {
-        swipeButtons.forEach(btn => btn.style.width = '')
-    } else {
-        swipeButtons.forEach(btn => btn.style.width = '5vw')
+//     // everything below is solely for those who resize their browsers(for some reason :| )
+//     setSlide(currentSlide)
+    if (window.innerWidth - document.body.offsetWidth == 17 && window.innerWidth > 1280) {
+        // swipeButtons.forEach(btn => btn.style.width = 'calc(5vw)')
     }
+    else if (window.innerWidth < 1280) {
+        swipeButtons.forEach(btn => btn.style.width = '')
+    }
+
+//     } else {
+//         swipeButtons.forEach(btn => btn.style.width = '5vw')
+//     }
 })
 
 function setSlide(n = currentSlide) {
