@@ -1,0 +1,123 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Inter";
+  padding: 200px 100px 100px  200px;
+  background: url("../images/pattern-curve.svg") no-repeat left bottom, url("../images/pattern-bg.svg") no-repeat top right 100px;
+}
+
+.main {
+  position: relative;
+}
+
+.main__first {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.main__second {
+  display: none;
+}
+
+.main > div {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.main > div:not(:last-child) {
+  position: relative;
+}
+
+.main > div:not(:last-child) > .text {
+  background: url("../images/pattern-quotes.svg") no-repeat top -10% left 10%;
+  width: 60%;
+}
+
+.main > div:not(:last-child) > .text > .quote {
+  font-weight: 300;
+  font-size: 32px;
+  color: #202046;
+  margin-bottom: 20px;
+}
+
+.main > div:not(:last-child) > .text > .name {
+  font-size: 15px;
+  display: inline;
+  font-weight: 700;
+  color: #202046;
+}
+
+.main > div:not(:last-child) > .text > .profession {
+  font-size: 15px;
+  display: inline;
+  font-weight: 500;
+  color: #babacf;
+}
+
+.main > div:not(:last-child) > .image {
+  width: 30%;
+}
+
+.main > div:not(:last-child) > .image > img {
+  position: absolute;
+  -webkit-box-shadow: 10px 5px  50px 1px  grey;
+          box-shadow: 10px 5px  50px 1px  grey;
+  border-radius: 5px;
+  width: 350px;
+  top: -100px;
+  right: 100px;
+  z-index: -1;
+}
+
+.main .switcher {
+  border-radius: 50px;
+  -webkit-box-shadow: 0 1px  10px 2px  grey;
+          box-shadow: 0 1px  10px 2px  grey;
+  width: 100px;
+  padding: 7px;
+  position: absolute;
+  right: 300px;
+  background-color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.main .switcher > a {
+  cursor: pointer;
+}
+
+.main .switcher:hover {
+  background-color: lightgrey;
+}
+
+@media (max-width: 500px) {
+  body {
+    padding: 20px;
+  }
+  .main > div {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  margin: 50px;
+}
+
+.attribution a {
+  color: #3e52a3;
+}

@@ -1,0 +1,120 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: #ccc;
+  padding: 70px 130px;
+}
+
+p {
+  font-size: 13px;
+}
+
+.parent-container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-row-gap: 25px;
+  grid-column-gap: 25px;
+}
+
+.parent-container .child-container {
+  border-radius: 10px;
+  padding: 35px;
+}
+
+.parent-container .child-container .profile-cont {
+  margin-bottom: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.parent-container .child-container .profile-cont .profile-picture {
+  width: 30px;
+  border-radius: 50px;
+  border: 1px solid white;
+  margin-right: 15px;
+}
+
+.parent-container .child-container .profile-cont .name-cont .name {
+  font-size: 15px;
+}
+
+.parent-container .child-container .profile-cont .name-cont .status {
+  opacity: 0.5;
+}
+
+.parent-container .child-container .title {
+  font-size: 22px;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.parent-container .child-container .subtitle {
+  opacity: 0.7;
+}
+
+.parent-container .child1 {
+  background: url("../images/bg-pattern-quotation.svg") no-repeat top left 80%;
+  background-color: #7541c8;
+  -ms-grid-column: 1;
+      grid-column-start: 1;
+  grid-column-end: 3;
+  color: white;
+}
+
+.parent-container .child2 {
+  background-color: #48556a;
+  color: white;
+}
+
+.parent-container .child3 {
+  background-color: white;
+  color: #19212e;
+}
+
+.parent-container .child4 {
+  background-color: #19212e;
+  -ms-grid-column: 2;
+      grid-column-start: 2;
+  grid-column-end: 4;
+  color: white;
+}
+
+.parent-container .child4 .profile-picture {
+  border: 1px solid #7541c8;
+}
+
+.parent-container .child5 {
+  background-color: white;
+  -ms-grid-column: 4;
+      grid-column-start: 4;
+  -ms-grid-row: 1;
+      grid-row-start: 1;
+  grid-row-end: 3;
+  color: #19212e;
+}
+
+@media (max-width: 850px) {
+  .parent-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+@media (max-width: 450px) {
+  body {
+    padding: 20px;
+  }
+}

@@ -1,0 +1,123 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Rubik", sans-serif;
+}
+
+.main-cont .info-cont {
+  background: url("../images/pattern-bg.png") no-repeat top center;
+  text-align: center;
+  height: 30vh;
+  padding: 30px 0 0 0;
+  position: relative;
+}
+
+.main-cont .info-cont > h1 {
+  color: white;
+}
+
+.main-cont .info-cont .search-cont {
+  height: 40px;
+  border-radius: 10px;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 500px;
+  margin: 30px auto;
+}
+
+@media (max-width: 900px) {
+  .main-cont .info-cont .search-cont {
+    width: 90%;
+    left: 5%;
+  }
+}
+
+.main-cont .info-cont .search-cont #searchInput {
+  width: 90%;
+  text-indent: 15px;
+  border: none;
+  outline: none;
+}
+
+.main-cont .info-cont .search-cont #searchButton {
+  background-color: #2b2b2b;
+  width: 10%;
+  position: relative;
+}
+
+.main-cont .info-cont .search-cont #searchButton > img {
+  position: absolute;
+  left: 50%;
+  margin-left: -7px;
+  top: 50%;
+  margin-top: -7px;
+}
+
+.main-cont .info-cont .search-cont #searchButton:hover, .main-cont .info-cont .search-cont #searchButton:active {
+  background-color: #969696;
+}
+
+.main-cont .info-cont .info-block {
+  background-color: white;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+          box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+  position: absolute;
+  width: 80%;
+  left: 10%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+@media (max-width: 900px) {
+  .main-cont .info-cont .info-block {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 90%;
+    left: 5%;
+  }
+  .main-cont .info-cont .info-block > div {
+    margin: 0 !important;
+    border: none !important;
+    padding: 0 !important;
+    text-align: center !important;
+  }
+  .main-cont .info-cont .info-block > div > p:last-child {
+    font-size: 15px !important;
+  }
+}
+
+.main-cont .info-cont .info-block > div {
+  text-align: left;
+}
+
+.main-cont .info-cont .info-block > div:not(:last-child) {
+  margin-right: 100px;
+}
+
+.main-cont .info-cont .info-block > div:not(:first-child) {
+  padding-left: 50px;
+  border-left: 1px solid #e3e3e3;
+}
+
+.main-cont .info-cont .info-block > div > p:last-child {
+  font-weight: 700;
+  font-size: 23px;
+  margin: 10px 0;
+}
+
+.main-cont #mapid {
+  height: 70vh;
+  z-index: -1;
+}
