@@ -10,8 +10,10 @@ export default [
         githubRepoURL: "",
         livePreviewURL: "",
         title: "",
-        description: "",
         descriptionTitle: "",
+        descriptionText: [],
+        tags: [],
         date: new Date(),
+
     }
 ];

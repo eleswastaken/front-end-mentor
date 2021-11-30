@@ -6,12 +6,27 @@ ol, ul, details > summary {
     list-style: none;
 }
 
-details[open=""] summary:after {
-    background-color: grey;
-    transform: rotate(90deg);
+details[open=""] summary svg {
+    transform: rotate(0);
+}
+details[open] {
+    margin-bottom: 0.75rem;
+}
+details ul {
+}
+details ul li {
+    @apply rounded-md bg-white text-accent1 py-1 px-2 m-2;
 }
 
-summary::after {
+summary {
+    cursor: pointer;
+}
+summary svg {
+    transform: rotate(-90deg);
+    
+}
+
+/* summary::after {
     content: '';
     display: inline-block;
     background-color: white;
@@ -21,7 +36,7 @@ summary::after {
     height: 15px;
     margin-left: 8px;
     transition: ease-in-out 200ms;
-}
+} */
 
 .external::after {
     content: '';

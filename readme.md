@@ -1,5 +1,5 @@
 # My front end projects
 
-Here is a link to the [live page](https://eleswastaken.github.io/front-end/index.html).
+Here is a link to the repo [live page](https://eleswastaken.github.io/front-end/index.html).
 
-The main page was done using Tailwind CSS.
+Main live page was built using tailwindcss.
