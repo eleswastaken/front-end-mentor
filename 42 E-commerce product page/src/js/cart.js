@@ -3,7 +3,7 @@
 
 const cartElem = document.querySelector("#cart-form");
 const cartLink = document.querySelector(".cart-link");
-const cartBg = cartElem.querySelector(".cart-bg");
+const cartBackground = document.querySelector("#cart-form-bg");
 const emptyMsg = cartElem.querySelector(".is-empty");
 const cartItemsElem = cartElem.querySelector(".cart-items");
 const cartItems = [];
@@ -15,22 +15,34 @@ const decrButton = document.querySelector("#decrement-amount");
 const orderAmount = document.querySelector("#order-amount");
 const addCartButton = document.querySelector("#add-cart-submit");
 
+cartBackground.addEventListener("click", function(event) {
+    if (event.target === this) {
+        hideCart(event)
+    }
+})
 
 function showCart(event) {
     cartElem.hidden = false;
     emptyMsg.hidden = true;
     cartItemsElem.hidden = false;
-    if ( cartItems.length === 0 ) {
+    if (cartItems.length === 0) {
         emptyMsg.hidden = false;
         cartItemsElem.hidden = true;
     }
-    cartLink.removeEventListener("click", showCart)
-    cartLink.addEventListener("click",hideCart )
+    cartLink.removeEventListener("click", showCart);
+    cartLink.addEventListener("click", hideCart);
+    console.log("cart is here");
+    cartBackground.hidden = false;
+    document.body.style.paddingRight = window.innerWidth - document.body.offsetWidth + "px"
+    document.body.style.overflowY = "hidden";
 }
 function hideCart(event) {
     cartElem.hidden = true;
     cartLink.removeEventListener("click", hideCart)
     cartLink.addEventListener("click", showCart)
+    cartBackground.hidden = true;
+    document.body.style.overflowY = "unset";
+    document.body.style.paddingRight = "0";
 }
 cartLink.addEventListener("click", showCart)
 
@@ -56,7 +68,7 @@ function renderCart() {
         cartItemsElem.lastElementChild.remove()
         cartItemsElem.innerHTML += 
         (`<li class="cart-item" id="cart-item${item.productId}">
-            <a href="${item.url}" class="cart-item-thumbnail" id="cart-item${item.productId}-thumbnail" aria-labelledby="cart-item${1}-name">
+            <a href="${item.url}" class="cart-item-thumbnail" tabindex="-1" id="cart-item${item.productId}-thumbnail" aria-labelledby="cart-item${1}-name">
             <img src="${item.imgUrl}" alt="">
             </a>
             <div class="wrapper">
@@ -98,7 +110,7 @@ function addToCart(item) {
     }
     saveCart()
     renderCart()
-    showCart()
+    // showCart()
 }
 
 addCartButton.addEventListener('click', function(event) {

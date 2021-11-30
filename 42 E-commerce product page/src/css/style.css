@@ -138,9 +138,12 @@ header .account-cart {
       -ms-flex-align: center;
           align-items: center;
   position: relative;
+  z-index: 15;
 }
 
 header .account-cart .cart-link {
+  position: relative;
+  z-index: 13;
   margin-right: 25px;
   border: none;
   border-radius: 50px;
@@ -189,6 +192,16 @@ header .account-cart .account:hover:after {
   opacity: 1;
 }
 
+header .account-cart #cart-form-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(56, 56, 56, 0.192);
+  z-index: 19;
+}
+
 header .account-cart #cart-form {
   -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0px 18px 50px -10px;
           box-shadow: rgba(0, 0, 0, 0.2) 0px 18px 50px -10px;
@@ -201,7 +214,7 @@ header .account-cart #cart-form {
   padding: 25px 25px 30px;
   min-width: 350px;
   width: 365px;
-  z-index: 6;
+  z-index: 23;
 }
 
 header .account-cart #cart-form hr {
@@ -681,7 +694,7 @@ main {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  z-index: 99;
+  z-index: 12;
 }
 
 .product .gallery #swipe-left > svg, .product .gallery #swipe-right > svg {
@@ -767,7 +780,7 @@ main {
   left: 0;
   width: 100vw;
   height: 100vh;
-  z-index: 1;
+  z-index: 15;
 }
 
 .product #gallery-lightbox .content {
