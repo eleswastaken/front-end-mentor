@@ -1,6 +1,4 @@
 
-
-
 const cartElem = document.querySelector("#cart-form"),
     cartLink = document.querySelector(".cart-link"),
     hideCartBtn = document.querySelector("#hide-cart"),
@@ -9,7 +7,7 @@ const cartElem = document.querySelector("#cart-form"),
 
     cartItemsElem = cartElem.querySelector(".cart-items"),
     cartItems = [],
-////////////////
+
     cartCheckoutButton = document.querySelector(".checkout"),
 
     incrButton = document.querySelector("#increment-amount"),
@@ -17,8 +15,12 @@ const cartElem = document.querySelector("#cart-form"),
     orderAmount = document.querySelector("#order-amount"),
     addCartButton = document.querySelector("#add-cart-submit");
 
+/// 
 cartBackground.addEventListener("click", function(event) {
-    if (event.target === this) hideCart(event)})
+    if (event.target === this) hideCart(event)
+});
+
+/// for accessibility, a button to leave cart
 hideCartBtn.addEventListener("click", function(event) {event.preventDefault(); hideCart(event)})
 
 function showCart(event) {
@@ -31,15 +33,18 @@ function showCart(event) {
     }
     cartLink.removeEventListener("click", showCart);
     cartLink.addEventListener("click", hideCart);
+    cartLink.setAttribute("aria-expanded", "true");
     console.log("cart is here");
     cartBackground.hidden = false;
     document.body.style.paddingRight = window.innerWidth - document.body.offsetWidth + "px"
     document.body.style.overflowY = "hidden";
 }
+
 function hideCart(event) {
     cartElem.hidden = true;
     cartLink.removeEventListener("click", hideCart)
     cartLink.addEventListener("click", showCart)
+    cartLink.setAttribute("aria-expanded", "false");
     cartBackground.hidden = true;
     document.body.style.overflowY = "unset";
     document.body.style.paddingRight = "0";
@@ -51,11 +56,14 @@ function restoreCart() {
         cartItems.push(...JSON.parse(localStorage.getItem("my-cart")))    }
     renderCart()
 }
+
 restoreCart()
+
 function saveCart() {
     localStorage.setItem("my-cart",
         JSON.stringify(cartItems))
 }
+
 function renderCart() {
     emptyMsg.hidden = true;
     cartItemsElem.hidden = false;
@@ -92,11 +100,13 @@ function renderCart() {
         })
     }
 }
+
 function deleteItem(id) {
     cartItems.splice(id-1,1)
     saveCart()
     renderCart()
 }
+
 function addToCart(item) {
     item.total = item.price*item.amount;
     item.productId = cartItems.length;

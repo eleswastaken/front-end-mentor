@@ -118,20 +118,21 @@ lightbox.addEventListener('click', function(event) {
 
 
 let mobileMenu = document.querySelector("#mobile-menu");
-
 function openNav(event) {
     linksCont.parentElement.style.display = "block";
     mobileMenu.removeEventListener('click', openNav)
     mobileMenu.addEventListener('click', closeNav)
     mobileMenu.firstElementChild.style.display = "none";
     mobileMenu.lastElementChild.style.display = "block";
-    // linksCont.style.transform = `translateX(143%)`;
-    document.body.style.overflow = "hidden"
+    mobileMenu.setAttribute("aria-expanded", "true");
+
     linksCont.parentElement.addEventListener('click', function(event) {
         if (event.target === this) {
             closeNav()
         }
     })
+    document.body.style.paddingRight = window.innerWidth - document.body.offsetWidth + "px"
+    document.body.style.overflowY = "hidden";
 }
 function closeNav(event) {
     linksCont.parentElement.style.display = "none";
@@ -139,7 +140,10 @@ function closeNav(event) {
     mobileMenu.addEventListener('click', openNav)
     mobileMenu.firstElementChild.style.display = "block";
     mobileMenu.lastElementChild.style.display = "none";
-    // linksCont.style.transform = `translateX(0)`;
-    document.body.style.overflow = "scroll"
+    mobileMenu.setAttribute("aria-expanded", "false");
+
+
+    document.body.style.overflowY = "unset";
+    document.body.style.paddingRight = "0";
 }
 mobileMenu.addEventListener('click', openNav)
