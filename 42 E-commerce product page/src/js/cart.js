@@ -1,25 +1,25 @@
 
 
 
-const cartElem = document.querySelector("#cart-form");
-const cartLink = document.querySelector(".cart-link");
-const cartBackground = document.querySelector("#cart-form-bg");
-const emptyMsg = cartElem.querySelector(".is-empty");
-const cartItemsElem = cartElem.querySelector(".cart-items");
-const cartItems = [];
-////////////////
-const cartCheckoutButton = document.querySelector(".checkout")
+const cartElem = document.querySelector("#cart-form"),
+    cartLink = document.querySelector(".cart-link"),
+    hideCartBtn = document.querySelector("#hide-cart"),
+    cartBackground = document.querySelector("#cart-form-bg"),
+    emptyMsg = cartElem.querySelector(".is-empty"),
 
-const incrButton = document.querySelector("#increment-amount");
-const decrButton = document.querySelector("#decrement-amount");
-const orderAmount = document.querySelector("#order-amount");
-const addCartButton = document.querySelector("#add-cart-submit");
+    cartItemsElem = cartElem.querySelector(".cart-items"),
+    cartItems = [],
+////////////////
+    cartCheckoutButton = document.querySelector(".checkout"),
+
+    incrButton = document.querySelector("#increment-amount"),
+    decrButton = document.querySelector("#decrement-amount"),
+    orderAmount = document.querySelector("#order-amount"),
+    addCartButton = document.querySelector("#add-cart-submit");
 
 cartBackground.addEventListener("click", function(event) {
-    if (event.target === this) {
-        hideCart(event)
-    }
-})
+    if (event.target === this) hideCart(event)})
+hideCartBtn.addEventListener("click", function(event) {event.preventDefault(); hideCart(event)})
 
 function showCart(event) {
     cartElem.hidden = false;

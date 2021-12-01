@@ -163,6 +163,14 @@ header {
             z-index: 19;
         }
         #cart-form{
+            #hide-cart {
+                width: 0;
+                height: 0;
+                border: 0;
+                position: absolute;
+                bottom: -1px;
+                right: -1px;
+            }
             box-shadow: rgba(0, 0, 0, 0.2) 0px 18px 50px -10px;
             border-radius: 10px;
             position: absolute;

@@ -217,6 +217,15 @@ header .account-cart #cart-form {
   z-index: 23;
 }
 
+header .account-cart #cart-form #hide-cart {
+  width: 0;
+  height: 0;
+  border: 0;
+  position: absolute;
+  bottom: -1px;
+  right: -1px;
+}
+
 header .account-cart #cart-form hr {
   margin: 25px -25px 25px;
   border: none;
