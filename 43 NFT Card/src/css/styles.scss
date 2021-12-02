@@ -63,9 +63,10 @@ a {
         &::after {
             transition: 200ms all ease-in-out;
             background-color: var(--price-color);
-            opacity: 0.4;
             content: '';
-            display: none;
+            // display: none;
+            display: block;
+            opacity: 0;
             position: absolute;
             top: 0;
             left: 0;
@@ -74,8 +75,11 @@ a {
             z-index: 99;
         }
         &::before {
+            transition: 200ms all ease-in-out;
             content: url("../../images/icon-view.svg");
-            display: none;
+            // display: none;
+            display: block;
+            opacity: 0;
             position: absolute;
             top: calc(50% - 24px);
             left: calc(50% - 24px);
@@ -85,11 +89,13 @@ a {
         }
         &:hover::after{
             // filter: var(--preview-hover-color);
-            display: block;
+            // display: block;
+            opacity: .4;
         }        
         &:hover::before{
             // filter: var(--preview-hover-color);
-            display: block;
+            // display: block;
+            opacity: 1;
         }
     }
     .card-preview, h3, &>p {
