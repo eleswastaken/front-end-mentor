@@ -1,0 +1,170 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap");
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+:root {
+  font-size: 62.5%;
+  --bg-color: hsl(217, 54%, 11%);
+  --card-bg: hsl(216, 50%, 16%);
+  --line-color: hsl(215, 32%, 27%);
+  --price-color: hsl(178, 100%, 50%);
+  --text-color: hsl(215, 51%, 70%);
+  --white: #fff;
+}
+
+body {
+  font-size: 1.6rem;
+  font-family: 'Outfit', sans-serif;
+  padding: 150px 0;
+  background-color: var(--bg-color);
+}
+
+img {
+  width: 100%;
+  max-width: 100%;
+  vertical-align: middle;
+}
+
+a {
+  text-decoration: none;
+  color: var(--white);
+}
+
+a:hover {
+  color: var(--price-color);
+}
+
+.price-card {
+  background-color: var(--card-bg);
+  width: 350px;
+  border-radius: 14px;
+  margin: auto;
+  padding: 25px 25px 35px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.price-card p {
+  color: var(--text-color);
+  font-size: 1.8rem;
+}
+
+.price-card .card-preview {
+  border-radius: 7px;
+  overflow: hidden;
+  width: 300px;
+  margin-bottom: 25px;
+  position: relative;
+}
+
+.price-card .card-preview::after {
+  -webkit-transition: 200ms all ease-in-out;
+  transition: 200ms all ease-in-out;
+  background-color: var(--price-color);
+  opacity: 0.4;
+  content: '';
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 99;
+}
+
+.price-card .card-preview::before {
+  content: url("../../images/icon-view.svg");
+  display: none;
+  position: absolute;
+  top: calc(50% - 24px);
+  left: calc(50% - 24px);
+  width: 48px;
+  height: 48px;
+  z-index: 100;
+}
+
+.price-card .card-preview:hover::after {
+  display: block;
+}
+
+.price-card .card-preview:hover::before {
+  display: block;
+}
+
+.price-card .card-preview, .price-card h3, .price-card > p {
+  margin-bottom: 25px;
+}
+
+.price-card div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.price-card div .avatar {
+  width: 30px;
+  margin-right: 15px;
+  border: 1px solid var(--white);
+  border-radius: 99px;
+}
+
+.price-card div .price {
+  color: var(--price-color);
+  font-weight: 600;
+}
+
+.price-card div > p {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.price-card div > p > svg {
+  margin-right: 5px;
+}
+
+.price-card div > p > a {
+  margin-left: .5ch;
+}
+
+.price-card .price-wrapper {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.price-card > hr {
+  border: none;
+  background: var(--line-color);
+  height: 1px;
+  width: 100%;
+  margin: 15px 0;
+}
+
+.attribution {
+  color: #FFF;
+  font-size: 1.4rem;
+  text-align: center;
+  margin-top: 50px;
+}
+
+.attribution a {
+  color: var(--price-color);
+}
