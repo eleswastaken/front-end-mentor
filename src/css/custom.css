@@ -12,9 +12,9 @@ details[open=""] summary svg {
 details[open] {
     margin-bottom: 0.75rem;
 }
-details ul {
+.description ul {
 }
-details ul li {
+.description ul li {
     @apply rounded-md bg-white text-accent1 py-1 px-2 m-2;
 }
 

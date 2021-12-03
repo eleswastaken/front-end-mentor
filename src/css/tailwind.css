@@ -699,16 +699,16 @@ video {
   margin-top: 3rem;
 }
 
+.mt-4 {
+  margin-top: 1rem;
+}
+
 .-ml-2 {
   margin-left: -0.5rem;
 }
 
-.mr-2 {
-  margin-right: 0.5rem;
-}
-
-.mt-4 {
-  margin-top: 1rem;
+.ml-2 {
+  margin-left: 0.5rem;
 }
 
 .block {
@@ -928,12 +928,6 @@ video {
   transition-duration: 150ms;
 }
 
-.transition-all {
-  transition-property: all;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
 .duration-300 {
   transition-duration: 300ms;
 }
@@ -954,10 +948,10 @@ details[open] {
   margin-bottom: 0.75rem;
 }
 
-details ul {
+.description ul {
 }
 
-details ul li {
+.description ul li {
   margin: 0.5rem;
   border-radius: 0.375rem;
   --tw-bg-opacity: 1;
