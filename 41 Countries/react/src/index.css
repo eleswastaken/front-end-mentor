@@ -3,7 +3,10 @@
 @tailwind utilities;
 
 @layer components {
+    *, *::after, *::before {
+        @apply transition-colors;
+    }
     body {
-        @apply bg-lightBg dark:bg-darkBg h-[200vh];
+        @apply bg-lightBg dark:bg-darkBg;
     }
 }
