@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+    body {
+        @apply bg-lightBg dark:bg-darkBg h-[200vh];
+    }
+}
