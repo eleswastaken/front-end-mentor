@@ -10,7 +10,16 @@ ReactDOM.render(
   </React.StrictMode>,
   document.getElementById('root')
 );
-
+{
+  let span = document.querySelector("#theme-switch");
+  if (localStorage.theme !== "dark") {
+    span.classList.toggle("before:-translate-x-7", true)
+    span.classList.toggle("before:bg-white", true)
+  } else {
+    span.classList.toggle("before:-translate-x-7", false)
+    span.classList.toggle("before:bg-white", false)
+  }
+}
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals

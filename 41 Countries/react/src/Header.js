@@ -9,7 +9,7 @@ function Header() {
                     className="bg-transparent flex items-center transform"
                     onClick={(event) => changeTheme(event)}
                 >
-                    <span className="
+                    <span id="theme-switch" className="
                         inline-block rounded-full w-14 h-7 mr-3 bg-green-400 relative
                         before:block before:transform before:transition-all before:absolute before:rounded-full before:w-6 before:h-6 before:top-0.5 before:right-0.5 before:bg-darkElements
                     "></span>
