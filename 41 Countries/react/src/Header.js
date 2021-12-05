@@ -6,7 +6,7 @@ function Header() {
             <div className="w-full max-w-7xl flex justify-between items-center">
                 <h1 className="text-xl">Where in the world?</h1>
                 <button 
-                    className="bg-transparent flex items-center transform translate-x-7 -translate-x-7"
+                    className="bg-transparent flex items-center transform"
                     onClick={(event) => changeTheme(event)}
                 >
                     <span className="
