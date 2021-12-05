@@ -5,21 +5,33 @@ function Header() {
         <header className="bg-lightElements dark:bg-darkElements h-16 w-full shadow-lg px-20 flex justify-center items-center">
             <div className="w-full max-w-7xl flex justify-between items-center">
                 <h1 className="text-xl">Where in the world?</h1>
-                <button 
-                    className="bg-transparent flex items-center transform"
-                    onClick={(event) => changeTheme(event)}
-                >
-                    <span id="theme-switch" className="
-                        inline-block rounded-full w-14 h-7 mr-3 bg-green-400 relative
-                        before:block before:transform before:transition-all before:absolute before:rounded-full before:w-6 before:h-6 before:top-0.5 before:right-0.5 before:bg-darkElements
-                    "></span>
-                    Dark mode
-                </button>
+                <ThemeButton />
             </div>
         </header>
     )
 }
 
+function ThemeButton() {
+    return (
+        <button     
+            className="bg-transparent flex items-center transform"
+            onClick={(event) => changeTheme(event)}
+        >
+            <Toggle />
+            Dark mode
+        </button>
+    );
+}
+
+function Toggle() {
+    return (
+        <span id="theme-switch" className="
+        max-h-
+            inline-block rounded-full w-14 h-7 mr-3 bg-green-400 relative
+            before:block before:transform before:transition-all before:absolute before:rounded-full before:w-6 before:h-6 before:top-0.5 before:right-0.5 before:bg-darkElements
+        "></span>
+    );
+}
 function changeTheme(event) {
     // console.log(event.currentTarget.firstElementChild)
     let span = event.currentTarget.firstElementChild;
