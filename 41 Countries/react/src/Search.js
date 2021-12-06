@@ -23,7 +23,7 @@ class SearchForm extends Component {
     render() {
         return (
             <form 
-                className="flex items-center justify-between mb-14"
+                className="flex items-center justify-between mb-14 max-w-7xl m-auto"
                 onSubmit={this.handleSubmit}
             >
                 <SearchField />
@@ -37,8 +37,8 @@ function SearchField() {
     return (
         <div className="bg-lightElements dark:bg-darkElements h-12 text-lightText dark:text-darkText rounded-md shadow-lg">
             <label className="w-[29rem] flex h-full ">
-                <div className="h-full w-20 flex items-center justify-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 14" width="24" height="24">
+                <div className="h-full w-20 flex items-center justify-center" aria-hidden="true">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 14" width="20" height="20">
                       <g fill="none" fill-rule="evenodd">
                         <path d="M-1-1h16v16H-1z"/>
                         <g stroke="#BAB4CC" stroke-linecap="round">
@@ -58,8 +58,11 @@ function SearchField() {
 }
 function FilterField() {
     return (
-        <div className="bg-white h-12 w-24 text-lightText dark:text-darkText">
-        <button>Filter by region</button>
+        <div className="bg-lightElements dark:bg-darkElements h-12 w-48 text-lightText dark:text-darkText rounded-md shadow-lg">
+            <button className="bg-lightElements dark:bg-darkElements h-full ml-auto w-full rounded-md flex items-center justify-center">
+                Filter by region
+                <svg aria-hidden="true" className="ml-4 scale-75" xmlns="http://www.w3.org/2000/svg" width="18" height="12"><path fill="none" stroke="#ccc" stroke-width="2" d="M1 1l8 8 8-8"/></svg>
+            </button>
         </div>
     );
 }
