@@ -1,23 +1,19 @@
 
-import {Input} from "react-dom";
 import {Component} from "react";
-
-function SearchContainer() {
-    return (
-        <form className="mx-20 my-14 flex items-center justify-between">
-            <div className="max-w-md w-full">
-                <input type="text" className=" w-full"/>
-            </div>
-            <div>
-                <input type="text" className=""/>
-            </div>
-        </form>
-    );
-}
 
 class SearchForm extends Component {
     constructor(props) {
         super(props)
+        this.props = props
+        this.handleClick = this.handleClick.bind(this)
+    }
+
+    handleClick(event) {
+        /// it is a form rememeber
+        event.preventDefault()
+
+        /// this is the way to change, thus rerender, parent component state
+        this.props.app.setState({countries: [1,2,3,4]})
     }
 
     render() {
@@ -25,6 +21,9 @@ class SearchForm extends Component {
             <form className="flex items-center justify-between mb-14">
                 <SearchField />
                 <FilterField />
+                <button
+                    onClick={this.handleClick}
+                >Change state</button>
             </form>
         );
     }
@@ -52,5 +51,4 @@ function PerPageField() {
     );
 }
 
-// export default SearchContainer;
 export default SearchForm;
