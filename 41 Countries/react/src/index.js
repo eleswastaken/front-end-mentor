@@ -10,6 +10,8 @@ ReactDOM.render(
   </React.StrictMode>,
   document.getElementById('root')
 );
+
+/// change toggle color on reload/first load
 {
   let span = document.querySelector("#theme-switch");
   if (localStorage.theme !== "dark") {

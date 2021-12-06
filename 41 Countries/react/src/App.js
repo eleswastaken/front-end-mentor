@@ -1,23 +1,25 @@
-import {Component} from "react";
+import { Component } from "react";
 
-import Header from './Header';
-import SearchForm from './Search'
+import Header from "./Header";
+import SearchForm from "./Search";
 
 class App extends Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
-      data: fetch("./data.json"),
+      // this is supposed to be all data from the api
+      // data: fetch("./data.json"),
+      // this is countries showing on the screen
       countries: [],
-    }
+    };
   }
   render() {
-    console.log("rerender",this.state)
+    console.log("rerender", this.state);
     return (
       <div className="text-lightText dark:text-darkText h-screen">
-        <Header/>
+        <Header />
         <main className="px-20 pt-14 ">
-          <SearchForm app={this}/>
+          <SearchForm app={this} />
         </main>
       </div>
     );

@@ -32,7 +32,7 @@ function ThemeButton() {
             className="bg-transparent flex items-center transform"
             onClick={handleClick}>
                 <Toggle />
-            Dark mode
+                Dark mode
         </button>
     );
 }

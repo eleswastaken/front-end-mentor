@@ -6,6 +6,10 @@ class SearchForm extends Component {
         super(props)
         this.props = props
         this.handleClick = this.handleClick.bind(this)
+        this.handleSubmit = this.handleSubmit.bind(this)
+    }
+    handleSubmit(event) {
+        event.preventDefault()
     }
 
     handleClick(event) {
@@ -18,12 +22,12 @@ class SearchForm extends Component {
 
     render() {
         return (
-            <form className="flex items-center justify-between mb-14">
+            <form 
+                className="flex items-center justify-between mb-14"
+                onSubmit={this.handleSubmit}
+            >
                 <SearchField />
                 <FilterField />
-                <button
-                    onClick={this.handleClick}
-                >Change state</button>
             </form>
         );
     }
@@ -31,15 +35,31 @@ class SearchForm extends Component {
 
 function SearchField() {
     return (
-        <div className="bg-white h-12 w-24 text-lightText dark:text-darkText">
-            {/* <input type="search" class="bg-lightElements dark:darkElements"/> */}
+        <div className="bg-lightElements dark:bg-darkElements h-12 text-lightText dark:text-darkText rounded-md shadow-lg">
+            <label className="w-[29rem] flex h-full ">
+                <div className="h-full w-20 flex items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 14" width="24" height="24">
+                      <g fill="none" fill-rule="evenodd">
+                        <path d="M-1-1h16v16H-1z"/>
+                        <g stroke="#BAB4CC" stroke-linecap="round">
+                          <path d="M13.5 13.5l-4-4M10.5 5.5A5 5 0 1 1 .499 5.499 5 5 0 0 1 10.5 5.5z"/>
+                        </g>
+                      </g>
+                    </svg>
+                </div>
+                <input 
+                    type="search" 
+                    className="bg-lightElements dark:bg-darkElements h-full ml-auto w-96 rounded-md pl-2"
+                    placeholder="Search for a country..."
+                /> 
+            </label>
         </div>
     );
 }
 function FilterField() {
     return (
         <div className="bg-white h-12 w-24 text-lightText dark:text-darkText">
-
+        <button>Filter by region</button>
         </div>
     );
 }
