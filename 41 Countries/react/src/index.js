@@ -13,11 +13,15 @@ ReactDOM.render(
 {
   let span = document.querySelector("#theme-switch");
   if (localStorage.theme !== "dark") {
-    span.classList.toggle("before:-translate-x-7", true)
-    span.classList.toggle("before:bg-white", true)
+      localStorage.theme = "light";
+      span.classList.toggle("before:-translate-x-7", true)
+      span.classList.toggle("before:bg-darkElements", false)
+      span.classList.toggle("before:bg-white", true)
   } else {
-    span.classList.toggle("before:-translate-x-7", false)
-    span.classList.toggle("before:bg-white", false)
+      localStorage.theme = "dark";
+      span.classList.toggle("before:-translate-x-7", false)
+      span.classList.toggle("before:bg-darkElements", true)
+      span.classList.toggle("before:bg-white", false)
   }
 }
 // If you want to start measuring performance in your app, pass a function
