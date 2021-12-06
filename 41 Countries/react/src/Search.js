@@ -58,11 +58,20 @@ function SearchField() {
 }
 function FilterField() {
     return (
-        <div className="bg-lightElements dark:bg-darkElements h-12 w-48 text-lightText dark:text-darkText rounded-md shadow-lg">
-            <button className="bg-lightElements dark:bg-darkElements h-full ml-auto w-full rounded-md flex items-center justify-center">
+        <div className="bg-lightElements dark:bg-darkElements h-12 w-48 text-lightText dark:text-darkText rounded-md shadow-lg relative">
+
+            <button className="bg-lightElements dark:bg-darkElements h-full ml-auto w-full rounded-md flex items-center justify-between px-6" aria-expanded="true">
                 Filter by region
-                <svg aria-hidden="true" className="ml-4 scale-75" xmlns="http://www.w3.org/2000/svg" width="18" height="12"><path fill="none" stroke="#ccc" stroke-width="2" d="M1 1l8 8 8-8"/></svg>
+                <svg aria-hidden="true" className="scale-75" xmlns="http://www.w3.org/2000/svg" width="18" height="12"><path fill="none" stroke="#ccc" stroke-width="2" d="M1 1l8 8 8-8"/></svg>
             </button>
+
+            <ul className="absolute top-14 bg-lightElements dark:bg-darkElements w-full text-lightText dark:text-darkText rounded-md shadow-lg py-2">
+                <li className="filter-button"><button>Asia</button></li>
+                <li className="filter-button"><button>Africa</button></li>
+                <li className="filter-button"><button>America</button></li>
+                <li className="filter-button"><button>Europe</button></li>
+            </ul>
+
         </div>
     );
 }
