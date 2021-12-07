@@ -4,22 +4,14 @@ import {Component} from "react";
 class SearchForm extends Component {
     constructor(props) {
         super(props)
-        this.someAppHandler = props.handler;
+        this.stateHandler = props.handler;
 
-        this.filterFieldHandler = this.filterFieldHandler.bind(this);
-        this.searchFieldHandler = this.searchFieldHandler.bind(this);
+        this.filterHandler = this.filterHandler.bind(this);
     }
 
-    filterFieldHandler(filter) {
-        console.log(filter)
-        // pass new region filter to the App to change the state, thus rerender
-        // this.someAppHandler({region: filter})
-    }
-
-    searchFieldHandler(filter) {
-        console.log(filter)
-        // pass new search filter to the App to change the state, thus rerender
-        // this.someAppHandler({region: filter})
+    filterHandler(filter) {
+        // pass new filter to the App to change the state, thus rerender
+        this.stateHandler(filter)
     }
 
     render() {
@@ -28,8 +20,8 @@ class SearchForm extends Component {
                 className="flex items-center justify-between mb-14 max-w-7xl m-auto"
                 onSubmit={(event) => event.preventDefault()}
             >
-                <SearchField handler={this.searchFieldHandler}/>
-                <FilterField handler={this.filterFieldHandler}/>
+                <SearchField handler={this.filterHandler}/>
+                <FilterField handler={this.filterHandler}/>
             </form>
         );
     }
@@ -38,7 +30,9 @@ class SearchForm extends Component {
 function SearchField(props) {
     function handleChange(event) {
         let filter = event.target.value;
-        props.handler(filter.trim())
+        props.handler(
+            {search: filter.trim()}
+        )
         /// fix bug: when pressed enter during typing the filter dropdown would showup, this fixes it
         if (event.key === "Enter") {
             event.preventDefault()
@@ -116,7 +110,9 @@ class FilterField extends Component {
         ul.classList.toggle("hidden", true);
 
         // pass new filter-region to the SearchForm
-        this.submitFilter(filter)
+        this.submitFilter(
+            {region: filter}
+        )
     }
 
     render() {
