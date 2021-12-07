@@ -7,11 +7,18 @@ class SearchForm extends Component {
         this.someAppHandler = props.handler;
 
         this.filterFieldHandler = this.filterFieldHandler.bind(this);
+        this.searchFieldHandler = this.searchFieldHandler.bind(this);
     }
 
     filterFieldHandler(filter) {
         console.log(filter)
         // pass new region filter to the App to change the state, thus rerender
+        // this.someAppHandler({region: filter})
+    }
+
+    searchFieldHandler(filter) {
+        console.log(filter)
+        // pass new search filter to the App to change the state, thus rerender
         // this.someAppHandler({region: filter})
     }
 
@@ -21,14 +28,18 @@ class SearchForm extends Component {
                 className="flex items-center justify-between mb-14 max-w-7xl m-auto"
                 onSubmit={(event) => event.preventDefault()}
             >
-                <SearchField />
+                <SearchField handler={this.searchFieldHandler}/>
                 <FilterField handler={this.filterFieldHandler}/>
             </form>
         );
     }
 }
 
-function SearchField() {
+function SearchField(props) {
+    function handleChange(event) {
+        let filter = event.target.value;
+        props.handler(filter.trim())
+    }
     return (
         <div className="bg-lightElements dark:bg-darkElements h-12 text-lightText dark:text-darkText rounded-md shadow-lg">
             <label className="w-[29rem] flex h-full ">
@@ -46,11 +57,13 @@ function SearchField() {
                     type="search" 
                     className="bg-lightElements dark:bg-darkElements h-full ml-auto w-96 rounded-md pl-2"
                     placeholder="Search for a country..."
+                    onChange={handleChange}
                 /> 
             </label>
         </div>
     );
 }
+
 class FilterField extends Component {
     constructor(props) {
         super(props)
