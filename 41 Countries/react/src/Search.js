@@ -39,6 +39,10 @@ function SearchField(props) {
     function handleChange(event) {
         let filter = event.target.value;
         props.handler(filter.trim())
+        /// fix bug: when pressed enter during typing the filter dropdown would showup, this fixes it
+        if (event.key === "Enter") {
+            event.preventDefault()
+        }
     }
     return (
         <div className="bg-lightElements dark:bg-darkElements h-12 text-lightText dark:text-darkText rounded-md shadow-lg">
@@ -47,7 +51,7 @@ function SearchField(props) {
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 14" width="20" height="20">
                       <g fill="none" fill-rule="evenodd">
                         <path d="M-1-1h16v16H-1z"/>
-                        <g stroke="#BAB4CC" stroke-linecap="round">
+                        <g stroke="#ccc" stroke-linecap="round">
                           <path d="M13.5 13.5l-4-4M10.5 5.5A5 5 0 1 1 .499 5.499 5 5 0 0 1 10.5 5.5z"/>
                         </g>
                       </g>
@@ -55,9 +59,10 @@ function SearchField(props) {
                 </div>
                 <input 
                     type="search" 
-                    className="bg-lightElements dark:bg-darkElements h-full ml-auto w-96 rounded-md pl-2"
+                    className="bg-lightElements dark:bg-darkElements h-full ml-auto w-96 rounded-md pl-2 dark:placeholder-gray-300 placeholder-gray-500"
                     placeholder="Search for a country..."
                     onChange={handleChange}
+                    onKeyDown={handleChange}
                 /> 
             </label>
         </div>
