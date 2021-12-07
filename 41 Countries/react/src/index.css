@@ -17,10 +17,13 @@
 
     }
     .card-p {
-        margin-bottom: 0px;
+        margin-bottom: 2px;
 
     }
     .card-p:last-child {
         margin-bottom: 45px;
     }
+
+
+    
 }

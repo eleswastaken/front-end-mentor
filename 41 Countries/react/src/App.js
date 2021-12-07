@@ -25,9 +25,9 @@ class App extends Component {
             search: "",
         },
     };
-    this.filterHandler = this.filterHandler.bind(this)
+    this.filtersHandler = this.filtersHandler.bind(this)
   }
-  filterHandler(props) {
+  filtersHandler(props) {
     let filters = Object.assign({}, this.state.filters, props);
     this.setState({filters})
   }
@@ -38,7 +38,7 @@ class App extends Component {
       <div className="text-lightText dark:text-darkText h-screen">
         <Header />
         <main className="pt-14">
-          <SearchForm handler={this.filterHandler} />
+          <SearchForm handler={this.filtersHandler} />
           <CardContainer />
         </main>
       </div>

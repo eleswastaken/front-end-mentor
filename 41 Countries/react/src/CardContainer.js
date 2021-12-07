@@ -1,6 +1,8 @@
 
 import {Component} from "react";
 
+import Paragraph from "./Paragraph";
+
 class CardContainer extends Component {
 
 	render() {
@@ -33,14 +35,15 @@ function Card() {
 				</a>
 			</div>
 			<div className="px-6 pt-6">
-				<h2 className="mb-4 font-bold">
+				<h2 className="mb-4 font-bold text-base">
 					<a href="#">
 						Austria
 					</a>
 				</h2>
-				<p className="card-p">Pragraph</p>
-				<p className="card-p">Pragraph</p>
-				<p className="card-p">Pragraph</p>
+				<Paragraph text="Capital" value="Vienna" classN="card-p text-sm"/>
+				<Paragraph text="Capital" value="Vienna" classN="card-p text-sm"/>
+				<Paragraph text="Capital" value="Vienna" classN="card-p text-sm"/>
+				<Paragraph text="Capital" value="Vienna" classN="card-p text-sm"/>
 			</div>
 		</div>
 	);
