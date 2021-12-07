@@ -1,6 +1,6 @@
 
 
-var requestURL = "https://restcountries.com/v3.1/all";
+var requestURL = "https://restcountries.com/v2/all";
 // var requestURL = "./data.json";
 const request = new XMLHttpRequest(),
       countryInfoCont = document.querySelector(".country-info"),
