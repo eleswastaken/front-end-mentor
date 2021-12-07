@@ -4,30 +4,25 @@ import {Component} from "react";
 class SearchForm extends Component {
     constructor(props) {
         super(props)
-        this.props = props
-        this.handleClick = this.handleClick.bind(this)
-        this.handleSubmit = this.handleSubmit.bind(this)
-    }
-    handleSubmit(event) {
-        event.preventDefault()
+        this.someAppHandler = props.handler;
+
+        this.filterFieldHandler = this.filterFieldHandler.bind(this);
     }
 
-    handleClick(event) {
-        /// it is a form rememeber
-        event.preventDefault()
-
-        /// this is the way to change, thus rerender, parent component state
-        this.props.app.setState({countries: [1,2,3,4]})
+    filterFieldHandler(filter) {
+        console.log(filter)
+        // pass new region filter to the App to change the state, thus rerender
+        // this.someAppHandler({region: filter})
     }
 
     render() {
         return (
             <form 
                 className="flex items-center justify-between mb-14 max-w-7xl m-auto"
-                onSubmit={this.handleSubmit}
+                onSubmit={(event) => event.preventDefault()}
             >
                 <SearchField />
-                <FilterField />
+                <FilterField handler={this.filterFieldHandler}/>
             </form>
         );
     }
@@ -59,14 +54,18 @@ function SearchField() {
 class FilterField extends Component {
     constructor(props) {
         super(props)
+        this.submitFilter = props.handler   // this is a function
         this.state = {
             isExpanded: false,
         }
-        this.handleClick = this.handleClick.bind(this);
+        this.openDropdown = this.openDropdown.bind(this);
         this.handleOutsideClick = this.handleOutsideClick.bind(this);
+        this.handleFilter = this.handleFilter.bind(this);
     }
-    handleClick(event) {
+
+    openDropdown(event) {
         let button = event.currentTarget;
+        // dropdown
         let ul = event.currentTarget.nextSibling;
 
         if (!this.state.isExpanded) {
@@ -79,8 +78,9 @@ class FilterField extends Component {
             ul.classList.toggle("hidden", true)
         }
     }
+
+    // handle clicks outside of the dropdown
     handleOutsideClick(event) {
-        console.log("ehhe")
         let button = event.currentTarget.parentElement.previousSibling;
         let ul = event.currentTarget.parentElement;
 
@@ -88,21 +88,37 @@ class FilterField extends Component {
         button.setAttribute("aria-expanded", false);
         ul.classList.toggle("hidden", true)
     }
+
+    handleFilter(event, filter) {
+        // hide dropdown, like a normal dropdown would do after choice :P
+        let button = event.currentTarget.parentElement.parentElement.previousSibling;
+        let ul = event.currentTarget.parentElement.parentElement;
+        this.setState({isExpanded: false});
+        button.setAttribute("aria-expanded", false);
+        ul.classList.toggle("hidden", true);
+
+        // pass new filter-region to the SearchForm
+        this.submitFilter(filter)
+    }
+
     render() {
         return (
             <div className="bg-lightElements dark:bg-darkElements h-12 w-48 text-lightText dark:text-darkText rounded-md shadow-lg relative">
 
-                <button className="bg-lightElements dark:bg-darkElements h-full ml-auto w-full rounded-md flex items-center justify-between px-6 relative z-20" aria-expanded="false" onClick={this.handleClick}>
+                <button className="bg-lightElements dark:bg-darkElements h-full ml-auto w-full rounded-md flex items-center justify-between px-6 relative z-20"
+                    aria-expanded="false"
+                    onClick={this.openDropdown}
+                >
                     Filter by region
                     <svg aria-hidden="true" className="scale-75" xmlns="http://www.w3.org/2000/svg" width="18" height="12"><path fill="none" stroke="#ccc" stroke-width="2" d="M1 1l8 8 8-8"/></svg>
                 </button>
 
                 <ul className="absolute top-14 bg-lightElements dark:bg-darkElements w-full text-lightText dark:text-darkText rounded-md shadow-lg py-2 z-20 hidden">
                     <li className="fixed top-0 left-0 w-screen h-screen z-[-1]" onClick={this.handleOutsideClick}></li>
-                    <li className="filter-button"><button>Asia</button></li>
-                    <li className="filter-button"><button>Africa</button></li>
-                    <li className="filter-button"><button>America</button></li>
-                    <li className="filter-button"><button>Europe</button></li>
+                    <li className="filter-button"><button onClick={(e) => this.handleFilter(e, "asia")}>Asia</button></li>
+                    <li className="filter-button"><button onClick={(e) => this.handleFilter(e, "africa")}>Africa</button></li>
+                    <li className="filter-button"><button onClick={(e) => this.handleFilter(e, "america")}>America</button></li>
+                    <li className="filter-button"><button onClick={(e) => this.handleFilter(e, "europe")}>Europe</button></li>
                 </ul>
 
             </div>
