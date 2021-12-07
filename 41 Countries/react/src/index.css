@@ -14,5 +14,6 @@
     .filter-button {}
     .filter-button button{
         @apply px-6 py-2 w-full text-left ;
+        
     }
 }

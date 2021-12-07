@@ -37,7 +37,7 @@ class App extends Component {
     return (
       <div className="text-lightText dark:text-darkText h-screen">
         <Header />
-        <main className="px-20 pt-14 ">
+        <main className="pt-14">
           <SearchForm handler={this.filterHandler} />
           <CardContainer />
         </main>

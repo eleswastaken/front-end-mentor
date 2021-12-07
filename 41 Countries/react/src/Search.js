@@ -16,13 +16,15 @@ class SearchForm extends Component {
 
     render() {
         return (
-            <form 
-                className="flex items-center justify-between mb-14 max-w-7xl m-auto"
-                onSubmit={(event) => event.preventDefault()}
-            >
-                <SearchField handler={this.filterHandler}/>
-                <FilterField handler={this.filterHandler}/>
-            </form>
+            <div className="px-20 m-auto">
+                <form 
+                    className="flex items-center justify-between mb-14 max-w-7xl m-auto"
+                    onSubmit={(event) => event.preventDefault()}
+                >
+                    <SearchField handler={this.filterHandler}/>
+                    <FilterField handler={this.filterHandler}/>
+                </form>
+            </div>
         );
     }
 }
