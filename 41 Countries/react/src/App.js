@@ -7,22 +7,21 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      // this is supposed to be all data from the api
-      // data: fetch("./data.json"),
-      // this is countries showing on the screen
-      countries: [],
-      region: "", 
-      perpage: 8, 
-      search: "",
+        // this is supposed to be all data from the api
+        // data: fetch("./data.json"),
+        // this is countries showing on the screen
+        countries: [],
+        filters: {
+            region: "", 
+            perpage: 8, 
+            search: "",
+        },
     };
-    // this.filters = {};
-    //// the idea: create a method this.setFilters that works like setState(even calls render at the end),
-    //// this would certainly make it easier to work with filters during conditional rendering
     this.filterHandler = this.filterHandler.bind(this)
   }
-
   filterHandler(props) {
-    this.setState(props)
+    let filters = Object.assign({}, this.state.filters, props);
+    this.setState({filters})
   }
 
   render() {
