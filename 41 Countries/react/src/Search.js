@@ -108,10 +108,15 @@ class FilterField extends Component {
         this.setState({isExpanded: false});
         button.setAttribute("aria-expanded", false);
         ul.classList.toggle("hidden", true);
+        if (filter) {
+            button.firstChild.nodeValue = filter;
+        } else {
+            button.firstChild.nodeValue = "Filter by region";
+        }
 
         // pass new filter-region to the SearchForm
         this.submitFilter(
-            {region: filter}
+            {region: filter.toLowerCase()}
         )
     }
 
@@ -129,10 +134,11 @@ class FilterField extends Component {
 
                 <ul className="absolute top-14 bg-lightElements dark:bg-darkElements w-full text-lightText dark:text-darkText rounded-md shadow-lg py-2 z-20 hidden">
                     <li className="fixed top-0 left-0 w-screen h-screen z-[-1]" onClick={this.handleOutsideClick}></li>
-                    <li className="filter-button"><button onClick={(e) => this.handleFilter(e, "asia")}>Asia</button></li>
-                    <li className="filter-button"><button onClick={(e) => this.handleFilter(e, "africa")}>Africa</button></li>
-                    <li className="filter-button"><button onClick={(e) => this.handleFilter(e, "america")}>America</button></li>
-                    <li className="filter-button"><button onClick={(e) => this.handleFilter(e, "europe")}>Europe</button></li>
+                    <li className="filter-button"><button onClick={(e) => this.handleFilter(e, "")}>All</button></li>
+                    <li className="filter-button"><button onClick={(e) => this.handleFilter(e, "Asia")}>Asia</button></li>
+                    <li className="filter-button"><button onClick={(e) => this.handleFilter(e, "Africa")}>Africa</button></li>
+                    <li className="filter-button"><button onClick={(e) => this.handleFilter(e, "America")}>America</button></li>
+                    <li className="filter-button"><button onClick={(e) => this.handleFilter(e, "Europe")}>Europe</button></li>
                 </ul>
 
             </div>
