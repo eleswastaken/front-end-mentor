@@ -35,9 +35,9 @@ class App extends Component {
   render() {
     console.log("rerender", this.state);
     return (
-      <div className="text-lightText dark:text-darkText h-screen">
+      <div className="text-lightText dark:text-darkText">
         <Header />
-        <main className="pt-14">
+        <main className="pt-14 pb-14">
           <SearchForm handler={this.filtersHandler} />
           <CardContainer />
         </main>

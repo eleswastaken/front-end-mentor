@@ -40,9 +40,8 @@ function Card() {
 						Austria
 					</a>
 				</h2>
-				<Paragraph text="Capital" value="Vienna" classN="card-p text-sm"/>
-				<Paragraph text="Capital" value="Vienna" classN="card-p text-sm"/>
-				<Paragraph text="Capital" value="Vienna" classN="card-p text-sm"/>
+				<Paragraph text="Population" value={999888777666} classN="card-p text-sm" isNum={true}/>
+				<Paragraph text="Region" value="Europe" classN="card-p text-sm"/>
 				<Paragraph text="Capital" value="Vienna" classN="card-p text-sm"/>
 			</div>
 		</div>

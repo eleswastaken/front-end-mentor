@@ -1,10 +1,13 @@
 
 function Paragraph(props) {
 	function parseNumber(n) {
-		// parse three digit+ numbers
-		return n+""
+		n = (n+'').split("");
+		for (let i = n.length-1; i > 0; i--) {
+			if (i%3==0) n.splice(-i, 0, ",")
+		}
+		return n.join("")
 	}
-	let value = props.isNum ? parseNumber(props.value) : props.value
+	let value = props.isNum ? parseNumber(props.value) : props.value;
 	return(
 		<p className={props.classN}>
 			<span className="font-semibold">{props.text}: </span>
