@@ -23,7 +23,7 @@ function Card(props) {
 		">
 			<div className="w-full overflow-hidden">
 				<a href="#" tabIndex="-1" className="w-full h-full">
-					<img src="../images/aut.svg"
+					<img src={country.flags.png}
 						className="transition-transform w-full h-full ease-in-out duration-300 hover:scale-110 object-cover"
 						alt="Flag"
 						width="420" height="280"
@@ -33,11 +33,11 @@ function Card(props) {
 			<div className="px-6 pt-6">
 				<h2 className="mb-4 font-bold text-base">
 					<a href="#">
-						Austria
+						{country.name.common}
 					</a>
 				</h2>
-				<Paragraph text="Population" value={999888777666} classN="card-p text-sm" isNum={true}/>
-				<Paragraph text="Region" value="Europe" classN="card-p text-sm"/>
+				<Paragraph text="Population" value={country.population} classN="card-p text-sm" isNum={true}/>
+				<Paragraph text="Region" value={country.region} classN="card-p text-sm"/>
 				<Paragraph text="Capital" value="Vienna" classN="card-p text-sm"/>
 			</div>
 		</div>

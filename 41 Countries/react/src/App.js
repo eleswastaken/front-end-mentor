@@ -14,10 +14,12 @@ class App extends Component {
         // this is countries showing on the screen
         countries: [
             {
-                name: "Italy",
+                name: {common: "Italy"},
                 capital: "Rome",
                 area: 301336.0,
                 population: 60665551,
+                region: "Europe",
+                flags: {png: "../images/aut.svg", svg: ""}
             },
         ],
     };
