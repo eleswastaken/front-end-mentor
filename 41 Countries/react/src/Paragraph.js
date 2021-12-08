@@ -3,7 +3,7 @@ function Paragraph(props) {
 	function parseNumber(n) {
 		n = (n+'').split("");
 		for (let i = n.length-1; i > 0; i--) {
-			if (i%3==0) n.splice(-i, 0, ",")
+			if (i%3===0) n.splice(-i, 0, ",")
 		}
 		return n.join("")
 	}

@@ -7,6 +7,7 @@ import CardContainer from "./CardContainer"
 class App extends Component {
   constructor(props) {
     super(props);
+    // https://restcountries.com/v3.1/all
     this.state = {
         // this is supposed to be all data from the api
         // data: fetch("./data.json"),
@@ -19,17 +20,24 @@ class App extends Component {
                 population: 60665551,
             },
         ],
-        filters: {
-            region: "", 
-            perpage: 8, 
-            search: "",
-        },
     };
-    this.filtersHandler = this.filtersHandler.bind(this)
+    this.filters = {
+        region: "", 
+        perpage: 8, 
+        search: "",
+    }
+    this.setFilters = this.setFilters.bind(this)
+    this.applyFilters = this.applyFilters.bind(this)
   }
-  filtersHandler(props) {
-    let filters = Object.assign({}, this.state.filters, props);
-    this.setState({filters})
+
+  setFilters(props) {
+    let filters = Object.assign({}, this.filters, props);
+    this.filters = filters;
+    // this.applyFilters()
+  }
+
+  applyFilters() {
+
   }
 
   render() {
@@ -38,7 +46,7 @@ class App extends Component {
       <div className="text-lightText dark:text-darkText">
         <Header />
         <main className="pt-14 pb-14">
-          <SearchForm handler={this.filtersHandler} />
+          <SearchForm handler={this.setFilters} />
           <CardContainer />
         </main>
       </div>
