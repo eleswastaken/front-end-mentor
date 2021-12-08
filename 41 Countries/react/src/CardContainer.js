@@ -18,20 +18,22 @@ function Card(props) {
 	let country = props.country
 	console.log("card", country)
 	return(
-		<div className="max-w-sm w-full bg-white overflow-hidden rounded-md relative shadow-lg
+		<div className="max-w-sm w-full h-full bg-white overflow-hidden rounded-md relative shadow-lg
 			min-w-[250px]
 			bg-lightElements dark:bg-darkElements
+			flex flex-col
 		">
-			<div className="w-full overflow-hidden ">
-				<a href="#" tabIndex="-1" className="w-full h-full">
+			<div className="overflow-hidden flex-1 relative">
+				<img src={country.flags.png} className="absolute object-cover h-full w-full blur-sm"/>
+				<a href="#" tabIndex="-1" className="w-full h-full inline-block flex items-center justify-center group relative z-10">
 					<img src={country.flags.png}
-						className="transition-transform w-full h-full ease-in-out duration-300 hover:scale-110"
+						className="transition-transform ease-in-out duration-300 group-hover:scale-110 object-contain"
 						alt={"Flag of " + country.name.common}
 						width="420" height="280"
 					/>
 				</a>
 			</div>
-			<div className="px-6 pt-6">
+			<div className="px-6 pt-6 flex-1">
 				<h2 className="mb-4 font-bold text-base">
 					<a href="#">
 						{country.name.common}
