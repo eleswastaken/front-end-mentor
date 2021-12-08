@@ -3,27 +3,20 @@ import {Component} from "react";
 
 import Paragraph from "./Paragraph";
 
-class CardContainer extends Component {
-
-	render() {
-		let cards = [];
-		return(
-			<div className=" px-20">
-				<ul className="max-w-7xl m-auto w-full grid grid-cols-[repeat(auto-fit,minmax(250px,1fr))] gap-7 justify-items-center">
-					<li><Card country={{j:1}}/></li>
-					<li><Card/></li>
-					<li><Card/></li>
-					<li><Card/></li>
-					<li><Card/></li>
-				</ul>
-			</div>
-		);
-	}
+function CardContainer(props) {
+	// let countries = props.countries;
+	return(
+		<div className=" px-20">
+			<ul className="max-w-7xl m-auto w-full grid grid-cols-[repeat(auto-fit,minmax(250px,1fr))] gap-7 justify-items-center">
+				{ props.countries.map(country => <li><Card country={country} /></li>) }
+			</ul>
+		</div>
+	);
 }
 
 function Card(props) {
 	let country = props.country
-	console.log(country)
+	console.log("card", country)
 	return(
 		<div className="max-w-sm w-full bg-white overflow-hidden rounded-md relative shadow-lg
 			bg-lightElements dark:bg-darkElements
@@ -33,6 +26,7 @@ function Card(props) {
 					<img src="../images/aut.svg"
 						className="transition-transform w-full h-full ease-in-out duration-300 hover:scale-110 object-cover"
 						alt="Flag"
+						width="420" height="280"
 					/>
 				</a>
 			</div>

@@ -36,8 +36,10 @@ class App extends Component {
     // this.applyFilters()
   }
 
-  applyFilters() {
+  applyFilters(isRandom) {
+    let countries = [];
 
+    this.setState(countries)
   }
 
   render() {
@@ -47,7 +49,7 @@ class App extends Component {
         <Header />
         <main className="pt-14 pb-14">
           <SearchForm handler={this.setFilters} />
-          <CardContainer />
+          <CardContainer countries={this.state.countries}/>
         </main>
       </div>
     );
