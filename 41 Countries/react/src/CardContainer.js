@@ -19,9 +19,10 @@ function Card(props) {
 	console.log("card", country)
 	return(
 		<div className="max-w-sm w-full bg-white overflow-hidden rounded-md relative shadow-lg
+			min-w-[250px]
 			bg-lightElements dark:bg-darkElements
 		">
-			<div className="w-full overflow-hidden">
+			<div className="w-full overflow-hidden max-h-[210px] h-[210px]">
 				<a href="#" tabIndex="-1" className="w-full h-full">
 					<img src={country.flags.png}
 						className="transition-transform w-full h-full ease-in-out duration-300 hover:scale-110 object-cover"
