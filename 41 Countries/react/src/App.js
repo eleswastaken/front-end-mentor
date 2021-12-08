@@ -39,9 +39,20 @@ class App extends Component {
   }
 
   applyFilters(isRandom) {
-    let countries = [];
+    // let countries = [];
 
-    this.setState(countries)
+    // sort through region
+    let regionFiltered = this.state.countries.slice();
+    if (this.filters.region.trim()) {
+      regionFiltered = regionFiltered.filter(country => country.region.toLowerCase() === this.filters.region.toLowerCase()) 
+    }
+
+    let searchFiltered = regionFiltered;
+    if (this.filters.search.trim()) {
+      searchFiltered = searchFiltered.filter(country => new RegExp(this.filters.search).test(country))
+    }
+
+    this.setState({countries: searchFiltered.slice(this.filters.perpage)})
   }
 
   render() {

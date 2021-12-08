@@ -25,7 +25,7 @@ function Card(props) {
 				<a href="#" tabIndex="-1" className="w-full h-full">
 					<img src={country.flags.png}
 						className="transition-transform w-full h-full ease-in-out duration-300 hover:scale-110 object-cover"
-						alt="Flag"
+						alt={"Flag of " + country.name.common}
 						width="420" height="280"
 					/>
 				</a>
@@ -38,7 +38,7 @@ function Card(props) {
 				</h2>
 				<Paragraph text="Population" value={country.population} classN="card-p text-sm" isNum={true}/>
 				<Paragraph text="Region" value={country.region} classN="card-p text-sm"/>
-				<Paragraph text="Capital" value="Vienna" classN="card-p text-sm"/>
+				<Paragraph text="Capital" value={country.capital} classN="card-p text-sm"/>
 			</div>
 		</div>
 	);
