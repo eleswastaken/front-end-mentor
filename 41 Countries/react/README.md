@@ -18,4 +18,4 @@ Users should be able to:
 
 ### Current look
 
-[](./screenshots/1.png)
+![](./screenshots/1.png)
