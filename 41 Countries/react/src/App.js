@@ -2,7 +2,8 @@ import { Component } from "react";
 
 import Header from "./Header";
 import SearchForm from "./Search";
-import CardContainer from "./CardContainer"
+import CardContainer from "./CardContainer";
+import Country from "./CountryInfo"
 
 class App extends Component {
   constructor(props) {
@@ -11,16 +12,7 @@ class App extends Component {
         isLoaded: false,
         error: null,
         allCountries: [],
-        countries: [
-/*            {
-                name: {common: "Italy"},
-                capital: "Rome",
-                area: 301336.0,
-                population: 60665551,
-                region: "Europe",
-                flags: {png: "../images/aut.svg", svg: ""}
-            },*/
-        ],
+        countries: [],
     };
     this.filters = {
         region: "", 
@@ -32,6 +24,7 @@ class App extends Component {
   }
 
   componentDidMount() {
+    return 0 ///////////////////////////////////////////////////
     fetch("https://restcountries.com/v3.1/all")
       .then(res => res.json())
       .then(
@@ -85,7 +78,15 @@ class App extends Component {
       // this.setState({countries: [1,2,3,4,5]})
     }
   }
-
+  /// for country info
+  // render() {
+  //   return (
+  //     <div className="text-lightText dark:text-darkText">
+  //       <Header />
+  //       <Country country={0}/>
+  //     </div>
+  //   );
+  // }
   render() {
     console.log("Render", this.state);
     let main;
