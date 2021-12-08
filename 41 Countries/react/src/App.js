@@ -54,6 +54,7 @@ class App extends Component {
     let filters = Object.assign({}, this.filters, props);
     this.filters = filters;
     // this.applyFilters()
+    console.log("Filters: ", this.filters);
     (!this.filters.region.trim() && !this.filters.search.trim()) ? this.applyFilters(true) : this.applyFilters();
   }
 
@@ -78,19 +79,22 @@ class App extends Component {
       if (this.filters.search.trim()) {
         searchFiltered = searchFiltered.filter(country => new RegExp(this.filters.search).test(country))
       }
-      this.setState({countries: searchFiltered.slice(this.filters.perpage)})
+      console.log(searchFiltered.slice(0,this.filters.perpage));
+      // this.setState({countries: searchFiltered.slice(this.filters.perpage)})
+      this.setState({countries: searchFiltered.slice(0,this.filters.perpage)})
+      // this.setState({countries: [1,2,3,4,5]})
     }
   }
 
   render() {
-    console.log("rerender", this.state);
-    // if (!this.state.countries.length) {
-    //   this.applyFilters(true)
-    //   console.log(this.state)
-    //   return null
-    // }
+    console.log("Render", this.state);
     let main;
     if (this.state.isLoaded) {
+      if (!this.state.countries.length) {
+        console.log("countries")
+        this.applyFilters(true)
+        return null
+      }
       main = (<CardContainer countries={this.state.countries}/>)
     } else {
       main = (<div>loading</div>);
@@ -99,7 +103,7 @@ class App extends Component {
       <div className="text-lightText dark:text-darkText">
         <Header />
         <main className="pt-14 pb-14">
-          <SearchForm handler={this.setFilters} />
+          <SearchForm handler={this.setFilters} filters={this.filters}/>
           {main}
         </main>
       </div>

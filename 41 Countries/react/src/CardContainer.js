@@ -22,10 +22,10 @@ function Card(props) {
 			min-w-[250px]
 			bg-lightElements dark:bg-darkElements
 		">
-			<div className="w-full overflow-hidden max-h-[210px]">
+			<div className="w-full overflow-hidden ">
 				<a href="#" tabIndex="-1" className="w-full h-full">
 					<img src={country.flags.png}
-						className="transition-transform w-full h-full ease-in-out duration-300 hover:scale-110 object-contain"
+						className="transition-transform w-full h-full ease-in-out duration-300 hover:scale-110"
 						alt={"Flag of " + country.name.common}
 						width="420" height="280"
 					/>
