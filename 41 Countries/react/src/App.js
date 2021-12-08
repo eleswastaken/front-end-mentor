@@ -24,7 +24,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    return 0 ///////////////////////////////////////////////////
+    // return 0 ///////////////////////////////////////////////////
     fetch("https://restcountries.com/v3.1/all")
       .then(res => res.json())
       .then(
@@ -33,6 +33,7 @@ class App extends Component {
             isLoaded: true,
             allCountries: result
           });
+          this.applyFilters(true)
         },
         (error) => {
           this.setState({
@@ -67,15 +68,12 @@ class App extends Component {
       if (this.filters.region.trim()) {
         regionFiltered = regionFiltered.filter(country => country.region.toLowerCase() === this.filters.region.toLowerCase()) 
       }
-
       let searchFiltered = regionFiltered;
       if (this.filters.search.trim()) {
-        searchFiltered = searchFiltered.filter(country => new RegExp(this.filters.search).test(country))
+        searchFiltered = searchFiltered.filter(country => new RegExp(this.filters.search.toLowerCase()).test(country.name.common.toLowerCase()))
       }
-      console.log(searchFiltered.slice(0,this.filters.perpage));
-      // this.setState({countries: searchFiltered.slice(this.filters.perpage)})
       this.setState({countries: searchFiltered.slice(0,this.filters.perpage)})
-      // this.setState({countries: [1,2,3,4,5]})
+      console.log(this.state.countries);
     }
   }
   /// for country info
@@ -88,14 +86,9 @@ class App extends Component {
   //   );
   // }
   render() {
-    console.log("Render", this.state);
+    // console.log("Render", this.state);
     let main;
     if (this.state.isLoaded) {
-      if (!this.state.countries.length) {
-        console.log("countries")
-        this.applyFilters(true)
-        return null
-      }
       main = (<CardContainer countries={this.state.countries}/>)
     } else {
       main = (<div>loading</div>);

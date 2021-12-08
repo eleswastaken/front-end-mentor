@@ -8,7 +8,7 @@ function CardContainer(props) {
 	return(
 		<div className=" px-20">
 			<ul className="max-w-7xl m-auto w-full grid grid-cols-[repeat(auto-fit,minmax(250px,1fr))] gap-7 justify-items-center">
-				{ props.countries.map(country => <li><Card country={country} /></li>) }
+				{ props.countries.map((country, index) => <li key={index}><Card country={country} /></li>) }
 			</ul>
 		</div>
 	);
@@ -16,7 +16,6 @@ function CardContainer(props) {
 
 function Card(props) {
 	let country = props.country
-	console.log("card", country)
 	return(
 		<div className="max-w-sm w-full h-full bg-white overflow-hidden rounded-md relative shadow-lg
 			min-w-[250px]
