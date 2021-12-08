@@ -24,10 +24,10 @@ function Card(props) {
 			flex flex-col
 		">
 			<div className="overflow-hidden flex-1 relative">
-				<img src={country.flags.png} className="absolute object-cover h-full w-full blur-sm"/>
+				<img src={country.flags.png} className="absolute object-cover h-full w-full blur"/>
 				<a href="#" tabIndex="-1" className="w-full h-full inline-block flex items-center justify-center group relative z-10">
 					<img src={country.flags.png}
-						className="transition-transform ease-in-out duration-300 group-hover:scale-110 object-contain"
+						className="transition-transform ease-in-out duration-300 group-hover:scale-110 object-contain max-h-full max-w-full"
 						alt={"Flag of " + country.name.common}
 						width="420" height="280"
 					/>
