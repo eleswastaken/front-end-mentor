@@ -7,11 +7,9 @@ import CardContainer from "./CardContainer"
 class App extends Component {
   constructor(props) {
     super(props);
-    // https://restcountries.com/v3.1/all
     this.state = {
-        // this is supposed to be all data from the api
-        // data: fetch("./data.json"),
-        // this is countries showing on the screen
+        isLoaded: false,
+        error: null,
         allCountries: [],
         countries: [
 /*            {
@@ -31,6 +29,25 @@ class App extends Component {
     }
     this.setFilters = this.setFilters.bind(this)
     this.applyFilters = this.applyFilters.bind(this)
+  }
+
+  componentDidMount() {
+    fetch("https://restcountries.com/v3.1/all")
+      .then(res => res.json())
+      .then(
+        (result) => {
+          this.setState({
+            isLoaded: true,
+            allCountries: result
+          });
+        },
+        (error) => {
+          this.setState({
+            isLoaded: true,
+            error
+          });
+        }
+      )
   }
 
   setFilters(props) {
@@ -69,14 +86,21 @@ class App extends Component {
     console.log("rerender", this.state);
     // if (!this.state.countries.length) {
     //   this.applyFilters(true)
+    //   console.log(this.state)
     //   return null
     // }
+    let main;
+    if (this.state.isLoaded) {
+      main = (<CardContainer countries={this.state.countries}/>)
+    } else {
+      main = (<div>loading</div>);
+    }
     return (
       <div className="text-lightText dark:text-darkText">
         <Header />
         <main className="pt-14 pb-14">
           <SearchForm handler={this.setFilters} />
-          <CardContainer countries={this.state.countries}/>
+          {main}
         </main>
       </div>
     );
