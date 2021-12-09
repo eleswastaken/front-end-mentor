@@ -4,6 +4,12 @@ import {Link} from "react-router-dom";
 import Paragraph from "./Paragraph";
 
 function Country(props) {
+	let country = props.country;
+	console.log(country);
+	// return (<p></p>);
+	let nativeName = country.name.nativeName[Object.keys(country.name.nativeName)[0]].common;
+	let languages = Object.keys(country.languages).map(key => country.languages[key]).join(", ");
+	let currencies = Object.keys(country.currencies).map(key => country.currencies[key].name).join(", ");
 	return (
 		<main className="px-20 py-14">
 			<div className="info-links mb-14 flex items-center justify-between">
@@ -27,19 +33,19 @@ function Country(props) {
 
 			<div className="info-content flex items-center">
 				<div className="flex-1 pr-16">
-					<img className="w-full" src={"https://flagcdn.com/w320/yt.png"}/>
+					<img className="w-full" src={country.flags.svg}/>
 				</div>
 				<div className="flex-1 pl-16">
-					<h1 className="text-2xl font-bold mb-7">YT something</h1>
+					<h1 className="text-2xl font-bold mb-7">{country.name.official}</h1>
 					<ul className="flex flex-wrap mb-10">
-						<li className="info-p"><Paragraph text={"Native Name"} value={"Value"} classN={"text-base"}/></li>
-						<li className="info-p"><Paragraph text={"Population"} value={"Value"} classN={"text-base"}/></li>
-						<li className="info-p"><Paragraph text={"Region"} value={"Value"} classN={"text-base"}/></li>
-						<li className="info-p"><Paragraph text={"Sub Region"} value={"Value"} classN={"text-base"}/></li>
-						<li className="info-p"><Paragraph text={"Top Level Domain"} value={"Value"} classN={"text-base"}/></li>
-						<li className="info-p"><Paragraph text={"Currencies"} value={"Value"} classN={"text-base"}/></li>
-						<li className="info-p"><Paragraph text={"Languages"} value={"Value"} classN={"text-base"}/></li>
-						<li className="info-p"><Paragraph text={"Capital"} value={"Value"} classN={"text-base"}/></li>
+						<li className="info-p"><Paragraph text={"Native Name"} value={nativeName} classN={"text-base"}/></li>
+						<li className="info-p"><Paragraph text={"Population"} value={country.population} isNum={true} classN={"text-base"}/></li>
+						<li className="info-p"><Paragraph text={"Region"} value={country.region} classN={"text-base"}/></li>
+						<li className="info-p"><Paragraph text={"Sub Region"} value={country.subregion} classN={"text-base"}/></li>
+						<li className="info-p"><Paragraph text={"Top Level Domain"} value={country.tld.join(" ")} classN={"text-base"}/></li>
+						<li className="info-p"><Paragraph text={"Currencies"} value={currencies} classN={"text-base"}/></li>
+						<li className="info-p"><Paragraph text={"Languages"} value={languages} classN={"text-base"}/></li>
+						<li className="info-p"><Paragraph text={"Capital"} value={country.capital} classN={"text-base"}/></li>
 					</ul>
 					<Paragraph text="Border countries" classN="text-base flex" value={
 						<ul className="flex flex-wrap max-w-[350px] gap-3 ml-3">

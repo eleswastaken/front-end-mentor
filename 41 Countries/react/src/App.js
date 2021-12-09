@@ -14,6 +14,7 @@ class App extends Component {
         error: null,
         allCountries: [],
         countries: [],
+        currentCountry: {},
     };
     this.filters = {
         region: "", 
@@ -25,14 +26,15 @@ class App extends Component {
   }
 
   componentDidMount() {
-    return 0 ///////////////////////////////////////////////////
+    // return 0 ///////////////////////////////////////////////////
     fetch("https://restcountries.com/v3.1/all")
       .then(res => res.json())
       .then(
         (result) => {
           this.setState({
             isLoaded: true,
-            allCountries: result
+            allCountries: result,
+            currentCountry: result[139],
           });
           this.applyFilters(true)
         },
@@ -79,15 +81,20 @@ class App extends Component {
   }
   // // for country info
   render() {
-    return (
-      <Router>
-        <div className="text-lightText dark:text-darkText">
-          <Header />
-          <Country country={0}/>
-        </div>
-        
-      </Router>
-    );
+    if (this.state.isLoaded) {
+      return (
+        <Router>
+          <div className="text-lightText dark:text-darkText">
+            <Header />
+            <Country country={this.state.currentCountry}/>
+          </div>
+        </Router>
+      );
+    } else {
+      return(
+        <p className="flex items-center justify-center h-screen">Loading...</p>
+        );
+    } 
   }
   /*render() {
     // console.log("Render", this.state);

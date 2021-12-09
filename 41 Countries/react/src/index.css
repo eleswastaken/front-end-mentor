@@ -28,8 +28,13 @@
         flex: 1;
         flex-basis: 50%;
         margin-bottom: 13px;
-    
+    }
+    .info-p:nth-child(7) {
+        flex-basis:  100%;
+    }
+    .info-p:last-child {
+        flex-basis:  100%;
     }
     
-    
+
 }

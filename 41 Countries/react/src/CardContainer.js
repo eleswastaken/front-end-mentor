@@ -27,7 +27,7 @@ function Card(props) {
 				<a href="#" tabIndex="-1" className="w-full h-full inline-block flex items-center justify-center group relative z-10">
 					<img src={country.flags.svg}
 						className="transition-transform ease-in-out duration-300 group-hover:scale-110 object-contain max-h-full max-w-full"
-						alt={"Flag of " + country.name.common}
+						alt={"Flag of " + country.name.official}
 						width="420" height="280"
 					/>
 				</a>
