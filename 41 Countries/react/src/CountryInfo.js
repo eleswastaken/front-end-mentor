@@ -7,18 +7,11 @@ function Country(props) {
 	const {cca3, back, forward} = useParams();
 	let country = props.findByCca3(cca3);
 	// return (<p></p>);
-	console.log(cca3, back, forward)
+	// console.log(cca3, back, forward)
+	// console.log(country)
 	let nativeName = country.name.nativeName ? country.name.nativeName[Object.keys(country.name.nativeName)[0]].common : country.name.common;
-	let languages = Object.keys(country.languages).map(key => country.languages[key]).join(", ");
-	let currencies = Object.keys(country.currencies).map(key => country.currencies[key].name).join(", ");
-	let borders = [];
-	try{
-		borders = country.borders.map((cca3, index) => {
-			// console.log(cca3)
-			let country = props.findByCca3(cca3);
-			return (<BorderCountry key={index} to={"/info/"+country.cca3} name={country.name.common}/>);
-		});
-	} catch{}
+	let languages = country.languages ? Object.keys(country.languages).map(key => country.languages[key]).join(", ") : "None";
+	let currencies = country.currencies ? Object.keys(country.currencies).map(key => country.currencies[key].name).join(", ") : "None";
 
 	return (
 		<div className="">
@@ -50,16 +43,16 @@ function Country(props) {
 					<ul className="flex flex-wrap mb-10">
 						<li className="info-p"><Paragraph text={"Native Name"} value={nativeName} classN={"text-base"}/></li>
 						<li className="info-p"><Paragraph text={"Population"} value={country.population} isNum={true} classN={"text-base"}/></li>
-						<li className="info-p"><Paragraph text={"Region"} value={country.region} classN={"text-base"}/></li>
-						<li className="info-p"><Paragraph text={"Sub Region"} value={country.subregion} classN={"text-base"}/></li>
-						<li className="info-p"><Paragraph text={"Top Level Domain"} value={country.tld.join(" ")} classN={"text-base"}/></li>
-						<li className="info-p"><Paragraph text={"Currencies"} value={currencies} classN={"text-base"}/></li>
-						<li className="info-p"><Paragraph text={"Languages"} value={languages} classN={"text-base"}/></li>
-						<li className="info-p"><Paragraph text={"Capital"} value={country.capital} classN={"text-base"}/></li>
+						<li className="info-p"><Paragraph text={"Region"} value={country.region || "None"} classN={"text-base"}/></li>
+						<li className="info-p"><Paragraph text={"Sub Region"} value={country.subregion || "None"} classN={"text-base"}/></li>
+						<li className="info-p"><Paragraph text={"Top Level Domain"} value={country.tld.length ? country.tld.join(" ") : "None"} classN={"text-base"}/></li>
+						<li className="info-p"><Paragraph text={"Currencies"} value={currencies.length ? currencies : "None"} classN={"text-base"}/></li>
+						<li className="info-p"><Paragraph text={"Languages"} value={languages.length ? languages : "None"} classN={"text-base"}/></li>
+						<li className="info-p"><Paragraph text={"Capital"} value={country.capital || "None"} classN={"text-base"}/></li>
 					</ul>
 					<Paragraph text="Border countries" classN="text-base flex" value={
 						<ul className="flex flex-wrap max-w-[350px] gap-3 ml-3">
-							{borders.length ? borders : "None"}
+							{country.borders ? country.borders : "None"}
 						</ul>
 					}/>
 				</div>
