@@ -89,24 +89,24 @@ class App extends Component {
       </Router>
     );
   }
-  // render() {
-  //   // console.log("Render", this.state);
-  //   let main;
-  //   if (this.state.isLoaded) {
-  //     main = (<CardContainer countries={this.state.countries}/>)
-  //   } else {
-  //     main = (<div>loading</div>);
-  //   }
-  //   return (
-  //     <div className="text-lightText dark:text-darkText">
-  //       <Header />
-  //       <main className="pt-14 pb-14">
-  //         <SearchForm handler={this.setFilters} filters={this.filters}/>
-  //         {main}
-  //       </main>
-  //     </div>
-  //   );
-  // }
+  /*render() {
+    // console.log("Render", this.state);
+    let main;
+    if (this.state.isLoaded) {
+      main = (<CardContainer countries={this.state.countries}/>)
+    } else {
+      main = (<div>loading</div>);
+    }
+    return (
+      <div className="text-lightText dark:text-darkText">
+        <Header />
+        <main className="py-14>
+          <SearchForm handler={this.setFilters} filters={this.filters}/>
+          {main}
+        </main>
+      </div>
+    );
+  }*/
 }
 
 export default App;
