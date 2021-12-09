@@ -137,10 +137,11 @@ class FilterField extends Component {
                 <ul className="absolute top-14 bg-lightElements dark:bg-darkElements w-full text-lightText dark:text-darkText rounded-md shadow-lg py-2 z-20 hidden">
                     <li className="fixed top-0 left-0 w-screen h-screen z-[-1]" onClick={this.handleOutsideClick}></li>
                     <li className="filter-button"><button onClick={(e) => this.handleFilter(e, "")}>All</button></li>
-                    <li className="filter-button"><button onClick={(e) => this.handleFilter(e, "Asia")}>Asia</button></li>
                     <li className="filter-button"><button onClick={(e) => this.handleFilter(e, "Africa")}>Africa</button></li>
-                    <li className="filter-button"><button onClick={(e) => this.handleFilter(e, "America")}>America</button></li>
+                    <li className="filter-button"><button onClick={(e) => this.handleFilter(e, "Americas")}>America</button></li>
+                    <li className="filter-button"><button onClick={(e) => this.handleFilter(e, "Asia")}>Asia</button></li>
                     <li className="filter-button"><button onClick={(e) => this.handleFilter(e, "Europe")}>Europe</button></li>
+                    <li className="filter-button"><button onClick={(e) => this.handleFilter(e, "Oceania")}>Oceania</button></li>
                 </ul>
 
             </div>
