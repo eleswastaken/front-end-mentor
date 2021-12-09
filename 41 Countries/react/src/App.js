@@ -24,6 +24,7 @@ class App extends Component {
     this.setFilters = this.setFilters.bind(this)
     this.applyFilters = this.applyFilters.bind(this)
     this.findName = this.findName.bind(this)
+    this.createInfoLink = this.createInfoLink.bind(this)
   }
 
   componentDidMount() {
@@ -35,7 +36,7 @@ class App extends Component {
           this.setState({
             isLoaded: true,
             allCountries: result,
-            currentCountry: result[54],
+            currentCountry: result[132],
           });
           this.applyFilters(true)
         },
@@ -83,8 +84,12 @@ class App extends Component {
   findName(cca3) {
     return this.state.allCountries.find(con => con.cca3 === cca3)
   }
+  createInfoLink(country, back=0, forward=0) {
+    return `/info/${country.cca3}/${back}/${forward}`;
+  }
 
-
+                // <SearchForm handler={this.setFilters} filters={this.filters}/>
+                // <CardContainer countries={this.state.countries} createLink={this.createInfoLink}/>
   render() {
     if (this.state.isLoaded) {
       return (
@@ -94,8 +99,7 @@ class App extends Component {
             <main className="py-14">
               <Switch>
                 <Route exact path="/">
-                  <SearchForm handler={this.setFilters} filters={this.filters}/>
-                  <CardContainer countries={this.state.countries}/>
+                  <Country country={this.state.currentCountry} find={this.findName}/>
                 </Route>
               </Switch>
             </main>
@@ -108,7 +112,6 @@ class App extends Component {
           <Header />
           <p className="flex items-center justify-center h-screen">Loading...</p>
         </main>
-
         );    
     }
   }

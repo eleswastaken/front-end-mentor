@@ -11,7 +11,8 @@ function Country(props) {
 	let currencies = Object.keys(country.currencies).map(key => country.currencies[key].name).join(", ");
 	let borders = [];
 	try{
-		borders = (country.borders || ["None"]).map((cca3, index) => {
+		borders = country.borders.map((cca3, index) => {
+			console.log(cca3)
 			return (<BorderCountry key={index} to={" "} name={props.find(cca3).name.common}/>);
 		});
 	} catch{}
