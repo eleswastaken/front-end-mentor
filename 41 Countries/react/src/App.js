@@ -23,6 +23,7 @@ class App extends Component {
     }
     this.setFilters = this.setFilters.bind(this)
     this.applyFilters = this.applyFilters.bind(this)
+    this.findName = this.findName.bind(this)
   }
 
   componentDidMount() {
@@ -79,6 +80,15 @@ class App extends Component {
       // console.log(this.state.countries);
     }
   }
+
+  findName(cca3) {
+    return this.state.allCountries.find(con => con.cca3 === cca3)
+  }
+
+
+
+  
+
   // // for country info
   render() {
     if (this.state.isLoaded) {
@@ -86,7 +96,7 @@ class App extends Component {
         <Router>
           <div className="text-lightText dark:text-darkText">
             <Header />
-            <Country country={this.state.currentCountry}/>
+            <Country country={this.state.currentCountry} find={this.findName}/>
           </div>
         </Router>
       );
