@@ -1,5 +1,5 @@
 import { Component } from "react";
-import {BrowserRouter as Router, Link, Switch, Route} from "react-router-dom";
+import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
 
 import Header from "./Header";
 import SearchForm from "./Search";
@@ -51,7 +51,6 @@ class App extends Component {
   setFilters(props) {
     let filters = Object.assign({}, this.filters, props);
     this.filters = filters;
-    // this.applyFilters()
     // console.log("Filters: ", this.filters);
     (!this.filters.region.trim() && !this.filters.search.trim()) ? this.applyFilters(true) : this.applyFilters();
   }
@@ -86,44 +85,34 @@ class App extends Component {
   }
 
 
-
-
-
-  // // for country info
   render() {
     if (this.state.isLoaded) {
       return (
         <Router>
           <div className="text-lightText dark:text-darkText">
             <Header />
-            <Country country={this.state.currentCountry} find={this.findName}/>
+            <main className="py-14">
+              <Switch>
+                <Route exact path="/">
+                  <SearchForm handler={this.setFilters} filters={this.filters}/>
+                  <CardContainer countries={this.state.countries}/>
+                </Route>
+              </Switch>
+            </main>
           </div>
         </Router>
-      );
-    } else {
-      return(
-        <p className="flex items-center justify-center h-screen">Loading...</p>
         );
-    } 
-  }
-  /*render() {
-    // console.log("Render", this.state);
-    let main;
-    if (this.state.isLoaded) {
-      main = (<CardContainer countries={this.state.countries}/>)
-    } else {
-      main = (<div>loading</div>);
-    }
-    return (
-      <div className="text-lightText dark:text-darkText">
-        <Header />
-        <main className="py-14>
-          <SearchForm handler={this.setFilters} filters={this.filters}/>
-          {main}
+    } else if (!this.state.isLoaded) {
+      return (
+        <main className="text-lightText dark:text-darkText">
+          <Header />
+          <p className="flex items-center justify-center h-screen">Loading...</p>
         </main>
-      </div>
-    );
-  }*/
+
+        );    
+    }
+  }
+
 }
 
 export default App;
