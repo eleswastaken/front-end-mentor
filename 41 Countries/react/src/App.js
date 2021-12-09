@@ -35,7 +35,7 @@ class App extends Component {
           this.setState({
             isLoaded: true,
             allCountries: result,
-            currentCountry: result[139],
+            currentCountry: result[54],
           });
           this.applyFilters(true)
         },
@@ -87,7 +87,7 @@ class App extends Component {
 
 
 
-  
+
 
   // // for country info
   render() {

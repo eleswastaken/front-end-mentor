@@ -9,9 +9,13 @@ function Country(props) {
 	let nativeName = country.name.nativeName[Object.keys(country.name.nativeName)[0]].common;
 	let languages = Object.keys(country.languages).map(key => country.languages[key]).join(", ");
 	let currencies = Object.keys(country.currencies).map(key => country.currencies[key].name).join(", ");
-	let borders = country.borders.map((cca3, index) => {
-		return (<BorderCountry key={index} to={" "} name={props.find(cca3).name.common}/>);
-	})
+	let borders = [];
+	try{
+		borders = (country.borders || ["None"]).map((cca3, index) => {
+			return (<BorderCountry key={index} to={" "} name={props.find(cca3).name.common}/>);
+		});
+	} catch{}
+
 	return (
 		<main className="px-20 py-14">
 			<div className="info-links mb-14 flex items-center justify-between">
@@ -51,7 +55,7 @@ function Country(props) {
 					</ul>
 					<Paragraph text="Border countries" classN="text-base flex" value={
 						<ul className="flex flex-wrap max-w-[350px] gap-3 ml-3">
-							{borders}
+							{borders.length ? borders : "None"}
 						</ul>
 					}/>
 				</div>
@@ -63,7 +67,7 @@ function Country(props) {
 function BorderCountry(props) {
 
 	return (
-		<Link to={props.to} className="inline-block min-w-[100px] shadow-lg rounded-sm bg-lightElements dark:bg-darkElements text-center text-sm py-0.5">
+		<Link to={props.to} className="inline-block min-w-[100px] shadow-lg rounded-sm bg-lightElements dark:bg-darkElements text-center text-sm py-1">
 			{props.name}
 		</Link>
 		);
