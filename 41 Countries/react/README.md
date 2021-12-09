@@ -1,6 +1,8 @@
 
 # Frontend Mentor - REST Countries API with color theme switcher 
 
+It is [live](https://eleswastaken-front-end-countries.netlify.app/)!
+
 ## Main build: 
 - Tailwind CSS
 - React
