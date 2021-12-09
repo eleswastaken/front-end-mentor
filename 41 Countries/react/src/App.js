@@ -94,11 +94,14 @@ class App extends Component {
         <Router>
           <div className="text-lightText dark:text-darkText">
             <Header />
-            <main className="py-14">
+            <main className="py-14 px-20">
               <Switch>
                 <Route exact path="/">
                   <SearchForm handler={this.setFilters} filters={this.filters}/>
                   <CardContainer countries={this.state.countries} createLink={this.createInfoLink}/>
+                </Route>
+                <Route path="/info/:name/:back/:forward">
+                  <Country country={this.state.currentCountry} find={this.findName}/>
                 </Route>
               </Switch>
             </main>

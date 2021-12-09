@@ -16,7 +16,7 @@ class SearchForm extends Component {
 
     render() {
         return (
-            <div className="px-20 m-auto">
+            <div className=" m-auto">
                 <form 
                     className="flex items-center justify-between mb-14 max-w-7xl m-auto"
                     onSubmit={(event) => event.preventDefault()}

@@ -18,7 +18,7 @@ function Country(props) {
 	} catch{}
 
 	return (
-		<main className="px-20 py-14">
+		<div className="">
 			<div className="info-links mb-14 flex items-center justify-between">
 				<Link to={" "} className="shadow-lg bg-lightElements dark:bg-darkElements flex items-center justify-between px-4 py-1 rounded-md shadow-lg">
 						<svg className="mr-2 dark:fill-[#fff]" mlns="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/1999/xlink" width="30" height="20" viewBox="0 0 486.975 486.975">
@@ -61,7 +61,7 @@ function Country(props) {
 					}/>
 				</div>
 			</div>
-		</main>
+		</div>
 	);
 }
 
