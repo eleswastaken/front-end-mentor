@@ -1,7 +1,7 @@
 
 # Frontend Mentor - REST Countries API with color theme switcher 
 
-It is [live](https://eleswastaken-front-end-countries.netlify.app/)!
+It is [live](https://eleswastaken-front-end-countries-api-gui.netlify.app/)!
 
 ## Main build: 
 - Tailwind CSS
@@ -25,5 +25,3 @@ Users should be able to:
 
 
 ### Current problems
-
-- When you try to apply filter, the entire page rerenders, thus removing all the changes but applying the filters. E.g. you type in the search bar, rerender, the search bar is empty but the filter has applied the first letter. Same with regions, the region filter has been applied, but the filter button value is wierd...Problem: passing props between siblings.
