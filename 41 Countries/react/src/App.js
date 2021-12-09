@@ -1,4 +1,5 @@
 import { Component } from "react";
+import {BrowserRouter as Router, Link, Switch, Route} from "react-router-dom";
 
 import Header from "./Header";
 import SearchForm from "./Search";
@@ -24,7 +25,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    // return 0 ///////////////////////////////////////////////////
+    return 0 ///////////////////////////////////////////////////
     fetch("https://restcountries.com/v3.1/all")
       .then(res => res.json())
       .then(
@@ -48,7 +49,7 @@ class App extends Component {
     let filters = Object.assign({}, this.filters, props);
     this.filters = filters;
     // this.applyFilters()
-    console.log("Filters: ", this.filters);
+    // console.log("Filters: ", this.filters);
     (!this.filters.region.trim() && !this.filters.search.trim()) ? this.applyFilters(true) : this.applyFilters();
   }
 
@@ -73,36 +74,39 @@ class App extends Component {
         searchFiltered = searchFiltered.filter(country => new RegExp(this.filters.search.toLowerCase()).test(country.name.common.toLowerCase()))
       }
       this.setState({countries: searchFiltered.slice(0,this.filters.perpage)})
-      console.log(this.state.countries);
+      // console.log(this.state.countries);
     }
   }
-  /// for country info
+  // // for country info
+  render() {
+    return (
+      <Router>
+        <div className="text-lightText dark:text-darkText">
+          <Header />
+          <Country country={0}/>
+        </div>
+        
+      </Router>
+    );
+  }
   // render() {
+  //   // console.log("Render", this.state);
+  //   let main;
+  //   if (this.state.isLoaded) {
+  //     main = (<CardContainer countries={this.state.countries}/>)
+  //   } else {
+  //     main = (<div>loading</div>);
+  //   }
   //   return (
   //     <div className="text-lightText dark:text-darkText">
   //       <Header />
-  //       <Country country={0}/>
+  //       <main className="pt-14 pb-14">
+  //         <SearchForm handler={this.setFilters} filters={this.filters}/>
+  //         {main}
+  //       </main>
   //     </div>
   //   );
   // }
-  render() {
-    // console.log("Render", this.state);
-    let main;
-    if (this.state.isLoaded) {
-      main = (<CardContainer countries={this.state.countries}/>)
-    } else {
-      main = (<div>loading</div>);
-    }
-    return (
-      <div className="text-lightText dark:text-darkText">
-        <Header />
-        <main className="pt-14 pb-14">
-          <SearchForm handler={this.setFilters} filters={this.filters}/>
-          {main}
-        </main>
-      </div>
-    );
-  }
 }
 
 export default App;
