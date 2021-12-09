@@ -87,9 +87,7 @@ class App extends Component {
   createInfoLink(country, back=0, forward=0) {
     return `/info/${country.cca3}/${back}/${forward}`;
   }
-
-                // <SearchForm handler={this.setFilters} filters={this.filters}/>
-                // <CardContainer countries={this.state.countries} createLink={this.createInfoLink}/>
+                  // <Country country={this.state.currentCountry} find={this.findName}/>
   render() {
     if (this.state.isLoaded) {
       return (
@@ -99,7 +97,8 @@ class App extends Component {
             <main className="py-14">
               <Switch>
                 <Route exact path="/">
-                  <Country country={this.state.currentCountry} find={this.findName}/>
+                  <SearchForm handler={this.setFilters} filters={this.filters}/>
+                  <CardContainer countries={this.state.countries} createLink={this.createInfoLink}/>
                 </Route>
               </Switch>
             </main>
