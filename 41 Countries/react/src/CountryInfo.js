@@ -8,21 +8,22 @@ function Country(props) {
 	let country = props.findByCca3(cca3);
 	// return (<p></p>);
 	console.log(cca3, back, forward)
-	let nativeName = country.name.nativeName[Object.keys(country.name.nativeName)[0]].common;
+	let nativeName = country.name.nativeName ? country.name.nativeName[Object.keys(country.name.nativeName)[0]].common : country.name.common;
 	let languages = Object.keys(country.languages).map(key => country.languages[key]).join(", ");
 	let currencies = Object.keys(country.currencies).map(key => country.currencies[key].name).join(", ");
 	let borders = [];
 	try{
 		borders = country.borders.map((cca3, index) => {
 			// console.log(cca3)
-			return (<BorderCountry key={index} to={" "} name={props.findByCca3(cca3).name.common}/>);
+			let country = props.findByCca3(cca3);
+			return (<BorderCountry key={index} to={"/info/"+country.cca3} name={country.name.common}/>);
 		});
 	} catch{}
 
 	return (
 		<div className="">
 			<div className="info-links mb-14 flex items-center justify-between">
-				<Link to={" "} className="shadow-lg bg-lightElements dark:bg-darkElements flex items-center justify-between px-4 py-1 rounded-md shadow-lg">
+				<Link to={"/"} className="shadow-lg bg-lightElements dark:bg-darkElements flex items-center justify-between px-4 py-1 rounded-md shadow-lg">
 						<svg className="mr-2 dark:fill-[#fff]" mlns="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/1999/xlink" width="30" height="20" viewBox="0 0 486.975 486.975">
 							<g>
 								<path d="M473.475,230.025h-427.4l116-116c5.3-5.3,5.3-13.8,0-19.1c-5.3-5.3-13.8-5.3-19.1,0l-139,139c-5.3,5.3-5.3,13.8,0,19.1   l139,139c2.6,2.6,6.1,4,9.5,4s6.9-1.3,9.5-4c5.3-5.3,5.3-13.8,0-19.1l-116-116h427.5c7.5,0,13.5-6,13.5-13.5   S480.975,230.025,473.475,230.025z"/>
