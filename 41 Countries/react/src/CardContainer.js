@@ -17,7 +17,7 @@ function CardContainer(props) {
 
 function Card(props) {
 	let country = props.country;
-	console.log(country)
+	// console.log(country)
 	return(
 		<div className="max-w-sm w-full h-full bg-white overflow-hidden rounded-md relative shadow-lg
 			min-w-[250px]

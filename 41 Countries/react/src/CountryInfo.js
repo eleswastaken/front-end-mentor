@@ -1,19 +1,21 @@
 
-import {Link} from "react-router-dom";
+import {Link, useParams} from "react-router-dom";
 
 import Paragraph from "./Paragraph";
 
 function Country(props) {
-	let country = props.country;
+	const {cca3, back, forward} = useParams();
+	let country = props.findByCca3(cca3);
 	// return (<p></p>);
+	console.log(cca3, back, forward)
 	let nativeName = country.name.nativeName[Object.keys(country.name.nativeName)[0]].common;
 	let languages = Object.keys(country.languages).map(key => country.languages[key]).join(", ");
 	let currencies = Object.keys(country.currencies).map(key => country.currencies[key].name).join(", ");
 	let borders = [];
 	try{
 		borders = country.borders.map((cca3, index) => {
-			console.log(cca3)
-			return (<BorderCountry key={index} to={" "} name={props.find(cca3).name.common}/>);
+			// console.log(cca3)
+			return (<BorderCountry key={index} to={" "} name={props.findByCca3(cca3).name.common}/>);
 		});
 	} catch{}
 
@@ -68,7 +70,7 @@ function Country(props) {
 function BorderCountry(props) {
 
 	return (
-		<Link to={props.to} className="inline-block min-w-[100px] shadow-lg rounded-sm bg-lightElements dark:bg-darkElements text-center text-sm py-1">
+		<Link to={props.to} className="inline-block min-w-[100px] shadow-lg rounded-sm bg-lightElements dark:bg-darkElements text-center text-sm py-1 px-2">
 			{props.name}
 		</Link>
 		);

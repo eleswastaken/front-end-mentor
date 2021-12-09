@@ -14,7 +14,7 @@ class App extends Component {
         error: null,
         allCountries: [],
         countries: [],
-        currentCountry: {},
+        // currentCountry: {},
     };
     this.filters = {
         region: "", 
@@ -23,7 +23,7 @@ class App extends Component {
     }
     this.setFilters = this.setFilters.bind(this)
     this.applyFilters = this.applyFilters.bind(this)
-    this.findName = this.findName.bind(this)
+    this.findByCca3 = this.findByCca3.bind(this)
     this.createInfoLink = this.createInfoLink.bind(this)
   }
 
@@ -81,13 +81,13 @@ class App extends Component {
     }
   }
 
-  findName(cca3) {
+  findByCca3(cca3) {
     return this.state.allCountries.find(con => con.cca3 === cca3)
   }
   createInfoLink(country, back=0, forward=0) {
     return `/info/${country.cca3}/${back}/${forward}`;
   }
-                  // <Country country={this.state.currentCountry} find={this.findName}/>
+                  // <Country country={this.state.currentCountry} find={this.findByCca3}/>
   render() {
     if (this.state.isLoaded) {
       return (
@@ -100,8 +100,11 @@ class App extends Component {
                   <SearchForm handler={this.setFilters} filters={this.filters}/>
                   <CardContainer countries={this.state.countries} createLink={this.createInfoLink}/>
                 </Route>
-                <Route path="/info/:name/:back/:forward">
-                  <Country country={this.state.currentCountry} find={this.findName}/>
+                <Route path="/info/:cca3/:back/:forward">
+                  <Country findByCca3={this.findByCca3}/>
+                </Route>
+                <Route path="/info/:cca3">
+                  <Country findByCca3={this.findByCca3}/>
                 </Route>
               </Switch>
             </main>
