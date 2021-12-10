@@ -119,7 +119,7 @@ class App extends Component {
         <div className="text-lightText dark:text-darkText">
           <Header />
           <Switch>
-            <main className="px-6 py-8 sm:px-10 sm:py-12 lg:px-12 xl:py-14 xl:px-20">
+            <main className="px-6 py-8 sm:px-8 md:px-10 lg:px-12 xl:px-20 sm:py-12  xl:py-14">
             {this.state.isLoaded &&
               <div>
                 <Route exact path="/">

@@ -3,7 +3,7 @@ import {Link} from "react-router-dom";
 
 function Header() {
     return (
-        <header className="bg-lightElements dark:bg-darkElements h-16 w-full shadow-lg px-20 flex justify-center items-center">
+        <header className="px-6 sm:px-8 md:px-10 lg:px-12 xl:px-20 bg-lightElements dark:bg-darkElements h-16 w-full shadow-lg flex justify-center items-center">
             <div className="w-full max-w-[95rem] flex justify-between items-center">
                 <h1 className="text-xl font-bold"><Link to="/">Where in the world?</Link></h1>
                 <ThemeButton />
@@ -33,7 +33,7 @@ function ThemeButton() {
             className="bg-transparent flex items-center transform"
             onClick={handleClick}>
                 <Toggle />
-                Dark mode
+                <span className="hidden md:inline-block ml-3">Dark mode</span>
         </button>
     );
 }
@@ -41,7 +41,7 @@ function ThemeButton() {
 function Toggle() {
     return (
         <span id="theme-switch" className="
-            inline-block rounded-full w-14 h-7 mr-3 bg-green-400 relative
+            inline-block rounded-full w-14 h-7 bg-green-400 relative
             before:block before:transform before:transition-all before:absolute before:rounded-full  before:w-6 before:h-6 before:top-0.5 before:right-0.5
             before:bg-grey-300
         "></span>
