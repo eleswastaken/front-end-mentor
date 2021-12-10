@@ -44,10 +44,30 @@ function LoadingSkeleton(props) {
 			);
 	} else {
 		console.log("homepage")
+		return (
+					// { props.countries.slice(0,props.filters.perpage).map((country, index) => <li key={index}><Card country={country} createLink={props.createLink} /></li>) }
+			<div className="">
+
+            <div className=" m-auto">
+                <div className="flex items-center mb-14 max-w-7xl m-auto">
+     			    <div className="bg-lightElements dark:bg-darkElements h-12 w-[29rem] rounded-md shadow-lg"></div>
+                    <div className="hover:bg-grey-300 ml-auto bg-lightElements dark:bg-darkElements h-12 w-12 mr-4 rounded-md shadow-lg"></div>
+       			    <div className="bg-lightElements dark:bg-darkElements h-12 w-48 rounded-md shadow-lg"></div>
+                </div>
+            </div>
+				<ul className="max-w-7xl m-auto w-full grid grid-cols-[repeat(auto-fit,minmax(250px,1fr))] gap-7 justify-items-center">
+					<div className="skeleton min-w-[250px] h-[320px] w-full overflow-hidden rounded-md shadow-lg bg-lightElements dark:bg-darkElements"></div>
+					<div className="skeleton min-w-[250px] h-[320px] w-full overflow-hidden rounded-md shadow-lg bg-lightElements dark:bg-darkElements"></div>
+					<div className="skeleton min-w-[250px] h-[320px] w-full overflow-hidden rounded-md shadow-lg bg-lightElements dark:bg-darkElements"></div>
+					<div className="skeleton min-w-[250px] h-[320px] w-full overflow-hidden rounded-md shadow-lg bg-lightElements dark:bg-darkElements"></div>
+					<div className="skeleton min-w-[250px] h-[320px] w-full overflow-hidden rounded-md shadow-lg bg-lightElements dark:bg-darkElements"></div>
+					<div className="skeleton min-w-[250px] h-[320px] w-full overflow-hidden rounded-md shadow-lg bg-lightElements dark:bg-darkElements"></div>
+					<div className="skeleton min-w-[250px] h-[320px] w-full overflow-hidden rounded-md shadow-lg bg-lightElements dark:bg-darkElements"></div>
+					<div className="skeleton min-w-[250px] h-[320px] w-full overflow-hidden rounded-md shadow-lg bg-lightElements dark:bg-darkElements"></div>
+				</ul>
+			</div>
+			);
 	}
-	return (
-		<div>Laosdofj</div>
-		);
 
 }
 
