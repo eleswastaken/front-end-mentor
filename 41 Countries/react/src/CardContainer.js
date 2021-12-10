@@ -26,7 +26,7 @@ function Card(props) {
 			flex flex-col
 		">
 			<div className="overflow-hidden flex-1 relative">
-				<img src={country.flags.svg} className="absolute object-cover h-full w-full blur"/>
+				<img src={country.flags.svg} className="absolute object-cover h-full w-full blur-lg"/>
 				<Link to={props.createLink(country)} tabIndex="-1" className="w-full h-full inline-block flex items-center justify-center group relative z-10">
 					<img src={country.flags.svg}
 						className="transition-transform ease-in-out duration-300 group-hover:scale-110 object-contain max-h-full max-w-full"

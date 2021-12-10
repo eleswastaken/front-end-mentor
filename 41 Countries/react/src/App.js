@@ -4,7 +4,8 @@ import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
 import Header from "./Header";
 import SearchForm from "./Search";
 import CardContainer from "./CardContainer";
-import Country from "./CountryInfo"
+import Country from "./CountryInfo";
+import LoadingSkeleton from "./LoadingSkeleton";
 
 class App extends Component {
   constructor(props) {
@@ -133,8 +134,9 @@ class App extends Component {
                 </Route>
               </div>
             }
-            {!this.state.isLoaded && //fdsafsdfa
+            {!this.state.isLoaded &&
               <div>
+                <LoadingSkeleton />
                 <p className="flex items-center justify-center h-full">Loading...</p>
               </div>
             }
