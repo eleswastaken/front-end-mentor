@@ -52,8 +52,23 @@
         width:  100%;
     }
     .skeleton {
-        @apply animate-pulse;
-
-        
+        /*@apply animate-pulse;*/
+        animation:  lightup 1000ms ease-in-out infinite alternate;
+        background: linear-gradient(to top right, transparent, #84848442, transparent, #84848442, transparent) no-repeat;
+        background-size: 1000px 1500px;
+    }
+    @keyframes lightup {
+        0% {
+            /*opacity: 0;*/
+            /*filter: brightness(0.8);*/
+            /*background: linear-gradient(0deg, transparent, #8484844a, transparent) no-repeat;*/
+            background-position: 0 -1000px;
+        }
+        100% {
+            /*opacity: 0;*/
+            /*filter: brightness(0.8);*/
+            /*background: linear-gradient(90deg, transparent, #8484844a, transparent) no-repeat;*/
+            background-position: 0 0;
+        }
     }
 }
