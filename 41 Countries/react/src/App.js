@@ -31,7 +31,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    // return 0 ///////////////////////////////////////////////////
+    return 0 ///////////////////////////////////////////////////
     fetch("https://restcountries.com/v3.1/all")
       .then(res => res.json())
       .then(
@@ -137,7 +137,6 @@ class App extends Component {
             {!this.state.isLoaded &&
               <div>
                 <LoadingSkeleton />
-                <p className="flex items-center justify-center h-full">Loading...</p>
               </div>
             }
           </main>
@@ -146,6 +145,7 @@ class App extends Component {
       </Router>
       );
   }
+                // <p className="flex items-center justify-center h-full">Loading...</p>
 
 }
 

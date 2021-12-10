@@ -12,7 +12,7 @@ function Country(props) {
 	let currencies = country.currencies ? Object.keys(country.currencies).map(key => country.currencies[key].name).join(", ") : "None";
 	let borders = country.borders ? country.borders.map((cca3, index) => {
 			let country = props.findByCca3(cca3);
-			return (<BorderCountry key={index} to={"/info/"+country.cca3} name={country.name.common}/>);
+			return (<li><BorderCountry key={index} to={"/info/"+country.cca3} name={country.name.common}/></li>);
 		}) : "None";
 	return (
 		<div className="">
