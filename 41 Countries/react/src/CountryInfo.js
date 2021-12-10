@@ -17,7 +17,7 @@ function Country(props) {
 	return (
 		<div className="max-w-[95rem] m-auto">
 			<div className="info-links mb-8 sm:mb-12 md:mb-14 flex items-center justify-between">
-				<Link to={"/"} className="shadow-lg bg-lightElements dark:bg-darkElements flex items-center justify-between px-4 py-1 rounded-md shadow-lg">
+				<Link to={"/"} className=" hover:brightness-125 transition-all shadow-lg bg-lightElements dark:bg-darkElements flex items-center justify-between px-4 py-1 rounded-md shadow-lg">
 						<svg className="mr-2 dark:fill-[#fff]" mlns="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/1999/xlink" width="30" height="20" viewBox="0 0 486.975 486.975">
 							<g>
 								<path d="M473.475,230.025h-427.4l116-116c5.3-5.3,5.3-13.8,0-19.1c-5.3-5.3-13.8-5.3-19.1,0l-139,139c-5.3,5.3-5.3,13.8,0,19.1   l139,139c2.6,2.6,6.1,4,9.5,4s6.9-1.3,9.5-4c5.3-5.3,5.3-13.8,0-19.1l-116-116h427.5c7.5,0,13.5-6,13.5-13.5   S480.975,230.025,473.475,230.025z"/>
@@ -57,7 +57,7 @@ function Country(props) {
 function BorderCountry(props) {
 
 	return (
-		<Link to={props.to} className="inline-block min-w-[100px] shadow-lg rounded-sm bg-lightElements dark:bg-darkElements text-center text-sm py-1 px-2">
+		<Link to={props.to} className="inline-block min-w-[100px] shadow-lg rounded-sm bg-lightElements dark:bg-darkElements text-center text-sm py-1 px-2 hover:brightness-125 transition-all">
 			{props.name}
 		</Link>
 		);
