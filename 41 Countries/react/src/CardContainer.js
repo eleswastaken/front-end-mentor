@@ -6,7 +6,7 @@ import Paragraph from "./Paragraph";
 
 function CardContainer(props) {
 	// let countries = props.countries;
-	console.log(props.countries.length)
+	// console.log(props.countries.length)
 	return(
 		<div className="">
 			<ul className="max-w-7xl m-auto w-full grid grid-cols-[repeat(auto-fit,minmax(250px,1fr))] gap-7 justify-items-center">

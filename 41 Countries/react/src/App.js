@@ -56,8 +56,8 @@ class App extends Component {
       this.applyFilters(true);
       return 0;
     }
-    console.log("shuffle countries")
-    console.log(this.state.countries.length)
+    // console.log("shuffle countries")
+    // console.log(this.state.countries.length)
     let countries = this.state.countries.slice();
     for(let i = 0; i < this.state.countries.length; i++) {
       let th = countries[i]
@@ -70,7 +70,7 @@ class App extends Component {
     let filters = Object.assign({}, this.filters, props);
     if (!this.areSame(this.filters, filters)) {
       this.filters = filters;
-      console.log("Filters: ", this.filters);
+      // console.log("Filters: ", this.filters);
 
       (!this.filters.region.trim() && !this.filters.search.trim()) ? this.applyFilters(true) : this.applyFilters();
     }

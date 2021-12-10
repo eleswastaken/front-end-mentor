@@ -20,8 +20,7 @@ Users should be able to:
 
 ### Current look
 
-![](./screenshots/2.png)
-![](./screenshots/1.png)
+![](./screenshots/3.png)
 
 
 ### Current problems
