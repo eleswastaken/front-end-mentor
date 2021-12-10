@@ -22,7 +22,11 @@ class SearchForm extends Component {
                     onSubmit={(event) => event.preventDefault()}
                 >
                     <SearchField handler={this.filterHandler}/>
-                    <button onClick={this.shuffle} className="ml-auto bg-lightElements dark:bg-darkElements h-12 w-12 mr-4 text-lightText dark:text-darkText rounded-md shadow-lg">O</button>
+                    <button onClick={this.shuffle} className="hover:bg-grey-300 flex items-center justify-center ml-auto bg-lightElements dark:bg-darkElements h-12 w-12 mr-4 text-lightText dark:text-darkText rounded-md shadow-lg">
+                        <svg className="fill-[grey] dark:fill-[#fff]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 489.533 489.533" width="20" height="20">
+                            <g><path d="M268.175,488.161c98.2-11,176.9-89.5,188.1-187.7c14.7-128.4-85.1-237.7-210.2-239.1v-57.6c0-3.2-4-4.9-6.7-2.9   l-118.6,87.1c-2,1.5-2,4.4,0,5.9l118.6,87.1c2.7,2,6.7,0.2,6.7-2.9v-57.5c87.9,1.4,158.3,76.2,152.3,165.6   c-5.1,76.9-67.8,139.3-144.7,144.2c-81.5,5.2-150.8-53-163.2-130c-2.3-14.3-14.8-24.7-29.2-24.7c-17.9,0-31.9,15.9-29.1,33.6   C49.575,418.961,150.875,501.261,268.175,488.161z"/></g> 
+                        </svg>
+                    </button>
                     <FilterField handler={this.filterHandler}/>
                 </form>
             </div>

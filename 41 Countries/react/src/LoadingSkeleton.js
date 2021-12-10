@@ -15,7 +15,7 @@ function LoadingSkeleton(props) {
 
 				<div className="info-content flex items-center">
 					<div className="skeleton flex-1 pr-16 min-h-full bg-lightElements dark:bg-darkElements rounded-md ">
-					<img src="../images/aut.svg" className="w-full h-[120%] opacity-0"/>
+					<img src="../images/aut.svg" className="w-[full] h-full opacity-0" width="500" height="400"/>
 					</div>
 					<div className="flex-1 pl-14">
 						<h1 className="skeleton text-2xl font-bold ml-[10px] mb-10 w-2/3 h-8 bg-lightElements dark:bg-darkElements rounded-md "></h1>
