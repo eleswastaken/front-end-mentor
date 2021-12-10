@@ -6,7 +6,7 @@ function LoadingSkeleton(props) {
 	// console.log(window.location.pathname)
 	if (/info/.test(window.location.pathname)) {
 		return (
-			<div aria-hidden="true">
+			<div aria-hidden="true" className="max-w-[95rem] m-auto">
 				<div className="info-links mb-14 flex items-center justify-between">
 					<div className="skeleton h-7 w-24 bg-lightElements dark:bg-darkElements px-4 py-1 rounded-md">
 
@@ -15,7 +15,7 @@ function LoadingSkeleton(props) {
 
 				<div className="info-content flex items-center">
 					<div className="skeleton flex-1 pr-16 min-h-full bg-lightElements dark:bg-darkElements rounded-md ">
-					<img src="../images/aut.svg" className="w-[full] h-full opacity-0" width="500" height="400"/>
+						<img src="../images/aut.svg" className="w-[full] h-full opacity-0" width="500" height="400"/>
 					</div>
 					<div className="flex-1 pl-14">
 						<h1 className="skeleton text-2xl font-bold ml-[10px] mb-10 w-2/3 h-8 bg-lightElements dark:bg-darkElements rounded-md "></h1>
@@ -47,13 +47,13 @@ function LoadingSkeleton(props) {
 		return (
 			<div className="">
 	            <div className=" m-auto">
-	                <div className="flex items-center mb-14 max-w-7xl m-auto">
+	                <div className="flex items-center mb-14 max-w-[95rem] m-auto">
 	     			    <div className="skeleton bg-lightElements dark:bg-darkElements h-12 w-[29rem] rounded-md "></div>
 	                    <div className="skeleton hover:bg-grey-300 ml-auto bg-lightElements dark:bg-darkElements h-12 w-12 mr-4 rounded-md"></div>
 	       			    <div className="skeleton bg-lightElements dark:bg-darkElements h-12 w-48 rounded-md "></div>
 	                </div>
 	            </div>
-				<ul className="max-w-7xl m-auto w-full grid grid-cols-[repeat(auto-fit,minmax(250px,1fr))] gap-7 justify-items-center">
+				<ul className="max-w-[95rem] m-auto w-full grid grid-cols-[repeat(auto-fit,minmax(250px,1fr))] gap-7 justify-items-center">
 					<div className="skeleton min-w-[250px] h-[320px] w-full overflow-hidden rounded-md bg-lightElements dark:bg-darkElements"></div>
 					<div className="skeleton min-w-[250px] h-[320px] w-full overflow-hidden rounded-md bg-lightElements dark:bg-darkElements"></div>
 					<div className="skeleton min-w-[250px] h-[320px] w-full overflow-hidden rounded-md bg-lightElements dark:bg-darkElements"></div>

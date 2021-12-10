@@ -1,10 +1,11 @@
+import {Link} from "react-router-dom";
 
 
 function Header() {
     return (
         <header className="bg-lightElements dark:bg-darkElements h-16 w-full shadow-lg px-20 flex justify-center items-center">
-            <div className="w-full max-w-7xl flex justify-between items-center">
-                <h1 className="text-xl font-bold">Where in the world?</h1>
+            <div className="w-full max-w-[95rem] flex justify-between items-center">
+                <h1 className="text-xl font-bold"><Link to="/">Where in the world?</Link></h1>
                 <ThemeButton />
             </div>
         </header>

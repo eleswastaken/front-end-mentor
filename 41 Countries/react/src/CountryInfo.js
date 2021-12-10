@@ -15,7 +15,7 @@ function Country(props) {
 			return (<li><BorderCountry key={index} to={"/info/"+country.cca3} name={country.name.common}/></li>);
 		}) : "None";
 	return (
-		<div className="">
+		<div className="max-w-[95rem] m-auto">
 			<div className="info-links mb-14 flex items-center justify-between">
 				<Link to={"/"} className="shadow-lg bg-lightElements dark:bg-darkElements flex items-center justify-between px-4 py-1 rounded-md shadow-lg">
 						<svg className="mr-2 dark:fill-[#fff]" mlns="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/1999/xlink" width="30" height="20" viewBox="0 0 486.975 486.975">

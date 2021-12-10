@@ -18,7 +18,7 @@ class SearchForm extends Component {
         return (
             <div className=" m-auto">
                 <form 
-                    className="flex items-center mb-14 max-w-7xl m-auto"
+                    className="flex items-center mb-14 max-w-[95rem] m-auto"
                     onSubmit={(event) => event.preventDefault()}
                 >
                     <SearchField handler={this.filterHandler}/>
