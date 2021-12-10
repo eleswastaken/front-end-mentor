@@ -22,6 +22,7 @@ class App extends Component {
         search: "",
     }
     this.setFilters = this.setFilters.bind(this)
+    this.areSame = this.areSame.bind(this)
     this.applyFilters = this.applyFilters.bind(this)
     this.findByCca3 = this.findByCca3.bind(this)
     this.createInfoLink = this.createInfoLink.bind(this)
@@ -36,7 +37,7 @@ class App extends Component {
           this.setState({
             isLoaded: true,
             allCountries: result,
-            currentCountry: result[132],
+            // currentCountry: result[132],
           });
           this.applyFilters(true)
         },
@@ -51,11 +52,19 @@ class App extends Component {
 
   setFilters(props) {
     let filters = Object.assign({}, this.filters, props);
-    this.filters = filters;
-    // console.log("Filters: ", this.filters);
-    (!this.filters.region.trim() && !this.filters.search.trim()) ? this.applyFilters(true) : this.applyFilters();
-  }
+    if (!this.areSame(this.filters, filters)) {
+      this.filters = filters;
+      console.log("Filters: ", this.filters);
 
+      (!this.filters.region.trim() && !this.filters.search.trim()) ? this.applyFilters(true) : this.applyFilters();
+    }
+  }
+  areSame(one, two) {
+    if (Object.keys(one).every(key => one[key] === two[key])) {
+      return true
+    }
+    return false
+  }
   applyFilters(isRandom = false) {
     // let countries = [];
     if (isRandom) {
