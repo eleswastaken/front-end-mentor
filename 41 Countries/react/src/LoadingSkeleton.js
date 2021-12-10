@@ -47,10 +47,10 @@ function LoadingSkeleton(props) {
 		return (
 			<div className="">
 	            <div className=" m-auto">
-	                <div className="flex items-center mb-14 max-w-[95rem] m-auto">
-	     			    <div className="skeleton bg-lightElements dark:bg-darkElements h-12 w-[29rem] rounded-md "></div>
-	                    <div className="skeleton hover:bg-grey-300 ml-auto bg-lightElements dark:bg-darkElements h-12 w-12 mr-4 rounded-md"></div>
-	       			    <div className="skeleton bg-lightElements dark:bg-darkElements h-12 w-48 rounded-md "></div>
+	                <div className="flex flex-wrap items-center justify-between mb-5 sm:mb-9 md:mb-10 lg:mb-12 xl:mb-14 max-w-[95rem] m-auto">
+	     			    <div className="skeleton w-full md:w-[29rem] mb-3 lg:mb-0  bg-lightElements dark:bg-darkElements h-12 rounded-md "></div>
+	                    <div className="skeleton hover:bg-grey-300 mb-3 lg:mb-0  h-12 w-12 md:ml-auto mr-4 bg-lightElements dark:bg-darkElements rounded-md"></div>
+	       			    <div className="skeleton bg-lightElements mb-3 lg:mb-0  dark:bg-darkElements h-12 w-48 rounded-md "></div>
 	                </div>
 	            </div>
 				<ul className="max-w-[95rem] m-auto w-full grid grid-cols-[repeat(auto-fit,minmax(250px,1fr))] gap-7 justify-items-center">
