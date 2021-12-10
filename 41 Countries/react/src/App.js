@@ -22,6 +22,7 @@ class App extends Component {
         search: "",
     }
     this.setFilters = this.setFilters.bind(this)
+    this.shuffle = this.shuffle.bind(this)
     this.areSame = this.areSame.bind(this)
     this.applyFilters = this.applyFilters.bind(this)
     this.findByCca3 = this.findByCca3.bind(this)
@@ -49,7 +50,21 @@ class App extends Component {
         }
       )
   }
-
+  shuffle() {
+    if (!this.filters.region && !this.filters.search) {
+      this.applyFilters(true);
+      return 0;
+    }
+    console.log("shuffle countries")
+    console.log(this.state.countries.length)
+    let countries = this.state.countries.slice();
+    for(let i = 0; i < this.state.countries.length; i++) {
+      let th = countries[i]
+      countries.splice(i, 1)
+      countries.splice(Math.floor(Math.random()*countries.length), 0, th)
+    }
+    this.setState({countries: countries})
+  }
   setFilters(props) {
     let filters = Object.assign({}, this.filters, props);
     if (!this.areSame(this.filters, filters)) {
@@ -85,7 +100,7 @@ class App extends Component {
       if (this.filters.search.trim()) {
         searchFiltered = searchFiltered.filter(country => new RegExp(this.filters.search.toLowerCase()).test(country.name.common.toLowerCase()))
       }
-      this.setState({countries: searchFiltered.slice(0,this.filters.perpage)})
+      this.setState({countries: searchFiltered})
       // console.log(this.state.countries);
     }
   }
@@ -107,8 +122,8 @@ class App extends Component {
             {this.state.isLoaded &&
               <div>
                 <Route exact path="/">
-                  <SearchForm handler={this.setFilters} filters={this.filters}/>
-                  <CardContainer countries={this.state.countries} createLink={this.createInfoLink}/>
+                  <SearchForm handler={this.setFilters} filters={this.filters} shuffle={this.shuffle}/>
+                  <CardContainer countries={this.state.countries} filters={this.filters} createLink={this.createInfoLink}/>
                 </Route>
                 <Route exact path="/info/:cca3/:back/:forward">
                   <Country findByCca3={this.findByCca3}/>

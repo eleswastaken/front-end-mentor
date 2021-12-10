@@ -6,10 +6,11 @@ import Paragraph from "./Paragraph";
 
 function CardContainer(props) {
 	// let countries = props.countries;
+	console.log(props.countries.length)
 	return(
 		<div className="">
 			<ul className="max-w-7xl m-auto w-full grid grid-cols-[repeat(auto-fit,minmax(250px,1fr))] gap-7 justify-items-center">
-				{ props.countries.map((country, index) => <li key={index}><Card country={country} createLink={props.createLink} /></li>) }
+				{ props.countries.slice(0,props.filters.perpage).map((country, index) => <li key={index}><Card country={country} createLink={props.createLink} /></li>) }
 			</ul>
 		</div>
 	);

@@ -5,7 +5,7 @@ class SearchForm extends Component {
     constructor(props) {
         super(props)
         this.stateHandler = props.handler;
-
+        this.shuffle = props.shuffle;
         this.filterHandler = this.filterHandler.bind(this);
     }
 
@@ -18,10 +18,11 @@ class SearchForm extends Component {
         return (
             <div className=" m-auto">
                 <form 
-                    className="flex items-center justify-between mb-14 max-w-7xl m-auto"
+                    className="flex items-center mb-14 max-w-7xl m-auto"
                     onSubmit={(event) => event.preventDefault()}
                 >
                     <SearchField handler={this.filterHandler}/>
+                    <button onClick={this.shuffle} className="ml-auto bg-lightElements dark:bg-darkElements h-12 w-12 mr-4 text-lightText dark:text-darkText rounded-md shadow-lg">O</button>
                     <FilterField handler={this.filterHandler}/>
                 </form>
             </div>
@@ -32,9 +33,11 @@ class SearchForm extends Component {
 function SearchField(props) {
     function handleChange(event) {
         let filter = event.target.value;
-        props.handler(
-            {search: filter.trim()}
-        )
+        if (event.key !== "/") {
+            props.handler(
+                {search: filter.trim()}
+            )
+        }
         /// fix bug: when pressed enter during typing the filter dropdown would showup, this fixes it
         if (event.key === "Enter") {
             event.preventDefault()
