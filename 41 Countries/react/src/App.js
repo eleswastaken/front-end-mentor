@@ -31,7 +31,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    return 0 ///////////////////////////////////////////////////
+    // return 0 ///////////////////////////////////////////////////
     fetch("https://restcountries.com/v3.1/all")
       .then(res => res.json())
       .then(
