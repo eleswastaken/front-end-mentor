@@ -16,7 +16,7 @@ function Country(props) {
 		}) : "None";
 	return (
 		<div className="max-w-[95rem] m-auto">
-			<div className="info-links mb-14 flex items-center justify-between">
+			<div className="info-links mb-8 sm:mb-12 md:mb-14 flex items-center justify-between">
 				<Link to={"/"} className="shadow-lg bg-lightElements dark:bg-darkElements flex items-center justify-between px-4 py-1 rounded-md shadow-lg">
 						<svg className="mr-2 dark:fill-[#fff]" mlns="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/1999/xlink" width="30" height="20" viewBox="0 0 486.975 486.975">
 							<g>
@@ -27,11 +27,11 @@ function Country(props) {
 				</Link>
 			</div>
 
-			<div className="info-content flex items-center">
-				<div className="flex-1 pr-16">
-					<img className="w-full" src={country.flags.svg}/>
+			<div className="info-content flex items-center flex-col lx:flex-row">
+				<div className="flex-1 p-0 lx:pr-16 mb-10">
+					<img className="w-full sm:w-3/4 md:w-2/3 lx:w-full m-auto" src={country.flags.svg}/>
 				</div>
-				<div className="flex-1 pl-16">
+				<div className="flex-1 p-0 lx:pl-16">
 					<h1 className="text-2xl font-bold mb-7">{country.name.official}</h1>
 					<ul className="flex flex-wrap mb-10">
 						<li className="info-p"><Paragraph text={"Native Name"} value={nativeName} classN={"text-base"}/></li>
@@ -43,8 +43,8 @@ function Country(props) {
 						<li className="info-p"><Paragraph text={"Languages"} value={languages.length ? languages : "None"} classN={"text-base"}/></li>
 						<li className="info-p"><Paragraph text={"Capital"} value={country.capital || "None"} classN={"text-base"}/></li>
 					</ul>
-					<Paragraph text="Border countries" classN="text-base flex" value={
-						<ul className="flex flex-wrap max-w-[350px] gap-3 ml-3">
+					<Paragraph text="Border countries" classN="text-base flex flex-col sm:flex-row" value={
+						<ul className="flex flex-wrap max-w-[350px] gap-3 sm:ml-3 mt-3 sm:mt-0">
 							{borders}
 						</ul>
 					}/>

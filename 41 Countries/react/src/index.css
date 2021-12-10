@@ -23,18 +23,35 @@
     .card-p:last-child {
         margin-bottom: -5px;
     }
-
+      
     .info-p {
         flex: 1;
-        flex-basis: 50%;
+        flex-basis: 100%;
         margin-bottom: 13px;
-    }
+
+    }   
     .info-p:nth-child(7) {
         flex-basis:  100%;
         
     }
     .info-p:last-child {
         flex-basis:  100%;
+    }
+    
+    @media (min-width: 530px) {
+        .info-p {
+            flex: 1;
+            flex-basis: 50%;
+            margin-bottom: 13px;
+
+        }   
+        .info-p:nth-child(7) {
+            flex-basis:  100%;
+            
+        }
+        .info-p:last-child {
+            flex-basis:  100%;
+        }
     }
     .skeleton-p {
         flex: 1;
