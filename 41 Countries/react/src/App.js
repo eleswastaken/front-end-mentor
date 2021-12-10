@@ -89,36 +89,36 @@ class App extends Component {
   }
                   // <Country country={this.state.currentCountry} find={this.findByCca3}/>
   render() {
-    if (this.state.isLoaded) {
-      return (
-        <Router>
-          <div className="text-lightText dark:text-darkText">
-            <Header />
+    return (
+      <Router>
+        <div className="text-lightText dark:text-darkText">
+          <Header />
+          <Switch>
             <main className="py-14 px-20">
-              <Switch>
+            {this.state.isLoaded &&
+              <div>
                 <Route exact path="/">
                   <SearchForm handler={this.setFilters} filters={this.filters}/>
                   <CardContainer countries={this.state.countries} createLink={this.createInfoLink}/>
                 </Route>
-                <Route path="/info/:cca3/:back/:forward">
+                <Route exact path="/info/:cca3/:back/:forward">
                   <Country findByCca3={this.findByCca3}/>
                 </Route>
-                <Route path="/info/:cca3">
+                <Route exact path="/info/:cca3">
                   <Country findByCca3={this.findByCca3}/>
                 </Route>
-              </Switch>
-            </main>
-          </div>
-        </Router>
-        );
-    } else if (!this.state.isLoaded) {
-      return (
-        <main className="text-lightText dark:text-darkText">
-          <Header />
-          <p className="flex items-center justify-center h-screen">Loading...</p>
-        </main>
-        );    
-    }
+              </div>
+            }
+            {!this.state.isLoaded && //fdsafsdfa
+              <div>
+                <p className="flex items-center justify-center h-full">Loading...</p>
+              </div>
+            }
+          </main>
+          </Switch>
+        </div>
+      </Router>
+      );
   }
 
 }
