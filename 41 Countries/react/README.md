@@ -1,11 +1,23 @@
 
 # Frontend Mentor - REST Countries API with color theme switcher 
 
-It is [live](https://eleswastaken-front-end-countries-api-gui.netlify.app/)!
+## Links
 
-## Main build: 
+- Live demo: [netlify](https://eleswastaken-front-end-countries-api-gui.netlify.app/)
+
+### Main build:
+
 - Tailwind CSS
-- React
+- React JS
+
+### Built with
+
+- Semantic HTML5 markup
+- CSS custom properties
+- Flexbox
+- CSS Grid
+- [React](https://reactjs.org/) - JS library
+- [Tailwind CSS](https://tailwindcss.com)
 
 ### The challenge
 
@@ -22,5 +34,17 @@ Users should be able to:
 
 ![](./screenshots/3.png)
 
+### Useful resources
 
-### Current problems
+- [SVG repo](https://www.svgrepo.com) - Amazing collection of free svg.
+
+## Author
+
+- Frontend Mentor - [@eleswastaken](https://www.frontendmentor.io/profile/eleswastaken)
+- GitHub - [@leswastaken](https://github.com/eleswastaken)
+- Twitter - [@eleswastaken](https://www.twitter.com/eleswastaken)
+
+### Current status
+
+- Want to add moon and sun icons to the theme switch
+- Want to add per page filter(only styling left)
