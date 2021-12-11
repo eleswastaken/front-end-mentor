@@ -7,15 +7,18 @@
     *, *::after, *::before {
         @apply transition-colors;
     }
+
     body {
         @apply bg-lightBg dark:bg-darkBg;
         font-family: 'Nunito Sans', sans-serif;
     }
+
     .filter-button {}
     .filter-button button{
         @apply px-6 py-2 w-full text-left hover:bg-gray-200 dark:hover:bg-gray-600 transition-all;
 
     }
+    
     .card-p {
         margin-bottom: 2px;
 

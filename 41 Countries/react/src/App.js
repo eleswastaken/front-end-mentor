@@ -6,6 +6,7 @@ import SearchForm from "./Search";
 import CardContainer from "./CardContainer";
 import Country from "./CountryInfo";
 import LoadingSkeleton from "./LoadingSkeleton";
+import Error from "./Error";
 
 class App extends Component {
   constructor(props) {
@@ -114,13 +115,14 @@ class App extends Component {
   }
                   // <Country country={this.state.currentCountry} find={this.findByCca3}/>
   render() {
+    console.log(this.state)
     return (
       <Router>
         <div className="text-lightText dark:text-darkText">
           <Header />
           <Switch>
             <main className="px-6 py-8 sm:px-8 md:px-10 lg:px-12 xl:px-20 sm:py-12  xl:py-14">
-            {this.state.isLoaded &&
+            {this.state.isLoaded && !this.state.error?
               <div>
                 <Route exact path="/">
                   <SearchForm handler={this.setFilters} filters={this.filters} shuffle={this.shuffle}/>
@@ -133,11 +135,13 @@ class App extends Component {
                   <Country findByCca3={this.findByCca3}/>
                 </Route>
               </div>
-            }
-            {!this.state.isLoaded &&
-              <div>
-                <LoadingSkeleton />
-              </div>
+            : ( this.state.error ?
+                <Error error={this.state.error}/>
+              :
+                <div>
+                  <LoadingSkeleton />
+                </div>
+              )
             }
           </main>
           </Switch>
