@@ -48,3 +48,4 @@ Users should be able to:
 
 - Want to add moon and sun icons to the theme switch
 - Want to add per page filter(only styling left)
+- Need to configure netlify redirects
