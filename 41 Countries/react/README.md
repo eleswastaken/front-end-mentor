@@ -41,7 +41,7 @@ Users should be able to:
 ## Author
 
 - Frontend Mentor - [@eleswastaken](https://www.frontendmentor.io/profile/eleswastaken)
-- GitHub - [@leswastaken](https://github.com/eleswastaken)
+- GitHub - [@eleswastaken](https://github.com/eleswastaken)
 - Twitter - [@eleswastaken](https://www.twitter.com/eleswastaken)
 
 ### Current status
