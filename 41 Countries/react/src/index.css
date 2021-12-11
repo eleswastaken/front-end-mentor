@@ -18,7 +18,18 @@
         @apply px-6 py-2 w-full text-left hover:bg-gray-200 dark:hover:bg-gray-600 transition-all;
 
     }
-    
+
+    #theme-switch::before {
+        /*opacity: .2;*/
+
+    }
+    #theme-switch:hover::before {
+        opacity: 0.8;
+    }
+    #theme-switch {
+        /*background: url("/images/icon-moon.svg") no-repeat;*/
+    }
+
     .card-p {
         margin-bottom: 2px;
 

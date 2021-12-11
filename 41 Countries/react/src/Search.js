@@ -22,8 +22,8 @@ class SearchForm extends Component {
                     onSubmit={(event) => event.preventDefault()}
                 >
                     <SearchField handler={this.filterHandler}/>
-                    <button onClick={this.shuffle} className="mb-3 lg:mb-0 md:mr-4 md:ml-auto flex items-center justify-center bg-lightElements dark:bg-darkElements h-12 w-12 text-lightText dark:text-darkText rounded-md shadow-lg  hover:bg-gray-200 dark:hover:brightness-125 transition-all">
-                        <svg className="fill-[grey] dark:fill-[#fff]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 489.533 489.533" width="20" height="20">
+                    <button onClick={this.shuffle} aria-label="Shuffle countries" className="mb-3 lg:mb-0 md:mr-4 md:ml-auto flex items-center justify-center bg-lightElements dark:bg-darkElements h-12 w-12 text-lightText dark:text-darkText rounded-md shadow-lg  hover:bg-gray-200 dark:hover:brightness-125 transition-all">
+                        <svg aria-hidden="true" className="fill-[grey] dark:fill-[#fff]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 489.533 489.533" width="20" height="20">
                             <g><path d="M268.175,488.161c98.2-11,176.9-89.5,188.1-187.7c14.7-128.4-85.1-237.7-210.2-239.1v-57.6c0-3.2-4-4.9-6.7-2.9   l-118.6,87.1c-2,1.5-2,4.4,0,5.9l118.6,87.1c2.7,2,6.7,0.2,6.7-2.9v-57.5c87.9,1.4,158.3,76.2,152.3,165.6   c-5.1,76.9-67.8,139.3-144.7,144.2c-81.5,5.2-150.8-53-163.2-130c-2.3-14.3-14.8-24.7-29.2-24.7c-17.9,0-31.9,15.9-29.1,33.6   C49.575,418.961,150.875,501.261,268.175,488.161z"/></g> 
                         </svg>
                     </button>
@@ -66,6 +66,7 @@ function SearchField(props) {
                     placeholder="Search for a country..."
                     onChange={handleChange}
                     onKeyDown={handleChange}
+                    aria-label="Search for a country by name"
                 /> 
             </label>
         </div>
@@ -136,19 +137,21 @@ class FilterField extends Component {
                 <button className="bg-lightElements dark:bg-darkElements h-full ml-auto w-full rounded-md flex items-center justify-between px-6 relative z-20 hover:bg-gray-200 dark:hover:brightness-125 transition-all"
                     aria-expanded="false"
                     onClick={this.openDropdown}
+                    role="listbox"
+                    aria-label="Choose region filter"
                 >
                     Filter by region
                     <svg aria-hidden="true" className="scale-75" xmlns="http://www.w3.org/2000/svg" width="18" height="12"><path fill="none" stroke="#ccc" stroke-width="2" d="M1 1l8 8 8-8"/></svg>
                 </button>
 
                 <ul className="absolute top-14 bg-lightElements dark:bg-darkElements w-full text-lightText dark:text-darkText rounded-md shadow-lg py-2 z-20 hidden">
-                    <li className="fixed top-0 left-0 w-screen h-screen z-[-1]" onClick={this.handleOutsideClick}></li>
-                    <li className="filter-button"><button onClick={(e) => this.handleFilter(e, "")}>All</button></li>
-                    <li className="filter-button"><button onClick={(e) => this.handleFilter(e, "Africa")}>Africa</button></li>
-                    <li className="filter-button"><button onClick={(e) => this.handleFilter(e, "Americas")}>America</button></li>
-                    <li className="filter-button"><button onClick={(e) => this.handleFilter(e, "Asia")}>Asia</button></li>
-                    <li className="filter-button"><button onClick={(e) => this.handleFilter(e, "Europe")}>Europe</button></li>
-                    <li className="filter-button"><button onClick={(e) => this.handleFilter(e, "Oceania")}>Oceania</button></li>
+                    <li className="fixed top-0 left-0 w-screen h-screen z-[-1]" aria-hidden="true" onClick={this.handleOutsideClick}></li>
+                    <li className="filter-button"><button aria-label="No region filter" role="option" onClick={(e) => this.handleFilter(e, "")}>All</button></li>
+                    <li className="filter-button"><button aria-label="Filter by Africa" role="option" onClick={(e) => this.handleFilter(e, "Africa")}>Africa</button></li>
+                    <li className="filter-button"><button aria-label="Filter by Americas" role="option" onClick={(e) => this.handleFilter(e, "Americas")}>America</button></li>
+                    <li className="filter-button"><button aria-label="Filter by Asia" role="option" onClick={(e) => this.handleFilter(e, "Asia")}>Asia</button></li>
+                    <li className="filter-button"><button aria-label="Filter by Europe" role="option" onClick={(e) => this.handleFilter(e, "Europe")}>Europe</button></li>
+                    <li className="filter-button"><button aria-label="Filter by Oceania" role="option" onClick={(e) => this.handleFilter(e, "Oceania")}>Oceania</button></li>
                 </ul>
 
             </div>

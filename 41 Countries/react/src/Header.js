@@ -31,20 +31,20 @@ function ThemeButton() {
     return (
         <button     
             className="bg-transparent flex items-center transform"
-            onClick={handleClick}>
+            onClick={handleClick}
+            aria-label="Switch theme">
                 <Toggle />
                 <span className="hidden md:inline-block ml-3">Dark mode</span>
         </button>
     );
 }
 
-function Toggle() {
+function Toggle(props) {
     return (
-        <span id="theme-switch" className="
+        <span id="theme-switch" className={`
             inline-block rounded-full w-14 h-7 bg-green-400 relative
             before:block before:transform before:transition-all before:absolute before:rounded-full  before:w-6 before:h-6 before:top-0.5 before:right-0.5
-            before:bg-grey-300
-        "></span>
+            before:bg-grey-300 ${props.classN}`}></span>
     );
 }
 

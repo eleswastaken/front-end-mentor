@@ -26,8 +26,9 @@ function Card(props) {
 			flex flex-col
 		">
 			<div className="overflow-hidden flex-1 relative">
-				<img src={country.flags.svg} className="absolute object-cover h-full w-full blur-lg"/>
-				<Link to={props.createLink(country)} tabIndex="-1" className="w-full h-full inline-block flex items-center justify-center group relative z-10">
+				<img aria-hidden="true" src={country.flags.svg} className="absolute object-cover h-full w-full blur-lg"/>
+				<Link to={props.createLink(country)} tabIndex="-1" className="w-full h-full inline-block flex items-center justify-center group relative z-10"
+				title={`Learn more about ${country.name.common}`}>
 					<img src={country.flags.svg}
 						className="transition-transform ease-in-out duration-300 group-hover:scale-110 object-contain max-h-full max-w-full"
 						alt={"Flag of " + country.name.official}
@@ -37,7 +38,7 @@ function Card(props) {
 			</div>
 			<div className="px-6 pt-6 flex-1">
 				<h2 className="mb-4 font-bold text-base">
-					<Link to={props.createLink(country)}>
+					<Link to={props.createLink(country)} title={`Learn more about ${country.name.common}`}>
 						{country.name.common}
 					</Link>
 				</h2>
