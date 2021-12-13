@@ -1,5 +1,5 @@
 
-let cardData = [
+let cardsData = [
     {
         imgURL: "./assets/screenshots/3.png",
         imgAltText: "Blockchain-bitcoin currency price",
