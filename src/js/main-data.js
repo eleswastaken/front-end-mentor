@@ -1,6 +1,18 @@
 
 let cardsData = [
     {
+        imgURL: "./assets/screenshots/4.png",
+        imgAltText: "REST Countries API",
+        githubRepoURL: "https://github.com/eleswastaken/front-end/tree/master/41%20Countries/react",
+        livePreviewURL: "https://eleswastaken-front-end-countries-api-gui.netlify.app/",
+        title: "REST Countries API",
+        descriptionTitle: "",
+        descriptionText: ["First time using react.", "It was pretty tough, but I loved it. Once you get the hang of it, it is hard to do things the other way."],
+        tags: ["react js", "tailwind css", "react-router"],
+        dateStr: "Decemeber 11th, 2021",
+        date: new Date("2021-12-11"),
+    },
+    {
         imgURL: "./assets/screenshots/3.png",
         imgAltText: "Blockchain-bitcoin currency price",
         githubRepoURL: "https://github.com/eleswastaken/front-end/tree/master/43%20NFT%20Card",
@@ -36,18 +48,6 @@ let cardsData = [
         dateStr: "November 14th, 2021",
         date: new Date("2021-11-14"),
     },
-    {
-        imgURL: "",
-        imgAltText: "",
-        githubRepoURL: "",
-        livePreviewURL: "",
-        title: "",
-        descriptionTitle: "",
-        descriptionText: [],
-        tags: [],
-        dateStr: new Date(),
-        date: new Date(),
-    }
 ];
 
 // Sat Dec 11 08:58:59 2021 +0600
