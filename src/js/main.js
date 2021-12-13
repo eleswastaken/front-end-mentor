@@ -6,8 +6,14 @@ console.log(cardsData)
 const cardsContainer = document.querySelector("#cards-container");
 console.log(cardsContainer)
 
+for (card of cardsData) {
+	cardsContainer.innerHTML += (createCard(card))
+}
+
+
 function createCard(card) {
-	
+	let texts = card.descriptionText.map(text => `<p>${text}</p>`).join("");
+	let tags = card.tags.map(tag => `<li>#${tag}</li>`).join("");
 	return (`<li class="max-w-md w-full bg-accent1 overflow-hidden rounded-lg relative">
         <div class="max-h-[250px] overflow-hidden" >
             <a href="${card.livePreviewURL}" target="_blank" class="w-full h-full" tabindex="-1">
@@ -20,7 +26,7 @@ function createCard(card) {
             <div class="description my-1">
                
                 <div class="text-content mt-4 ml-2">
-                	${text}
+                	${texts}
                 </div>
                 <ul class="flex flex-wrap max-w-[300px] mt-4">
                 	${tags}
