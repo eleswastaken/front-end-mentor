@@ -10,7 +10,7 @@ function CardContainer(props) {
 	return(
 		<div className="">
 			<ul className="max-w-[95rem] m-auto w-full grid grid-cols-[repeat(auto-fit,minmax(250px,1fr))] gap-7 justify-items-center">
-				{ props.countries.slice(0,props.filters.perpage).map((country, index) => <li key={index}><Card country={country} createLink={props.createLink} /></li>) }
+				{ props.countries.slice(0,props.filters.perpage).map((country, index) => <li key={index}><Card country={country} filters={props.filters} createLink={props.createLink} /></li>) }
 			</ul>
 		</div>
 	);
@@ -19,6 +19,12 @@ function CardContainer(props) {
 function Card(props) {
 	let country = props.country;
 	// console.log(country)
+	if (props.filters.search) {
+
+		console.log(props.filters.search)
+		console.log()
+	}
+	let name = props.filters.search ? country.name.common.replace(new RegExp(props.filters.search, "gi"), "<span class='title-highlight'>$&</span>") : country.name.common;
 	return(
 		<div className="max-w-sm w-full h-full bg-white overflow-hidden rounded-md relative shadow-lg
 			min-w-[250px]
@@ -38,8 +44,8 @@ function Card(props) {
 			</div>
 			<div className="px-6 pt-6 flex-1">
 				<h2 className="mb-4 font-bold text-base">
-					<Link to={props.createLink(country)} title={`Learn more about ${country.name.common}`}>
-						{country.name.common}
+					<Link to={props.createLink(country)} dangerouslySetInnerHTML={{__html: name}} title={`Learn more about ${country.name.common}`}>
+						
 					</Link>
 				</h2>
 				<Paragraph text="Population" value={country.population} classN="card-p text-sm" isNum={true}/>
