@@ -1,11 +1,11 @@
 import {Link} from "react-router-dom";
 
 
-function Header() {
+function Header(props) {
     return (
         <header className="px-6 sm:px-8 md:px-10 lg:px-12 xl:px-20 bg-lightElements dark:bg-darkElements h-16 w-full shadow-lg flex justify-center items-center">
             <div className="w-full max-w-[95rem] flex justify-between items-center">
-                <h1 className="text-xl font-bold"><Link to="/">Where in the world?</Link></h1>
+                <h1 className="text-xl font-bold"><Link onClick={props.reset} to="/">Where in the world?</Link></h1>
                 <ThemeButton />
             </div>
         </header>

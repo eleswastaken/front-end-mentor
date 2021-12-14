@@ -29,6 +29,7 @@ class App extends Component {
     this.applyFilters = this.applyFilters.bind(this)
     this.findByCca3 = this.findByCca3.bind(this)
     this.createInfoLink = this.createInfoLink.bind(this)
+    this.reset = this.reset.bind(this)
   }
 
   componentDidMount() {
@@ -51,6 +52,11 @@ class App extends Component {
           });
         }
       )
+  }
+  reset() {
+    this.filters = Object.assign({}, this.filters, {search: "", region: ""});
+    this.applyFilters(true)
+    this.render()
   }
   shuffle() {
     if (!this.filters.region && !this.filters.search) {
@@ -119,7 +125,7 @@ class App extends Component {
     return (
       <Router>
         <div className="text-lightText dark:text-darkText">
-          <Header />
+          <Header reset={this.reset}/>
           <Switch>
             <main className="px-6 py-8 sm:px-8 md:px-10 lg:px-12 xl:px-20 sm:py-12  xl:py-14">
             {this.state.isLoaded && !this.state.error?

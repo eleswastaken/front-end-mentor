@@ -112,6 +112,6 @@
     }
 
     .title-highlight {
-        background-color: #ffff00bd;
+        @apply bg-[#ff0] dark:bg-[#ffff00bd];
     }
 } 
