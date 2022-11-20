@@ -1,6 +1,29 @@
 {
   "dependencies": {
+    "express": "^4.18.2",
     "npm": "^8.1.4",
     "tailwindcss": "^2.2.19"
+  },
+  "name": "front-end",
+  "description": "Here is a link to the repo [live page](https://eleswastaken.github.io/front-end/index.html).",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eleswastaken/front-end.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/eleswastaken/front-end/issues"
+  },
+  "homepage": "https://github.com/eleswastaken/front-end#readme",
+  "devDependencies": {
+    "dotenv": "^16.0.3",
+    "nodemon": "^2.0.20"
   }
 }
