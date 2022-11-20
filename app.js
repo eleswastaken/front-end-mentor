@@ -7,45 +7,27 @@ const app = express();
 
 
 app.use((req, res, next) => {
-  console.log(req.method, path.join(__dirname, req.path))
+  console.log(req.method, path.join(__dirname, req.path).replace(/%20/g," "))
   next()
 })
 
 app.get('/', function(req, res) {
 
-  console.log(req.path)
-
-  res.send('hello, world!')
+  res.redirect('/index.html')
 
 });
 
 
-app.get('/index.html', function(req, res) {
-
-  const filepath = path.join(__dirname, req.path);
-
-  const fileStream = fs.createReadStream(filepath);
-
-
-  fileStream
-    .on('open', () => {
-
-    fileStream.pipe(res)
-
-  })
-    .on('end', () => {
-      
-      res.end()
-
-    });
-})
-
 app.get('/*', function(req, res) {
 
-  const filepath = path.join(__dirname, req.path);
+  let filepath = path.join(__dirname, req.path);
+
+  // when browser requests something, it adds %20, this fixes it
+  filepath = filepath.replace(/%20/g, " ");
 
   // check if file exists
   if (!fs.existsSync(filepath)) {
+    console.log('Did not find')
     res.sendStatus(404)
     return
   }
@@ -67,10 +49,8 @@ app.get('/*', function(req, res) {
 })
 
 
+const PORT = 5000;
 
-
-const port = 5000;
-
-app.listen(port, () => {
+app.listen(PORT, () => {
   console.log('Running...')
 });
