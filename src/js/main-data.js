@@ -19,7 +19,7 @@ let cardsData = [
         livePreviewURL: "https://eleswastaken.github.io/front-end/43%20NFT%20Card/",
         title: "NTF Card",
         descriptionTitle: "",
-        descriptionText: ["The real challenge was animating eye on hover.", "I didn't want to clutter markup with 'meaningless' elements, plus I probably would've had to use js. So I went for pseudo elements instead.", "Pseudo elements of a link are still a part of the link, meaning they would still work even though on top of the link."],
+        descriptionText: ["The real challenge was animating the eye on hover.", "I didn't want to clutter markup with 'meaningless' elements, plus I probably would've had to use js. So I went for pseudo elements instead.", "Pseudo elements of a link are still a part of the link, meaning they would still work even though on top of the link."],
         tags: ["animation", "html", "css"],
         dateStr: "Decemeber 3rd, 2021",
         date: new Date("2021-12-03"),
