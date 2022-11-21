@@ -98,7 +98,7 @@ function renderCart() {
             <img src="./images/icon-delete.svg" alt="Delete">
             </button>
         </li>
-        <button type="submit" class="checkout" aria-label="Checkout">Checkout</button>
+        <button disabled type="submit" class="checkout" aria-label="Checkout">Checkout</button>
         `);
         document.querySelector(`#cart-item${item.productId}-delete`).addEventListener('click', function(event) {
             deleteItem(item.productId)
