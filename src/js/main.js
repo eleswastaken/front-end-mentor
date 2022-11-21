@@ -32,9 +32,11 @@ function createCard(card) {
                 	${tags}
                 </ul>
             </div> 
+            <!--
             <p class=" text-white text-opacity-70 text-base text-left">
                 <time datetime="${card.date}">${card.dateStr}</time>
             </p>
+            -->
             <a href="${card.githubRepoURL}" target="_blank" aria-label="Github Repository" class="absolute w-10 h-10 top-5 right-5 flex justify-center items-center rounded-md bg-accent1 shadow-lg">
                 <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="none" viewBox="0 0 16 16">
                     <title>Github Repo</title>
