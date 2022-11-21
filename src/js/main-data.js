@@ -16,7 +16,7 @@ let cardsData = [
         imgURL: "./assets/screenshots/3.png",
         imgAltText: "Blockchain-bitcoin currency price",
         githubRepoURL: "https://github.com/eleswastaken/front-end/tree/master/43%20NFT%20Card",
-        livePreviewURL: "https://eleswastaken.github.io/front-end/43%20NFT%20Card/",
+        livePreviewURL: "/43%20NFT%20Card/index.html",
         title: "NTF Card",
         descriptionTitle: "",
         descriptionText: ["The real challenge was animating the eye on hover.", "I didn't want to clutter markup with 'meaningless' elements, plus I probably would've had to use js. So I went for pseudo elements instead.", "Pseudo elements of a link are still a part of the link, meaning they would still work even though on top of the link."],

@@ -13,8 +13,27 @@ app.use((req, res, next) => {
 
 app.get('/', function(req, res) {
 
-  res.redirect('/index.html')
+  const filepath = path.join(__dirname, '/index.html');
 
+  const fileStream = fs.createReadStream(filepath);
+
+
+  fileStream
+    .on('open', () => {
+
+    fileStream.pipe(res)
+
+    })
+    .on('error', () => {
+      res
+        .sendStatus(404)
+        .end();
+    })
+    .on('end', () => {
+      
+      res.end()
+
+    });
 });
 
 
@@ -22,8 +41,8 @@ app.get('/*', function(req, res) {
 
   let filepath = path.join(__dirname, req.path);
 
-  // when browser requests something, it adds %20, this fixes it
-  filepath = filepath.replace(/%20/g, " ");
+  // replace spaces
+  filepath = filepath.replace(/%20/g, ' ');
 
   // check if file exists
   if (!fs.existsSync(filepath)) {
