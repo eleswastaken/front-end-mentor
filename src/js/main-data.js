@@ -108,6 +108,85 @@ let cardsData = [
         dateStr: "November 14th, 2021",
         date: new Date("2021-11-14"),
     }, 
+
+    {
+        imgURL: "./assets/screenshots/ip-adress-tracker-preview.png",
+        imgAltText: "IP Adress Tracker",
+        githubRepoURL: "https://github.com/eleswastaken/front-end/tree/main/33 IP Map",
+        livePreviewURL: "/33 IP Map/index.html",
+        title: "IP Adress Tracker",
+        descriptionTitle: "",
+        descriptionText: ['Really like how it came out.', 'The slider is a flickity library.'],
+        tags: ["scss", "html", "css", "frontendmentor", "dynamic"],
+        dateStr: "November 14th, 2021",
+        date: new Date("2021-11-14"),
+    }, 
+
+    {
+        imgURL: "./assets/screenshots/calculator-preview.png",
+        imgAltText: "Calculator",
+        githubRepoURL: "https://github.com/eleswastaken/front-end/tree/main/28 Calculator",
+        livePreviewURL: "/28 Calculator/index.html",
+        title: "Calculator",
+        descriptionTitle: "",
+        descriptionText: ['Really like how it came out.', 'The slider is a flickity library.'],
+        tags: ["scss", "html", "css", "frontendmentor", "dynamic"],
+        dateStr: "November 14th, 2021",
+        date: new Date("2021-11-14"),
+    }, 
+
+    {
+        imgURL: "./assets/screenshots/huddle-landing-page-preview.png",
+        imgAltText: "Huddle Landing Page",
+        githubRepoURL: "https://github.com/eleswastaken/front-end/tree/main/27 Huddle LP",
+        livePreviewURL: "/27 Huddle LP/index.html",
+        title: "Huddle Landing Page",
+        descriptionTitle: "",
+        descriptionText: ['Really like how it came out.', 'The slider is a flickity library.'],
+        tags: ["scss", "html", "css", "frontendmentor", "dynamic"],
+        dateStr: "November 14th, 2021",
+        date: new Date("2021-11-14"),
+    }, 
+
+    {
+        imgURL: "./assets/screenshots/clipboard-landing-page-preview.png",
+        imgAltText: "Clipboard Landing Page",
+        githubRepoURL: "https://github.com/eleswastaken/front-end/tree/main/23 Copy LP",
+        livePreviewURL: "/23 Copy LP/index.html",
+        title: "Clipboard Landing Page",
+        descriptionTitle: "",
+        descriptionText: ['Really like how it came out.', 'The slider is a flickity library.'],
+        tags: ["scss", "html", "css", "frontendmentor", "dynamic"],
+        dateStr: "November 14th, 2021",
+        date: new Date("2021-11-14"),
+    }, 
+
+    {
+        imgURL: "./assets/screenshots/fylo-landing-page-preview.png",
+        imgAltText: "Fylo Landing Page",
+        githubRepoURL: "https://github.com/eleswastaken/front-end/tree/main/25 Fylo LP",
+        livePreviewURL: "/25 Fylo LP/index.html",
+        title: "Fylo Landing Page",
+        descriptionTitle: "",
+        descriptionText: ['Really like how it came out.', 'The slider is a flickity library.'],
+        tags: ["scss", "html", "css", "frontendmentor", "dynamic"],
+        dateStr: "November 14th, 2021",
+        date: new Date("2021-11-14"),
+    }, 
+
+
+    {
+        imgURL: "./assets/screenshots/social-media-dashboard-preview.png",
+        imgAltText: "Social Media Dashboard",
+        githubRepoURL: "https://github.com/eleswastaken/front-end/tree/main/19 SocialMedia Dashboard",
+        livePreviewURL: "/19 SocialMedia Dashboard/index.html",
+        title: "Social Media Dashboard",
+        descriptionTitle: "",
+        descriptionText: ['Really like how it came out.', 'The slider is a flickity library.'],
+        tags: ["scss", "html", "css", "frontendmentor", "dynamic"],
+        dateStr: "November 14th, 2021",
+        date: new Date("2021-11-14"),
+    }, 
 ];
 
 // Sat Dec 11 08:58:59 2021 +0600
