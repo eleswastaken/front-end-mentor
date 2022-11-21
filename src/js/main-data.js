@@ -48,18 +48,38 @@ let cardsData = [
         dateStr: "November 14th, 2021",
         date: new Date("2021-11-14"),
     },
+
     {
-        imgURL: "./assets/screenshots/rock-paper-scissors-preview.png",
-        imgAltText: "Rock Paper Scissors Game",
-        githubRepoURL: "https://github.com/eleswastaken/front-end/tree/main/40%20RockPaperScissors",
-        livePreviewURL: "40%20RockPaperScissors/index.html",
-        title: "Rock Paper Scissors",
+        imgURL: "./assets/screenshots/social-media-dashboard-preview.png",
+        imgAltText: "Social Media Dashboard",
+        githubRepoURL: "https://github.com/eleswastaken/front-end/tree/main/19 SocialMedia Dashboard",
+        livePreviewURL: "/19 SocialMedia Dashboard/index.html",
+        title: "Social Media Dashboard",
         descriptionTitle: "",
-        descriptionText: ["The challenge was making the animations. The score is recorded in the local storage."],
-        tags: ["vanilla js", "scss", "html", "css", "frontendmentor"],
+        descriptionText: ["Theme switcher is really the best part here."],
+        tags: ["scss", "darkmode", "html", "js"], 
         dateStr: "November 14th, 2021",
         date: new Date("2021-11-14"),
-    },
+    }, 
+    {
+        imgURL: "./assets/screenshots/job-listing-preview.png",
+        imgAltText: "Job Listing",
+        githubRepoURL: "https://github.com/eleswastaken/front-end/tree/main/35 Job Listing",
+        livePreviewURL: "/35 Job Listing/index.html",
+        title: "Job Listing",
+        descriptionTitle: "",
+        descriptionText: ["The rendering part and the filtering was the challege.", "It is always fun to make something dynamic)"],
+        tags: [
+          "dynamic",
+          "frontendmentor",
+          "vanilla js",
+          "html", 
+          "scss", 
+        ],
+        dateStr: "November 14th, 2021",
+        date: new Date("2021-11-14"),
+    }, 
+
     {
         imgURL: "./assets/screenshots/bookmark-landing-page-preview.png",
         imgAltText: "Bookmark Landing Page",
@@ -107,25 +127,6 @@ let cardsData = [
         dateStr: "November 14th, 2021",
         date: new Date("2021-11-14"),
     }, 
-    {
-        imgURL: "./assets/screenshots/job-listing-preview.png",
-        imgAltText: "Job Listing",
-        githubRepoURL: "https://github.com/eleswastaken/front-end/tree/main/35 Job Listing",
-        livePreviewURL: "/35 Job Listing/index.html",
-        title: "Job Listing",
-        descriptionTitle: "",
-        descriptionText: ["The rendering part and the filtering was the challege.", "It is always fun to make something dynamic)"],
-        tags: [
-          "dynamic",
-          "frontendmentor",
-          "vanilla js",
-          "html", 
-          "scss", 
-        ],
-        dateStr: "November 14th, 2021",
-        date: new Date("2021-11-14"),
-    }, 
-
     {
         imgURL: "./assets/screenshots/ip-adress-tracker-preview.png",
         imgAltText: "IP Adress Tracker",
@@ -203,20 +204,19 @@ let cardsData = [
         dateStr: "November 14th, 2021",
         date: new Date("2021-11-14"),
     }, 
-
-
     {
-        imgURL: "./assets/screenshots/social-media-dashboard-preview.png",
-        imgAltText: "Social Media Dashboard",
-        githubRepoURL: "https://github.com/eleswastaken/front-end/tree/main/19 SocialMedia Dashboard",
-        livePreviewURL: "/19 SocialMedia Dashboard/index.html",
-        title: "Social Media Dashboard",
+        imgURL: "./assets/screenshots/rock-paper-scissors-preview.png",
+        imgAltText: "Rock Paper Scissors Game",
+        githubRepoURL: "https://github.com/eleswastaken/front-end/tree/main/40%20RockPaperScissors",
+        livePreviewURL: "40%20RockPaperScissors/index.html",
+        title: "Rock Paper Scissors",
         descriptionTitle: "",
-        descriptionText: ["Theme switcher is really the best part here."],
-        tags: ["scss", "darkmode", "html", "js"], 
+        descriptionText: ["The challenge was making the animations. The score is recorded in the local storage."],
+        tags: ["vanilla js", "scss", "html", "css", "frontendmentor"],
         dateStr: "November 14th, 2021",
         date: new Date("2021-11-14"),
-    }, 
+    },
+
 ];
 
 // Sat Dec 11 08:58:59 2021 +0600
