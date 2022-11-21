@@ -13,10 +13,27 @@ app.use((req, res, next) => {
 
 app.get('/', function(req, res) {
 
-  console.log(req.path)
+  const filepath = path.join(__dirname, '/index.html');
 
-  res.send('hello, world!')
+  const fileStream = fs.createReadStream(filepath);
 
+
+  fileStream
+    .on('open', () => {
+
+    fileStream.pipe(res)
+
+    })
+    .on('error', () => {
+      res
+        .sendStatus(404)
+        .end();
+    })
+    .on('end', () => {
+      
+      res.end()
+
+    });
 });
 
 
@@ -42,7 +59,10 @@ app.get('/index.html', function(req, res) {
 
 app.get('/*', function(req, res) {
 
-  const filepath = path.join(__dirname, req.path);
+  let filepath = path.join(__dirname, req.path);
+
+  // replace spaces
+  filepath = filepath.replace(/%20/g, ' ');
 
   // check if file exists
   if (!fs.existsSync(filepath)) {
